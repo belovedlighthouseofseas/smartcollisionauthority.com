@@ -1,5 +1,5 @@
-// âââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
-// /api/send-verification.js  â  Next.js API route
+// ─────────────────────────────────────────────────────────────────────────────
+// /api/send-verification.js  —  Next.js API route
 //
 // Sends a 6-digit SMS verification code via Twilio Verify.
 // Part of the Bumper Fix temporary booking testing system.
@@ -9,12 +9,12 @@
 //   TWILIO_AUTH_TOKEN          your_auth_token
 //   TWILIO_VERIFY_SERVICE_SID  VAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 //
-// current implementation: stateless â no database needed for this route.
-// âââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
+// current implementation: stateless — no database needed for this route.
+// ─────────────────────────────────────────────────────────────────────────────
 
 import twilio from 'twilio';
 
-// ââ Environment variable validation ââââââââââââââââââââââââââââââââââââââââââ
+// ── Environment variable validation ──────────────────────────────────────────
 const ACCOUNT_SID        = process.env.TWILIO_ACCOUNT_SID;
 const AUTH_TOKEN         = process.env.TWILIO_AUTH_TOKEN;
 const VERIFY_SERVICE_SID = process.env.TWILIO_VERIFY_SERVICE_SID;
@@ -27,7 +27,7 @@ function missingEnvVars() {
   return missing;
 }
 
-// ââ Phone normalizer â E.164 ââââââââââââââââââââââââââââââââââââââââââââââââââ
+// ── Phone normalizer → E.164 ──────────────────────────────────────────────────
 function normalizePhone(raw) {
   if (!raw || typeof raw !== 'string') return null;
   const cleaned = raw.trim();
@@ -39,7 +39,7 @@ function normalizePhone(raw) {
   return null;                                      // too short to be valid
 }
 
-// ââ Route handler âââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
+// ── Route handler ─────────────────────────────────────────────────────────────
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed.' });
@@ -56,7 +56,7 @@ export default async function handler(req, res) {
 
   const { phone, name, date, time } = req.body || {};
 
-  // ââ Input validation âââââââââââââââââââââââââââââââââââââââââââââââââââââââ
+  // ── Input validation ───────────────────────────────────────────────────────
   if (!phone) {
     return res.status(400).json({ error: 'Phone number is required.' });
   }
@@ -71,7 +71,7 @@ export default async function handler(req, res) {
     });
   }
 
-  // ââ Send verification via Twilio Verify ââââââââââââââââââââââââââââââââââââ
+  // ── Send verification via Twilio Verify ────────────────────────────────────
   const client = twilio(ACCOUNT_SID, AUTH_TOKEN);
 
   try {

@@ -1,4 +1,4 @@
-// /api/incoming-sms.js â Twilio inbound SMS webhook
+// /api/incoming-sms.js — Twilio inbound SMS webhook
 // Handles CONFIRMED / YES / RESCHEDULE / NO / STOP replies
 import { createClient } from '@supabase/supabase-js';
 import twilio from 'twilio';
@@ -36,7 +36,7 @@ export default async function handler(req, res) {
 
   const now = new Date().toISOString();
 
-  // ââ CONFIRMED / YES âââââââââââââââââââââââââââââââââââââââââââââââââââââââ
+  // ── CONFIRMED / YES ───────────────────────────────────────────────────────
   if (text === 'CONFIRMED' || text === 'YES' || text === 'YES.' || text === 'YES!') {
     await supabase.from('bookings').update({
       status: 'customer_confirmed',
@@ -47,7 +47,7 @@ export default async function handler(req, res) {
     if (OWNER) {
       try {
         await client.messages.create({
-          body: `â CUSTOMER CONFIRMED\n\n${booking.name}\n${booking.phone}\n${booking.date} at ${booking.time}\n${booking.area}`,
+          body: `✅ CUSTOMER CONFIRMED\n\n${booking.name}\n${booking.phone}\n${booking.date} at ${booking.time}\n${booking.area}`,
           from: FROM, to: OWNER
         });
       } catch (e) {}
@@ -55,7 +55,7 @@ export default async function handler(req, res) {
     return res.status(200).send(twiml(`Confirmed! See you on ${booking.date} at ${booking.time}. Call/text (858) 988-0325 if anything changes.`));
   }
 
-  // ââ RESCHEDULE ââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
+  // ── RESCHEDULE ────────────────────────────────────────────────────────────
   if (text === 'RESCHEDULE') {
     await supabase.from('bookings').update({
       status: 'reschedule_requested',
@@ -66,7 +66,7 @@ export default async function handler(req, res) {
     if (OWNER) {
       try {
         await client.messages.create({
-          body: `ð RESCHEDULE REQUEST\n\n${booking.name}\n${booking.phone}\nCurrent slot: ${booking.date} at ${booking.time}\nLocation: ${booking.area}`,
+          body: `🔄 RESCHEDULE REQUEST\n\n${booking.name}\n${booking.phone}\nCurrent slot: ${booking.date} at ${booking.time}\nLocation: ${booking.area}`,
           from: FROM, to: OWNER
         });
       } catch (e) {}
@@ -74,7 +74,7 @@ export default async function handler(req, res) {
     return res.status(200).send(twiml('Reschedule request received. We will contact you shortly to find a new time.'));
   }
 
-  // ââ NO / STOP / CANCEL ââââââââââââââââââââââââââââââââââââââââââââââââââââ
+  // ── NO / STOP / CANCEL ────────────────────────────────────────────────────
   if (['NO', 'NO.', 'NO!', 'STOP', 'CANCEL'].includes(text)) {
     await supabase.from('bookings').update({
       status: 'canceled',
@@ -85,7 +85,7 @@ export default async function handler(req, res) {
     if (OWNER) {
       try {
         await client.messages.create({
-          body: `â BOOKING CANCELED\n\n${booking.name}\n${booking.phone}\n${booking.date} at ${booking.time}\n${booking.area}`,
+          body: `❌ BOOKING CANCELED\n\n${booking.name}\n${booking.phone}\n${booking.date} at ${booking.time}\n${booking.area}`,
           from: FROM, to: OWNER
         });
       } catch (e) {}
@@ -93,7 +93,7 @@ export default async function handler(req, res) {
     return res.status(200).send(twiml('Your appointment has been canceled. Call (858) 988-0325 if you change your mind.'));
   }
 
-  // ââ Unrecognized ââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
+  // ── Unrecognized ──────────────────────────────────────────────────────────
   await supabase.from('bookings').update({
     customer_reply: (body.Body || '').trim().substring(0, 200),
     customer_reply_at: now

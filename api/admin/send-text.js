@@ -1,4 +1,4 @@
-// /api/admin/send-text.js â Manually send a custom SMS to a customer (admin only)
+// /api/admin/send-text.js — Manually send a custom SMS to a customer (admin only)
 import twilio from 'twilio';
 
 function checkAuth(req) {

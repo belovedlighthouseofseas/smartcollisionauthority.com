@@ -1,4 +1,4 @@
-// /api/admin/bookings.js â List all bookings (admin only)
+// /api/admin/bookings.js — List all bookings (admin only)
 import { createClient } from '@supabase/supabase-js';
 
 function checkAuth(req) {

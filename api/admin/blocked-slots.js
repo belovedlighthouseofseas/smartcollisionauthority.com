@@ -1,4 +1,4 @@
-// /api/admin/blocked-slots.js â List all blocked slots (admin only)
+// /api/admin/blocked-slots.js — List all blocked slots (admin only)
 import { createClient } from '@supabase/supabase-js';
 
 function checkAuth(req) {

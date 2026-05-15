@@ -167,7 +167,7 @@
 <div id="loginScreen">
   <div class="login-box">
     <div class="login-logo">BUMPER FIX</div>
-    <div class="login-sub">Admin Dashboard â Authorized Access Only</div>
+    <div class="login-sub">Admin Dashboard — Authorized Access Only</div>
     <input type="password" id="passwordInput" class="login-input" placeholder="Enter admin password"/>
     <button class="login-btn" onclick="doLogin()">SIGN IN</button>
     <div class="login-error" id="loginError">Incorrect password.</div>
@@ -180,12 +180,12 @@
     <aside class="admin-sidebar">
       <div class="sidebar-brand"><span>BUMPER FIX</span> ADMIN</div>
       <nav class="sidebar-nav">
-        <button class="nav-btn active" onclick="showPanel('all',this)">ð All Bookings</button>
-        <button class="nav-btn" onclick="showPanel('awaiting',this)">â³ Awaiting Review</button>
-        <button class="nav-btn" onclick="showPanel('confirmed',this)">â Confirmed</button>
-        <button class="nav-btn" onclick="showPanel('reschedule',this)">ð Reschedule</button>
-        <button class="nav-btn" onclick="showPanel('completed',this)">ð Completed</button>
-        <button class="nav-btn" onclick="showPanel('blocked',this)">ð« Block Slots</button>
+        <button class="nav-btn active" onclick="showPanel('all',this)">📋 All Bookings</button>
+        <button class="nav-btn" onclick="showPanel('awaiting',this)">⏳ Awaiting Review</button>
+        <button class="nav-btn" onclick="showPanel('confirmed',this)">✅ Confirmed</button>
+        <button class="nav-btn" onclick="showPanel('reschedule',this)">🔄 Reschedule</button>
+        <button class="nav-btn" onclick="showPanel('completed',this)">🏁 Completed</button>
+        <button class="nav-btn" onclick="showPanel('blocked',this)">🚫 Block Slots</button>
       </nav>
       <div class="sidebar-logout">
         <button class="logout-btn" onclick="doLogout()">Sign Out</button>
@@ -196,17 +196,17 @@
       <div class="admin-topbar">
         <h1 id="panelTitle">All Bookings</h1>
         <div class="topbar-actions">
-          <button class="btn-outline" onclick="loadAll()">â» Refresh</button>
+          <button class="btn-outline" onclick="loadAll()">↻ Refresh</button>
         </div>
       </div>
 
       <div class="stats-row">
-        <div class="stat-card"><div class="stat-label">Total</div><div class="stat-value" id="sTotal">â</div></div>
-        <div class="stat-card"><div class="stat-label">Awaiting</div><div class="stat-value" id="sAwaiting">â</div></div>
-        <div class="stat-card"><div class="stat-label">Admin Conf.</div><div class="stat-value" id="sAdminConf">â</div></div>
-        <div class="stat-card"><div class="stat-label">Cust. Conf.</div><div class="stat-value" id="sCustConf">â</div></div>
-        <div class="stat-card"><div class="stat-label">Reschedule</div><div class="stat-value" id="sReschedule">â</div></div>
-        <div class="stat-card"><div class="stat-label">Completed</div><div class="stat-value" id="sCompleted">â</div></div>
+        <div class="stat-card"><div class="stat-label">Total</div><div class="stat-value" id="sTotal">—</div></div>
+        <div class="stat-card"><div class="stat-label">Awaiting</div><div class="stat-value" id="sAwaiting">—</div></div>
+        <div class="stat-card"><div class="stat-label">Admin Conf.</div><div class="stat-value" id="sAdminConf">—</div></div>
+        <div class="stat-card"><div class="stat-label">Cust. Conf.</div><div class="stat-value" id="sCustConf">—</div></div>
+        <div class="stat-card"><div class="stat-label">Reschedule</div><div class="stat-value" id="sReschedule">—</div></div>
+        <div class="stat-card"><div class="stat-label">Completed</div><div class="stat-value" id="sCompleted">—</div></div>
       </div>
 
       <!-- All Bookings -->
@@ -225,7 +225,7 @@
             </select>
           </div>
         </div>
-        <div id="list-all" class="booking-list"><div class="loading"><div class="spinner"></div>Loadingâ¦</div></div>
+        <div id="list-all" class="booking-list"><div class="loading"><div class="spinner"></div>Loading…</div></div>
       </div>
 
       <div class="panel" id="panel-awaiting">
@@ -265,7 +265,7 @@
           <div class="form-group"><label>Reason</label><input type="text" class="form-input" id="blockReason" placeholder="e.g. Lunch, Travel"/></div>
           <button class="btn-primary" onclick="addBlock()" style="height:40px">Block</button>
         </div>
-        <div id="list-blocked" class="blocks-list"><div class="loading"><div class="spinner"></div>Loadingâ¦</div></div>
+        <div id="list-blocked" class="blocks-list"><div class="loading"><div class="spinner"></div>Loading…</div></div>
       </div>
     </main>
   </div>
@@ -292,7 +292,7 @@
   <div class="modal-box">
     <div class="modal-title">Send Text Message</div>
     <div class="modal-sub" id="sendTextSub">Send a custom SMS to this customer.</div>
-    <textarea class="modal-textarea" id="sendTextBody" placeholder="Type your message hereâ¦"></textarea>
+    <textarea class="modal-textarea" id="sendTextBody" placeholder="Type your message here…"></textarea>
     <div class="modal-actions">
       <button class="btn-outline" onclick="closeSendTextModal()">Cancel</button>
       <button class="btn-primary" style="background:var(--purple)" onclick="executeSendText()">Send Text</button>
@@ -309,7 +309,7 @@ let allBlocks   = [];
 let pendingConfirmId   = null;
 let pendingSendPhone   = null;
 
-// ââ AUTH ââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
+// ── AUTH ──────────────────────────────────────────────────────────────────────
 if (token) initDashboard();
 
 document.getElementById('passwordInput').addEventListener('keydown', e => { if (e.key==='Enter') doLogin(); });
@@ -341,7 +341,7 @@ function initDashboard() {
   loadAll();
 }
 
-// ââ NAV âââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
+// ── NAV ───────────────────────────────────────────────────────────────────────
 function showPanel(name, btn) {
   document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
   document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
@@ -353,7 +353,7 @@ function showPanel(name, btn) {
   else renderPanel(name);
 }
 
-// ââ DATA ââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
+// ── DATA ──────────────────────────────────────────────────────────────────────
 async function loadAll() {
   await Promise.all([loadBookings(), loadBlocks()]);
 }
@@ -373,7 +373,7 @@ async function loadBlocks() {
   allBlocks = d.blocks || [];
 }
 
-// ââ STATS âââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
+// ── STATS ─────────────────────────────────────────────────────────────────────
 function renderStats() {
   document.getElementById('sTotal').textContent     = allBookings.length;
   document.getElementById('sAwaiting').textContent  = allBookings.filter(b => b.status==='awaiting_review').length;
@@ -383,7 +383,7 @@ function renderStats() {
   document.getElementById('sCompleted').textContent = allBookings.filter(b => b.status==='completed').length;
 }
 
-// ââ RENDER PANELS âââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
+// ── RENDER PANELS ─────────────────────────────────────────────────────────────
 function renderPanel(name) {
   const el = document.getElementById('list-' + name);
   if (!el) return;
@@ -402,20 +402,20 @@ function renderPanel(name) {
     const allowed = filters[name];
     if (allowed) list = allBookings.filter(b => allowed.includes(b.status));
   }
-  el.innerHTML = list.length ? list.map(renderCard).join('') : `<div class="empty-state"><div class="empty-icon">ð­</div>No bookings found.</div>`;
+  el.innerHTML = list.length ? list.map(renderCard).join('') : `<div class="empty-state"><div class="empty-icon">📭</div>No bookings found.</div>`;
 }
 
-// ââ BOOKING CARD ââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
+// ── BOOKING CARD ──────────────────────────────────────────────────────────────
 function renderCard(b) {
   const statusLabel = (b.status||'').replace(/_/g,' ');
   const replyColor  = {'CONFIRMED':'#4ade80','YES':'#4ade80','RESCHEDULE':'#fb923c','NO':'#f87171','STOP':'#f87171','CANCEL':'#f87171'}[b.customer_reply] || 'var(--mid)';
 
   // Activity log
   const logItems = [];
-  if (b.created_at)              logItems.push({dot:'ðµ', text:'Booking submitted',          time:fmt(b.created_at)});
-  if (b.admin_confirmed_at)      logItems.push({dot:'ð¡', text:'Admin confirmed',             time:fmt(b.admin_confirmed_at)});
-  if (b.confirmation_sms_sent_at)logItems.push({dot:'ð¢', text:'Confirmation SMS sent',       time:fmt(b.confirmation_sms_sent_at)});
-  if (b.customer_reply)          logItems.push({dot:'ð¬', text:`Customer replied: ${b.customer_reply}`, time:fmt(b.customer_reply_at)});
+  if (b.created_at)              logItems.push({dot:'🔵', text:'Booking submitted',          time:fmt(b.created_at)});
+  if (b.admin_confirmed_at)      logItems.push({dot:'🟡', text:'Admin confirmed',             time:fmt(b.admin_confirmed_at)});
+  if (b.confirmation_sms_sent_at)logItems.push({dot:'🟢', text:'Confirmation SMS sent',       time:fmt(b.confirmation_sms_sent_at)});
+  if (b.customer_reply)          logItems.push({dot:'💬', text:`Customer replied: ${b.customer_reply}`, time:fmt(b.customer_reply_at)});
 
   const logHtml = logItems.map(l =>
     `<div class="bc-log-item"><span class="log-dot">${l.dot}</span><span class="log-text">${l.text}</span><span class="log-time">${l.time}</span></div>`
@@ -424,21 +424,21 @@ function renderCard(b) {
   // Action buttons
   const actions = [];
   if (!['customer_confirmed','yes_confirmed','completed','canceled'].includes(b.status))
-    actions.push(`<button class="action-btn confirm" onclick="openConfirmModal('${b.id}','${esc(b.name)}','${esc(b.date)}','${esc(b.time)}')">â Confirm</button>`);
+    actions.push(`<button class="action-btn confirm" onclick="openConfirmModal('${b.id}','${esc(b.name)}','${esc(b.date)}','${esc(b.time)}')">✅ Confirm</button>`);
   if (b.status !== 'completed')
-    actions.push(`<button class="action-btn complete" onclick="updateStatus('${b.id}','completed')">ð Complete</button>`);
+    actions.push(`<button class="action-btn complete" onclick="updateStatus('${b.id}','completed')">🏁 Complete</button>`);
   if (!['reschedule_requested','canceled','completed'].includes(b.status))
-    actions.push(`<button class="action-btn" onclick="updateStatus('${b.id}','reschedule_requested')">ð Reschedule</button>`);
+    actions.push(`<button class="action-btn" onclick="updateStatus('${b.id}','reschedule_requested')">🔄 Reschedule</button>`);
   if (b.status !== 'canceled')
-    actions.push(`<button class="action-btn cancel" onclick="updateStatus('${b.id}','canceled')">â Cancel</button>`);
-  actions.push(`<button class="action-btn send-text" onclick="openSendTextModal('${esc(b.phone)}','${esc(b.name)}')">ð¬ Text</button>`);
+    actions.push(`<button class="action-btn cancel" onclick="updateStatus('${b.id}','canceled')">✕ Cancel</button>`);
+  actions.push(`<button class="action-btn send-text" onclick="openSendTextModal('${esc(b.phone)}','${esc(b.name)}')">💬 Text</button>`);
 
   return `
     <div class="booking-card" id="card-${b.id}">
       <div class="bc-top">
         <div>
           <div class="bc-name">${esc(b.name)}</div>
-          <div class="bc-contact">${esc(b.phone)} Â· ${esc(b.area)}</div>
+          <div class="bc-contact">${esc(b.phone)} · ${esc(b.area)}</div>
         </div>
         <span class="status-badge status-${b.status}">${statusLabel}</span>
       </div>
@@ -447,10 +447,10 @@ function renderCard(b) {
         <div class="bc-field"><label>Date</label><span>${esc(b.date)}</span></div>
         <div class="bc-field"><label>Time</label><span>${esc(b.time)}</span></div>
         <div class="bc-field"><label>Booked</label><span>${fmt(b.created_at)}</span></div>
-        <div class="bc-field"><label>Reply</label><span style="color:${replyColor}">${b.customer_reply || 'â'}</span></div>
+        <div class="bc-field"><label>Reply</label><span style="color:${replyColor}">${b.customer_reply || '—'}</span></div>
       </div>
 
-      ${b.notes ? `<div class="bc-notes">ð ${esc(b.notes)}</div>` : ''}
+      ${b.notes ? `<div class="bc-notes">📝 ${esc(b.notes)}</div>` : ''}
 
       ${logItems.length ? `
         <div class="bc-log">
@@ -462,7 +462,7 @@ function renderCard(b) {
     </div>`;
 }
 
-// ââ CONFIRM MODAL âââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
+// ── CONFIRM MODAL ─────────────────────────────────────────────────────────────
 function openConfirmModal(id, name, date, time) {
   pendingConfirmId = id;
   document.getElementById('confirmModalSub').textContent = `Confirming ${name} on ${date} at ${time}. Customer will receive a confirmation text.`;
@@ -483,7 +483,7 @@ async function executeConfirm() {
   await updateStatus(id, 'admin_confirmed', { sendCustomerSms: sendSms, notifyOwner });
 }
 
-// ââ SEND TEXT MODAL âââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
+// ── SEND TEXT MODAL ───────────────────────────────────────────────────────────
 function openSendTextModal(phone, name) {
   pendingSendPhone = phone;
   document.getElementById('sendTextSub').textContent = `Sending to ${name} (${phone})`;
@@ -508,7 +508,7 @@ async function executeSendText() {
   toast(r.ok ? 'Text sent!' : 'Failed to send text.', !r.ok);
 }
 
-// ââ STATUS UPDATE âââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
+// ── STATUS UPDATE ─────────────────────────────────────────────────────────────
 async function updateStatus(id, status, extra = {}) {
   const r = await fetch('/api/admin/update-booking', {
     method:'POST',
@@ -525,17 +525,17 @@ async function updateStatus(id, status, extra = {}) {
   }
 }
 
-// ââ BLOCKED SLOTS âââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
+// ── BLOCKED SLOTS ─────────────────────────────────────────────────────────────
 function renderBlocks() {
   const el = document.getElementById('list-blocked');
-  if (!allBlocks.length) { el.innerHTML = `<div class="empty-state"><div class="empty-icon">ðï¸</div>No blocked slots.</div>`; return; }
+  if (!allBlocks.length) { el.innerHTML = `<div class="empty-state"><div class="empty-icon">🗓️</div>No blocked slots.</div>`; return; }
   el.innerHTML = allBlocks.map(b => `
     <div class="block-item">
       <div class="block-info">
         <div class="block-date">${esc(b.date)}</div>
         <div class="block-time">${b.time || 'Full Day'}</div>
       </div>
-      <div style="color:var(--mid);font-size:12px;font-style:italic">${esc(b.reason||'â')}</div>
+      <div style="color:var(--mid);font-size:12px;font-style:italic">${esc(b.reason||'—')}</div>
       <button class="delete-btn" onclick="deleteBlock('${b.id}')">Remove</button>
     </div>`).join('');
 }
@@ -566,14 +566,14 @@ async function deleteBlock(id) {
   if (r.ok) { toast('Block removed'); await loadBlocks(); renderBlocks(); }
 }
 
-// ââ HELPERS âââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
+// ── HELPERS ───────────────────────────────────────────────────────────────────
 function esc(s) {
   if (!s) return '';
   return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
 }
 
 function fmt(iso) {
-  if (!iso) return 'â';
+  if (!iso) return '—';
   try { return new Date(iso).toLocaleDateString('en-US',{month:'short',day:'numeric',hour:'numeric',minute:'2-digit'}); }
   catch { return iso; }
 }

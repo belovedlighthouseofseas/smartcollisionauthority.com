@@ -1,4 +1,4 @@
-// /api/admin/block-slot.js â Block a date or time slot (admin only)
+// /api/admin/block-slot.js — Block a date or time slot (admin only)
 import { createClient } from '@supabase/supabase-js';
 
 function checkAuth(req) {

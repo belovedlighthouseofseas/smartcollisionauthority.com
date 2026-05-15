@@ -65,7 +65,7 @@
         "name": "Do you come to my condo or parking garage in Downtown San Diego?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes. We perform all repairs on-site at your home, driveway, or workplace in Downtown San Diego â no shop drop-off required."
+          "text": "Yes. We perform all repairs on-site at your home, driveway, or workplace in Downtown San Diego — no shop drop-off required."
         }
       },
       {
@@ -73,7 +73,7 @@
         "name": "How long does a mobile collision authority and mobile repair take?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Most cosmetic repairs take 1â3 hours on-site. collision authority and mobile repairs typically run 2â3 hours. Most jobs are completed the same day."
+          "text": "Most cosmetic repairs take 1–3 hours on-site. collision authority and mobile repairs typically run 2–3 hours. Most jobs are completed the same day."
         }
       },
       {
@@ -81,7 +81,7 @@
         "name": "Do you serve all of Downtown San Diego?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes. We cover all of Downtown San Diego including ZIP codes 92101 and 92103 â East Village, Little Italy, Gaslamp, Marina District, Cortez Hill, and Bankers Hill."
+          "text": "Yes. We cover all of Downtown San Diego including ZIP codes 92101 and 92103 — East Village, Little Italy, Gaslamp, Marina District, Cortez Hill, and Bankers Hill."
         }
       }
     ]
@@ -109,7 +109,7 @@
     html { scroll-behavior: smooth; }
     body { background: var(--bg); color: var(--white); font-family: 'DM Sans', sans-serif; font-size: 16px; line-height: 1.6; overflow-x: hidden; }
 
-    /* ââ TOPBAR ââ */
+    /* ── TOPBAR ── */
     .topbar {
       background: var(--red);
       height: 38px; overflow: hidden;
@@ -133,7 +133,7 @@
     .topbar-sep { display: inline-block; width: 5px; height: 5px; background: rgba(255,255,255,0.5); border-radius: 50%; flex-shrink: 0; }
     @keyframes topbarScroll { 0%{ transform: translateX(0); } 100%{ transform: translateX(-50%); } }
 
-    /* ââ NAV ââ */
+    /* ── NAV ── */
     nav {
       background: rgba(12,12,12,0.98);
       border-bottom: 1px solid rgba(255,255,255,0.07);
@@ -163,7 +163,7 @@
     /* Nav Dropdown */
     .nav-dropdown { position: relative; }
     .nav-dropdown > a { display: flex; align-items: center; gap: 5px; }
-    .nav-dropdown > a::after { content: 'â¾'; font-size: 10px; opacity: 0.6; }
+    .nav-dropdown > a::after { content: '▾'; font-size: 10px; opacity: 0.6; }
     .nav-dropdown-menu {
       display: none; position: absolute; top: 100%; padding-top: 14px; left: 50%; transform: translateX(-50%);
       background: rgba(18,18,18,0.98); border: 1px solid rgba(255,255,255,0.1);
@@ -176,10 +176,13 @@
       backdrop-filter: blur(16px);
     }
     .nav-dropdown:hover .nav-dropdown-menu,
+    .nav-dropdown:focus-within .nav-dropdown-menu,
     .nav-dropdown-menu:hover {
       opacity: 1; pointer-events: auto;
       transform: translateX(-50%) translateY(0);
     }
+    .nav-dropdown > a:focus-visible { outline: 2px solid rgba(255,255,255,0.7); outline-offset: 3px; border-radius: 3px; }
+    .nav-dropdown-menu a:focus-visible { outline: 2px solid var(--red); outline-offset: 1px; }
     .nav-dropdown-menu a {
       text-decoration: none; color: rgba(255,255,255,0.7); font-size: 13px; font-weight: 500;
       padding: 8px 12px; border-radius: 6px; transition: background 0.15s, color 0.15s;
@@ -201,14 +204,14 @@
     .mm-phone { font-weight: 700 !important; color: var(--red) !important; font-size: 18px !important; }
     .mm-cta { background: var(--red) !important; color: var(--white) !important; text-align: center; border-radius: 6px; font-weight: 700 !important; padding: 14px !important; border-bottom: none !important; margin-top: 8px; }
 
-    /* ââ SECTION COMMONS ââ */
+    /* ── SECTION COMMONS ── */
     .section-tag { font-size: 11px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--red); margin-bottom: 12px; display: flex; align-items: center; gap: 10px; }
     .section-tag::before { content: ''; width: 20px; height: 2px; background: var(--red); flex-shrink: 0; }
     h2.section-h { font-family: 'Anton', sans-serif; font-size: clamp(40px, 5vw, 72px); letter-spacing: 0.01em; line-height: 0.92; margin-bottom: 18px; }
     .reveal { opacity: 0; transform: translateY(22px); transition: opacity 0.7s ease, transform 0.7s ease; }
     .reveal.visible { opacity: 1; transform: translateY(0); }
 
-    /* ââ PAGE HERO ââ */
+    /* ── PAGE HERO ── */
     .page-hero {
       padding: 80px 48px 72px;
       background: var(--bg);
@@ -237,7 +240,7 @@
     .btn-sms { display: inline-flex; align-items: center; gap: 7px; color: #4ADE80; font-size: 14px; font-weight: 700; text-decoration: none; border: 1px solid rgba(74,222,128,0.3); padding: 14px 22px; border-radius: 6px; transition: all 0.2s; }
     .btn-sms:hover { border-color: #4ADE80; background: rgba(74,222,128,0.06); }
 
-    /* ââ SERVICES ââ */
+    /* ── SERVICES ── */
     .svc-section { padding: 88px 48px; background: var(--bg2); }
     .svc-header { margin-bottom: 52px; }
     .svc-header p { font-size: 16px; color: var(--mid); line-height: 1.75; max-width: 500px; }
@@ -256,7 +259,7 @@
     .svc-card-cta:hover { background: rgba(217,38,38,0.1); }
     .svc-card-cta .svc-title { color: var(--red); }
 
-    /* ââ LOCAL SECTION ââ */
+    /* ── LOCAL SECTION ── */
     .local-section { padding: 88px 48px; background: var(--bg); }
     .local-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; }
     .local-intro p { font-size: 16px; color: var(--mid); line-height: 1.8; margin-bottom: 28px; }
@@ -266,7 +269,7 @@
     .local-map { border: 1px solid rgba(255,255,255,0.08); overflow: hidden; }
     .local-map iframe { width: 100%; height: 380px; border: 0; display: block; }
 
-    /* ââ WHY MOBILE ââ */
+    /* ── WHY MOBILE ── */
     .why-section { padding: 88px 48px; background: var(--bg2); border-top: 1px solid rgba(255,255,255,0.06); }
     .why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; background: var(--line); border: 1px solid var(--line); margin-top: 48px; }
     .why-block { background: var(--bg2); padding: 44px 36px; }
@@ -274,7 +277,7 @@
     .why-title { font-family: 'Anton', sans-serif; font-size: 22px; letter-spacing: 0.03em; color: var(--white); margin-bottom: 12px; line-height: 1.1; }
     .why-desc { font-size: 14px; color: var(--mid); line-height: 1.75; }
 
-    /* ââ CTA ââ */
+    /* ── CTA ── */
     .cta-section { padding: 88px 48px; background: var(--red); text-align: center; position: relative; overflow: hidden; }
     .cta-section::before {
       content: ''; position: absolute; inset: 0; pointer-events: none;
@@ -290,7 +293,7 @@
     .cta-btn-outline { background: transparent; border: 2px solid rgba(255,255,255,0.5); color: var(--white); padding: 16px 36px; border-radius: 6px; font-size: 15px; font-weight: 700; text-decoration: none; transition: border-color 0.2s; }
     .cta-btn-outline:hover { border-color: var(--white); }
 
-    /* ââ FOOTER ââ */
+    /* ── FOOTER ── */
     .footer-rainbow-stripe { height: 4px; background: var(--rainbow); }
     footer { background: #080808; padding: 64px 48px 32px; }
     .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 48px; }
@@ -304,7 +307,7 @@
     .footer-links a:hover { color: var(--white); }
     .footer-bottom { border-top: 1px solid rgba(255,255,255,0.06); padding-top: 24px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; font-size: 12px; color: rgba(255,255,255,0.25); }
 
-    /* ââ STICKY CTA ââ */
+    /* ── STICKY CTA ── */
     .sticky-cta {
       position: fixed; bottom: 0; left: 0; right: 0; z-index: 400;
       background: #0C0C0C; border-top: 2px solid var(--red);
@@ -320,7 +323,7 @@
     .sticky-btn:hover { background: var(--red2); }
     .sticky-close { background: none; border: none; color: var(--mid); font-size: 20px; cursor: pointer; padding: 4px; }
 
-    /* ââ WHATSAPP ââ */
+    /* ── WHATSAPP ── */
     .wa-btn {
       position: fixed; bottom: 80px; right: 24px; z-index: 500;
       background: #25D366; border-radius: 50%; width: 54px; height: 54px;
@@ -330,7 +333,7 @@
     }
     .wa-btn:hover { transform: scale(1.1); }
 
-    /* ââ RESPONSIVE ââ */
+    /* ── RESPONSIVE ── */
     @media (max-width: 960px) {
       .local-grid { grid-template-columns: 1fr; gap: 40px; }
       .why-grid { grid-template-columns: 1fr 1fr; }
@@ -379,7 +382,7 @@
   <div class="nav-links">
     <a href="services.html">Services</a>
     <a href="pricing.html">Pricing</a>
-    <div class="nav-dropdown"><a href="service-area.html">Service Area</a><div class="nav-dropdown-menu"><a href="carlsbad.html">Carlsbad</a><a href="chula-vista.html">Chula Vista</a><a href="coronado.html">Coronado</a><a href="downtown-san-diego.html">Downtown San Diego</a><a href="el-cajon.html">El Cajon</a><a href="escondido.html">Escondido</a><a href="la-jolla.html">La Jolla</a><a href="mira-mesa.html">Mira Mesa</a><a href="mission-valley.html">Mission Valley</a><a href="national-city.html">National City</a><a href="ocean-beach.html">Ocean Beach</a><a href="oceanside.html">Oceanside</a><a href="pacific-beach.html">Pacific Beach</a><a href="poway.html">Poway</a><a href="rancho-bernardo.html">Rancho Bernardo</a><a href="santee.html">Santee</a><a href="vista.html">Vista</a><a href="service-area.html" class="dd-all">View All Service Areas â</a></div></div>
+    <div class="nav-dropdown"><a href="service-area.html">Service Area</a><div class="nav-dropdown-menu"><a href="carlsbad.html">Carlsbad</a><a href="chula-vista.html">Chula Vista</a><a href="coronado.html">Coronado</a><a href="downtown-san-diego.html">Downtown San Diego</a><a href="el-cajon.html">El Cajon</a><a href="escondido.html">Escondido</a><a href="la-jolla.html">La Jolla</a><a href="mira-mesa.html">Mira Mesa</a><a href="mission-valley.html">Mission Valley</a><a href="national-city.html">National City</a><a href="ocean-beach.html">Ocean Beach</a><a href="oceanside.html">Oceanside</a><a href="pacific-beach.html">Pacific Beach</a><a href="poway.html">Poway</a><a href="rancho-bernardo.html">Rancho Bernardo</a><a href="santee.html">Santee</a><a href="vista.html">Vista</a><a href="service-area.html" class="dd-all">View All Service Areas →</a></div></div>
     <a href="tel:+18589880325" class="nav-phone">(858) 988-0325</a>
     <a href="contact.html" class="nav-cta">Get a Quote</a>
   </div>
@@ -392,25 +395,25 @@
   <a href="pricing.html">Pricing</a>
   <a href="service-area.html">Service Area</a>
   
-  <a href="carlsbad.html" style="font-size:13px;padding:8px 0;color:rgba(255,255,255,0.55);">â³ Carlsbad</a>
-  <a href="chula-vista.html" style="font-size:13px;padding:8px 0;color:rgba(255,255,255,0.55);">â³ Chula Vista</a>
-  <a href="coronado.html" style="font-size:13px;padding:8px 0;color:rgba(255,255,255,0.55);">â³ Coronado</a>
-  <a href="downtown-san-diego.html" style="font-size:13px;padding:8px 0;color:rgba(255,255,255,0.55);">â³ Downtown San Diego</a>
-  <a href="el-cajon.html" style="font-size:13px;padding:8px 0;color:rgba(255,255,255,0.55);">â³ El Cajon</a>
-  <a href="escondido.html" style="font-size:13px;padding:8px 0;color:rgba(255,255,255,0.55);">â³ Escondido</a>
-  <a href="la-jolla.html" style="font-size:13px;padding:8px 0;color:rgba(255,255,255,0.55);">â³ La Jolla</a>
-  <a href="mira-mesa.html" style="font-size:13px;padding:8px 0;color:rgba(255,255,255,0.55);">â³ Mira Mesa</a>
-  <a href="mission-valley.html" style="font-size:13px;padding:8px 0;color:rgba(255,255,255,0.55);">â³ Mission Valley</a>
-  <a href="national-city.html" style="font-size:13px;padding:8px 0;color:rgba(255,255,255,0.55);">â³ National City</a>
-  <a href="ocean-beach.html" style="font-size:13px;padding:8px 0;color:rgba(255,255,255,0.55);">â³ Ocean Beach</a>
-  <a href="oceanside.html" style="font-size:13px;padding:8px 0;color:rgba(255,255,255,0.55);">â³ Oceanside</a>
-  <a href="pacific-beach.html" style="font-size:13px;padding:8px 0;color:rgba(255,255,255,0.55);">â³ Pacific Beach</a>
-  <a href="poway.html" style="font-size:13px;padding:8px 0;color:rgba(255,255,255,0.55);">â³ Poway</a>
-  <a href="rancho-bernardo.html" style="font-size:13px;padding:8px 0;color:rgba(255,255,255,0.55);">â³ Rancho Bernardo</a>
-  <a href="santee.html" style="font-size:13px;padding:8px 0;color:rgba(255,255,255,0.55);">â³ Santee</a>
-  <a href="vista.html" style="font-size:13px;padding:8px 0;color:rgba(255,255,255,0.55);">â³ Vista</a>
+  <a href="carlsbad.html" style="font-size:13px;padding:8px 0;color:rgba(255,255,255,0.55);">↳ Carlsbad</a>
+  <a href="chula-vista.html" style="font-size:13px;padding:8px 0;color:rgba(255,255,255,0.55);">↳ Chula Vista</a>
+  <a href="coronado.html" style="font-size:13px;padding:8px 0;color:rgba(255,255,255,0.55);">↳ Coronado</a>
+  <a href="downtown-san-diego.html" style="font-size:13px;padding:8px 0;color:rgba(255,255,255,0.55);">↳ Downtown San Diego</a>
+  <a href="el-cajon.html" style="font-size:13px;padding:8px 0;color:rgba(255,255,255,0.55);">↳ El Cajon</a>
+  <a href="escondido.html" style="font-size:13px;padding:8px 0;color:rgba(255,255,255,0.55);">↳ Escondido</a>
+  <a href="la-jolla.html" style="font-size:13px;padding:8px 0;color:rgba(255,255,255,0.55);">↳ La Jolla</a>
+  <a href="mira-mesa.html" style="font-size:13px;padding:8px 0;color:rgba(255,255,255,0.55);">↳ Mira Mesa</a>
+  <a href="mission-valley.html" style="font-size:13px;padding:8px 0;color:rgba(255,255,255,0.55);">↳ Mission Valley</a>
+  <a href="national-city.html" style="font-size:13px;padding:8px 0;color:rgba(255,255,255,0.55);">↳ National City</a>
+  <a href="ocean-beach.html" style="font-size:13px;padding:8px 0;color:rgba(255,255,255,0.55);">↳ Ocean Beach</a>
+  <a href="oceanside.html" style="font-size:13px;padding:8px 0;color:rgba(255,255,255,0.55);">↳ Oceanside</a>
+  <a href="pacific-beach.html" style="font-size:13px;padding:8px 0;color:rgba(255,255,255,0.55);">↳ Pacific Beach</a>
+  <a href="poway.html" style="font-size:13px;padding:8px 0;color:rgba(255,255,255,0.55);">↳ Poway</a>
+  <a href="rancho-bernardo.html" style="font-size:13px;padding:8px 0;color:rgba(255,255,255,0.55);">↳ Rancho Bernardo</a>
+  <a href="santee.html" style="font-size:13px;padding:8px 0;color:rgba(255,255,255,0.55);">↳ Santee</a>
+  <a href="vista.html" style="font-size:13px;padding:8px 0;color:rgba(255,255,255,0.55);">↳ Vista</a>
   <a href="tel:+18589880325" class="mm-phone">(858) 988-0325</a>
-  <a href="contact.html" class="mm-cta">Get a Quote â</a>
+  <a href="contact.html" class="mm-cta">Get a Quote →</a>
 </div>
 
 <!-- PAGE HERO -->
@@ -418,15 +421,15 @@
   <div class="breadcrumb"><a href="/">Home</a> / <a href="service-area.html">Service Area</a> / Downtown San Diego</div>
   <div class="section-tag">Downtown San Diego</div>
   <h1>Mobile collision authority and mobile repair<br>Downtown San Diego, CA</h1>
-  <p class="page-hero-sub">We fix your car inside parking structures, garages, and tight urban lots â without you moving it. collision authority and mobile repair, scratch removal, and cosmetic bodywork. Most repairs same day.</p>
+  <p class="page-hero-sub">We fix your car inside parking structures, garages, and tight urban lots — without you moving it. collision authority and mobile repair, scratch removal, and cosmetic bodywork. Most repairs same day.</p>
   <div style="display:flex;gap:14px;flex-wrap:wrap;">
     <a href="contact.html" class="btn-primary">Get a Quote</a>
-    <a href="sms:+18589880325" class="btn-sms">ð¬ Text a Photo</a>
+    <a href="sms:+18589880325" class="btn-sms">💬 Text a Photo</a>
   </div>
   <div style="margin-top:20px;display:flex;gap:20px;flex-wrap:wrap;font-size:13px;font-weight:600;color:rgba(255,255,255,0.55);">
-    <span>â Same-Day Service Available</span>
-    <span>â On-Site Repair (No Drop-Off)</span>
-    <span>â Color-Matched Paint</span>
+    <span>✔ Same-Day Service Available</span>
+    <span>✔ On-Site Repair (No Drop-Off)</span>
+    <span>✔ Color-Matched Paint</span>
   </div>
 </div>
 
@@ -437,32 +440,32 @@
   <div class="core-repairs-grid" style="display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:32px;">
 
     <div style="background:var(--bg2);padding:36px 28px;" class="reveal">
-      <div style="font-size:28px;margin-bottom:14px;">ð§</div>
+      <div style="font-size:28px;margin-bottom:14px;">🚧</div>
       <div style="font-family:'Anton',sans-serif;font-size:20px;color:var(--white);margin-bottom:10px;letter-spacing:0.02em;">Car Scratch Repair</div>
-      <p style="font-size:14px;color:var(--mid);line-height:1.75;">Tight parking structures and narrow downtown garages cause constant side scrapes and bumper scratches â we repair them on-site.</p>
+      <p style="font-size:14px;color:var(--mid);line-height:1.75;">Tight parking structures and narrow downtown garages cause constant side scrapes and bumper scratches — we repair them on-site.</p>
     </div>
 
     <div style="background:var(--bg2);padding:36px 28px;" class="reveal">
-      <div style="font-size:28px;margin-bottom:14px;">ð¨</div>
+      <div style="font-size:28px;margin-bottom:14px;">🔨</div>
       <div style="font-family:'Anton',sans-serif;font-size:20px;color:var(--white);margin-bottom:10px;letter-spacing:0.02em;">Dent Repair</div>
       <p style="font-size:14px;color:var(--mid);line-height:1.75;">Door dings from crowded garages and shared parking decks are one of the most common repairs we run in Downtown. Fixed where it sits.</p>
     </div>
 
     <div style="background:var(--bg2);padding:36px 28px;" class="reveal">
-      <div style="font-size:28px;margin-bottom:14px;">ð¨</div>
+      <div style="font-size:28px;margin-bottom:14px;">🎨</div>
       <div style="font-family:'Anton',sans-serif;font-size:20px;color:var(--white);margin-bottom:10px;letter-spacing:0.02em;">Paint Repair</div>
       <p style="font-size:14px;color:var(--mid);line-height:1.75;">Paint transfer, peeling, and wear from daily urban driving corrected with precision color-matching. No booth required for cosmetic panels.</p>
     </div>
 
     <div style="background:var(--bg2);padding:36px 28px;" class="reveal">
-      <div style="font-size:28px;margin-bottom:14px;">ð¥</div>
+      <div style="font-size:28px;margin-bottom:14px;">💥</div>
       <div style="font-family:'Anton',sans-serif;font-size:20px;color:var(--white);margin-bottom:10px;letter-spacing:0.02em;">Bumper Crack Repair</div>
       <p style="font-size:14px;color:var(--mid);line-height:1.75;">Low-speed impacts in garages and tight urban streets often crack bumper covers. We repair or replace on-site the same day.</p>
     </div>
 
   </div>
   <div style="margin-top:28px;text-align:center;" class="reveal">
-    <a href="contact.html" class="btn-primary">Get a Fast Quote â</a>
+    <a href="contact.html" class="btn-primary">Get a Fast Quote →</a>
   </div>
 </section>
 
@@ -471,60 +474,60 @@
   <div class="svc-header reveal">
     <div class="section-tag">What We Fix</div>
     <h2 class="section-h">Our Services.</h2>
-    <p>Cosmetic auto body repair brought to you â wherever your car is parked in Downtown San Diego.</p>
+    <p>Cosmetic auto body repair brought to you — wherever your car is parked in Downtown San Diego.</p>
   </div>
 
   <div class="svc-grid">
 
     <div class="svc-card reveal">
-      <div class="svc-icon">ð</div>
+      <div class="svc-icon">🚗</div>
       <div class="svc-title">collision authority and mobile repair</div>
       <p class="svc-desc">Cracks, splits, dents, and scuffs on front and rear bumpers repaired on-site with a color-matched finish. The most common repair we do in urban parking decks.</p>
-      <div class="svc-meta">From $175 â $450</div>
-      <div class="svc-badge">1.5 â 3 hrs</div>
+      <div class="svc-meta">From $175 – $450</div>
+      <div class="svc-badge">1.5 – 3 hrs</div>
       <div class="svc-num">01</div>
     </div>
 
     <div class="svc-card reveal">
-      <div class="svc-icon">âï¸</div>
+      <div class="svc-icon">✏️</div>
       <div class="svc-title">Scratch Removal</div>
-      <p class="svc-desc">Surface scratches and keying damage polished or refinished. We assess depth on-site and quote before starting â no surprises.</p>
-      <div class="svc-meta">From $125 â $350</div>
-      <div class="svc-badge">1 â 2.5 hrs</div>
+      <p class="svc-desc">Surface scratches and keying damage polished or refinished. We assess depth on-site and quote before starting — no surprises.</p>
+      <div class="svc-meta">From $125 – $350</div>
+      <div class="svc-badge">1 – 2.5 hrs</div>
       <div class="svc-num">02</div>
     </div>
 
     <div class="svc-card reveal">
-      <div class="svc-icon">ð¥</div>
+      <div class="svc-icon">💥</div>
       <div class="svc-title">Dent Removal</div>
       <p class="svc-desc">Paintless dent removal (PDR) for door dings and minor panel dents with no paint damage. Fast, clean, and invisible when done right.</p>
-      <div class="svc-meta">From $100 â $300</div>
-      <div class="svc-badge">45 min â 2 hrs</div>
+      <div class="svc-meta">From $100 – $300</div>
+      <div class="svc-badge">45 min – 2 hrs</div>
       <div class="svc-num">03</div>
     </div>
 
     <div class="svc-card reveal">
-      <div class="svc-icon">ð¨</div>
+      <div class="svc-icon">🎨</div>
       <div class="svc-title">Paint Touch-Up</div>
       <p class="svc-desc">Stone chips, parking lot door dings, and small paint losses blended to match your factory color. Protects bare metal from rust.</p>
-      <div class="svc-meta">From $85 â $225</div>
-      <div class="svc-badge">45 min â 1.5 hrs</div>
+      <div class="svc-meta">From $85 – $225</div>
+      <div class="svc-badge">45 min – 1.5 hrs</div>
       <div class="svc-num">04</div>
     </div>
 
     <div class="svc-card reveal">
-      <div class="svc-icon">ð§</div>
+      <div class="svc-icon">🔧</div>
       <div class="svc-title">Scuff &amp; Rub Mark Removal</div>
       <p class="svc-desc">Rubber transfer and scuff marks from tight parking spots or shopping carts removed by machine polish or compound. Most go away completely.</p>
-      <div class="svc-meta">From $75 â $200</div>
-      <div class="svc-badge">30 min â 1.5 hrs</div>
+      <div class="svc-meta">From $75 – $200</div>
+      <div class="svc-badge">30 min – 1.5 hrs</div>
       <div class="svc-num">05</div>
     </div>
 
     <div class="svc-card svc-card-cta reveal">
-      <div class="svc-icon">ð¸</div>
+      <div class="svc-icon">📸</div>
       <div class="svc-title">Not Sure? Text a Photo.</div>
-      <p class="svc-desc">Snap a photo of the damage and send it to (858) 988-0325. We'll give you an honest assessment and a quote â usually within the hour, no obligation.</p>
+      <p class="svc-desc">Snap a photo of the damage and send it to (858) 988-0325. We'll give you an honest assessment and a quote — usually within the hour, no obligation.</p>
       <div class="svc-meta" style="color:var(--white);opacity:0.5;">Free estimate</div>
       <div class="svc-badge">Fast response</div>
       <div class="svc-num">?</div>
@@ -539,9 +542,9 @@
     <div class="local-intro">
       <div class="section-tag reveal">Downtown San Diego Coverage.</div>
       <h2 class="section-h reveal">Where We Serve<br>Downtown.</h2>
-      <p class="reveal">We frequently serve the parking structures and lots throughout Downtown, the Gaslamp Quarter, Little Italy, Cortez Hill, East Village, and Banker's Hill. Urban parking structure repairs are a core part of what we do â we carry all the equipment needed to work in covered, low-clearance decks.</p>
+      <p class="reveal">We frequently serve the parking structures and lots throughout Downtown, the Gaslamp Quarter, Little Italy, Cortez Hill, East Village, and Banker's Hill. Urban parking structure repairs are a core part of what we do — we carry all the equipment needed to work in covered, low-clearance decks.</p>
       <p class="reveal">If your car is in a downtown office building, condo garage, or surface lot, text us the address and we'll confirm availability. Most Downtown jobs can be booked same-week, and often same-day when slots are open.</p>
-      <p class="reveal">If you searched for <strong>collision authority and mobile repair near me Downtown San Diego</strong> â this is exactly what we do. Whether your bumper was hit in a parking garage, scraped in a tight downtown lot, or damaged on the freeway on-ramp, we come to your car.</p>
+      <p class="reveal">If you searched for <strong>collision authority and mobile repair near me Downtown San Diego</strong> — this is exactly what we do. Whether your bumper was hit in a parking garage, scraped in a tight downtown lot, or damaged on the freeway on-ramp, we come to your car.</p>
 
       <ul class="neighborhood-list reveal">
         <li>Gaslamp Quarter</li>
@@ -554,13 +557,14 @@
 
       <p class="reveal" style="margin-bottom:28px;">Also serving nearby areas: <a href="la-jolla.html" style="color:var(--red);">La Jolla collision authority and mobile repair</a>, <a href="mission-valley.html" style="color:var(--red);">Mission Valley collision authority and mobile repair</a>, <a href="chula-vista.html" style="color:var(--red);">Chula Vista collision authority and mobile repair</a>, and <a href="national-city.html" style="color:var(--red);">National City collision authority and mobile repair</a>.</p>
 
-      <a href="contact.html" class="btn-primary reveal">Get a Quote â</a>
+      <a href="contact.html" class="btn-primary reveal">Get a Quote →</a>
     </div>
 
     <div class="local-map reveal">
       <iframe
         src="https://maps.google.com/maps?q=Downtown+San+Diego,+CA&t=&z=14&ie=UTF8&iwloc=&output=embed"
-        title="Downtown San Diego service area â Smart Collision Authority"
+        title="Downtown San Diego service area — Smart Collision Authority"
+        loading="lazy"
         allowfullscreen
         referrerpolicy="no-referrer-when-downgrade">
       </iframe>
@@ -579,19 +583,19 @@
   <div class="why-grid">
 
     <div class="why-block reveal">
-      <div class="why-icon">ðï¸</div>
+      <div class="why-icon">🏗️</div>
       <div class="why-title">Parking Structure Friendly</div>
       <p class="why-desc">We work in most covered parking structures, so your car stays exactly where it is. No need to find street parking or move it to a different location for us to get started.</p>
     </div>
 
     <div class="why-block reveal">
-      <div class="why-icon">ð«</div>
+      <div class="why-icon">🚫</div>
       <div class="why-title">No Tow, No Trip</div>
-      <p class="why-desc">No need to drive to a shop across town, arrange a ride, or wait days for a booking. We come to your building, handle the repair, and you're done â car stays put.</p>
+      <p class="why-desc">No need to drive to a shop across town, arrange a ride, or wait days for a booking. We come to your building, handle the repair, and you're done — car stays put.</p>
     </div>
 
     <div class="why-block reveal">
-      <div class="why-icon">â¡</div>
+      <div class="why-icon">⚡</div>
       <div class="why-title">Same-Day When Available</div>
       <p class="why-desc">Urban availability is often fast. Text a photo of the damage to check open slots in Downtown San Diego. We confirm quickly and many jobs complete the same day.</p>
     </div>
@@ -604,10 +608,10 @@
   <div class="cta-inner">
     <div class="cta-tag">Get Started</div>
     <h2 class="cta-h">Start With a Photo.</h2>
-    <p class="cta-p">Snap a photo of the damage and send it over. We'll quote you fast â no shop visit, no hassle, no obligation.</p>
+    <p class="cta-p">Snap a photo of the damage and send it over. We'll quote you fast — no shop visit, no hassle, no obligation.</p>
     <div class="cta-btns">
-      <a href="contact.html" class="cta-btn-dark">Get a Free Quote â</a>
-      <a href="sms:+18589880325" class="cta-btn-outline">ð¬ Text (858) 988-0325</a>
+      <a href="contact.html" class="cta-btn-dark">Get a Free Quote →</a>
+      <a href="sms:+18589880325" class="cta-btn-outline">💬 Text (858) 988-0325</a>
     </div>
   </div>
 </section>
@@ -616,7 +620,7 @@
 <section style="padding:80px 48px;background:var(--bg);border-top:1px solid rgba(255,255,255,0.07);text-align:center;">
   <div class="section-tag reveal" style="justify-content:center;">How It Works</div>
   <h2 class="section-h reveal" style="font-size:clamp(32px,4vw,56px);margin-bottom:16px;">Send a Photo.<br>Get a Price.</h2>
-  <p class="reveal" style="font-size:16px;color:var(--mid);max-width:480px;margin:0 auto 48px;line-height:1.75;">No estimate appointments. No shop visits. Text a few photos of the damage and we reply with a price range and next steps â usually within the hour.</p>
+  <p class="reveal" style="font-size:16px;color:var(--mid);max-width:480px;margin:0 auto 48px;line-height:1.75;">No estimate appointments. No shop visits. Text a few photos of the damage and we reply with a price range and next steps — usually within the hour.</p>
   <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);max-width:760px;margin:0 auto 40px;" class="reveal">
     <div style="background:var(--bg2);padding:36px 28px;text-align:left;">
       <div style="font-family:'Anton',sans-serif;font-size:48px;color:rgba(255,255,255,0.07);line-height:1;margin-bottom:16px;">01</div>
@@ -631,11 +635,11 @@
     <div style="background:var(--bg2);padding:36px 28px;text-align:left;">
       <div style="font-family:'Anton',sans-serif;font-size:48px;color:rgba(255,255,255,0.07);line-height:1;margin-bottom:16px;">03</div>
       <div style="font-weight:700;color:#fff;margin-bottom:8px;font-size:15px;">We Come to You</div>
-      <div style="font-size:14px;color:var(--mid);line-height:1.7;">We come to your Downtown San Diego location â apartment, office, or home â and complete the repair on-site.</div>
+      <div style="font-size:14px;color:var(--mid);line-height:1.7;">We come to your Downtown San Diego location — apartment, office, or home — and complete the repair on-site.</div>
     </div>
   </div>
   <div class="reveal" style="display:flex;gap:14px;flex-wrap:wrap;justify-content:center;">
-    <a href="sms:+18589880325" class="btn-primary">ð¬ Text a Photo Now</a>
+    <a href="sms:+18589880325" class="btn-primary">💬 Text a Photo Now</a>
     <a href="https://wa.me/18589880325?text=Hi! I need a quote for collision authority and mobile repair in Downtown San Diego." target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;background:#25D366;color:#fff;padding:15px 28px;border-radius:6px;font-size:15px;font-weight:700;text-decoration:none;">WhatsApp Quote</a>
   </div>
 </section>
@@ -651,15 +655,15 @@
     </div>
     <div style="background:var(--bg3);border-radius:8px;padding:28px;border:1px solid rgba(255,255,255,0.07);">
       <div style="font-weight:700;color:#fff;margin-bottom:10px;font-size:15px;">Do you come to my condo or parking garage in Downtown San Diego?</div>
-      <div style="font-size:14px;color:rgba(255,255,255,0.55);line-height:1.75;">Yes. We perform all repairs on-site at your home, driveway, or workplace in Downtown San Diego â no shop drop-off required.</div>
+      <div style="font-size:14px;color:rgba(255,255,255,0.55);line-height:1.75;">Yes. We perform all repairs on-site at your home, driveway, or workplace in Downtown San Diego — no shop drop-off required.</div>
     </div>
     <div style="background:var(--bg3);border-radius:8px;padding:28px;border:1px solid rgba(255,255,255,0.07);">
       <div style="font-weight:700;color:#fff;margin-bottom:10px;font-size:15px;">How long does a mobile collision authority and mobile repair take?</div>
-      <div style="font-size:14px;color:rgba(255,255,255,0.55);line-height:1.75;">Most cosmetic repairs take 1â3 hours on-site. collision authority and mobile repairs typically run 2â3 hours. Most jobs are completed the same day.</div>
+      <div style="font-size:14px;color:rgba(255,255,255,0.55);line-height:1.75;">Most cosmetic repairs take 1–3 hours on-site. collision authority and mobile repairs typically run 2–3 hours. Most jobs are completed the same day.</div>
     </div>
     <div style="background:var(--bg3);border-radius:8px;padding:28px;border:1px solid rgba(255,255,255,0.07);">
       <div style="font-weight:700;color:#fff;margin-bottom:10px;font-size:15px;">Do you serve all of Downtown San Diego?</div>
-      <div style="font-size:14px;color:rgba(255,255,255,0.55);line-height:1.75;">Yes â we cover all Downtown San Diego ZIP codes 92101 and 92103, including East Village, Little Italy, Gaslamp, Marina District, and Bankers Hill.</div>
+      <div style="font-size:14px;color:rgba(255,255,255,0.55);line-height:1.75;">Yes — we cover all Downtown San Diego ZIP codes 92101 and 92103, including East Village, Little Italy, Gaslamp, Marina District, and Bankers Hill.</div>
     </div>
   </div>
 </section>
@@ -672,7 +676,7 @@
       <div class="footer-brand-row">
         <img src="logo.png" alt="Smart Collision Authority" style="width:800px;height:auto;display:block;">
       </div>
-      <p class="footer-tagline">Mobile collision authority and mobile repair and cosmetic auto body service across San Diego County. We come to you â no shop drop-off required.</p>
+      <p class="footer-tagline">Mobile collision authority and mobile repair and cosmetic auto body service across San Diego County. We come to you — no shop drop-off required.</p>
       <a href="tel:+18589880325" class="footer-phone">(858) 988-0325</a>
     </div>
     <div>
@@ -720,12 +724,12 @@
   </div>
   <div class="footer-bottom">
     <span>&copy; 2026 Smart Collision Authority. All rights reserved.</span>
-    <span>Mobile Auto Body Repair Â· San Diego, CA</span>
+    <span>Mobile Auto Body Repair · San Diego, CA</span>
   </div>
 </footer>
 
 <!-- WHATSAPP -->
-<a href="https://wa.me/18589880325?text=Hi! I need a quote for collision authority and mobile repair in Downtown San Diego." class="wa-btn" target="_blank" rel="noopener" aria-label="WhatsApp Smart Collision Authority">ð¬</a>
+<a href="https://wa.me/18589880325?text=Hi! I need a quote for collision authority and mobile repair in Downtown San Diego." class="wa-btn" target="_blank" rel="noopener" aria-label="WhatsApp Smart Collision Authority">💬</a>
 
 <!-- STICKY CTA -->
 <div class="sticky-cta" id="stickyCta">

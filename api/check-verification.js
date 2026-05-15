@@ -1,4 +1,4 @@
-// /api/check-verification.js â Vercel serverless function
+// /api/check-verification.js — Vercel serverless function
 // Verifies Twilio code, saves booking as "awaiting_review", sends owner alert SMS
 import twilio from 'twilio';
 import { createClient } from '@supabase/supabase-js';
@@ -30,7 +30,7 @@ export default async function handler(req, res) {
   const twilioClient = twilio(process.env.TWILIO_ACCOUNT_SID, process.env.TWILIO_AUTH_TOKEN);
   const supabase     = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_SECRET_KEY);
 
-  // ââ 1. Verify code ââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
+  // ── 1. Verify code ────────────────────────────────────────────────────────
   let verificationResult;
   try {
     verificationResult = await twilioClient.verify.v2
@@ -43,7 +43,7 @@ export default async function handler(req, res) {
   if (verificationResult.status !== 'approved')
     return res.status(400).json({ error: 'Incorrect code. Please double-check and try again.' });
 
-  // ââ 2. Check slot conflict ââââââââââââââââââââââââââââââââââââââââââââââââ
+  // ── 2. Check slot conflict ────────────────────────────────────────────────
   const { data: existing } = await supabase
     .from('bookings')
     .select('id')
@@ -55,7 +55,7 @@ export default async function handler(req, res) {
   if (existing && existing.length > 0)
     return res.status(409).json({ error: 'That time slot was just taken. Please choose a different time.' });
 
-  // ââ 3. Save booking as awaiting_review ââââââââââââââââââââââââââââââââââââ
+  // ── 3. Save booking as awaiting_review ────────────────────────────────────
   const { data: booking, error: insertError } = await supabase
     .from('bookings')
     .insert({
@@ -76,7 +76,7 @@ export default async function handler(req, res) {
     return res.status(500).json({ error: 'Could not save booking. Please try again.' });
   }
 
-  // ââ 4. Send customer "request received" SMS âââââââââââââââââââââââââââââââ
+  // ── 4. Send customer "request received" SMS ───────────────────────────────
   try {
     await twilioClient.messages.create({
       body: `Bumper Fix: Booking request received for ${date} at ${time} in ${area}.\n\nWe will review and confirm shortly. Questions? Call/text (858) 988-0325.`,
@@ -85,7 +85,7 @@ export default async function handler(req, res) {
     });
   } catch (e) { console.error('[check-verification] Customer SMS failed:', e.message); }
 
-  // ââ 5. Send owner alert SMS âââââââââââââââââââââââââââââââââââââââââââââââ
+  // ── 5. Send owner alert SMS ───────────────────────────────────────────────
   if (process.env.OWNER_PHONE) {
     try {
       await twilioClient.messages.create({

@@ -54,11 +54,11 @@
     html { scroll-behavior: smooth; }
     body { background: var(--bg); color: var(--ink); font-family: 'DM Sans', sans-serif; font-size: 16px; line-height: 1.6; overflow-x: hidden; }
 
-    /* ââ RAINBOW WORDMARK ââ */
+    /* ── RAINBOW WORDMARK ── */
     .bf-rainbow { background: var(--rainbow); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
     .rainbow-block { background: var(--rainbow); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; display: block; }
 
-    /* ââ HEADER ââ */
+    /* ── HEADER ── */
     .site-header { position: sticky; top: 0; z-index: 300; }
 
     /* Marquee topbar */
@@ -118,7 +118,7 @@
     /* Nav Dropdown */
     .nav-dropdown { position: relative; }
     .nav-dropdown > a { display: flex; align-items: center; gap: 5px; }
-    .nav-dropdown > a::after { content: 'â¾'; font-size: 10px; opacity: 0.6; }
+    .nav-dropdown > a::after { content: '▾'; font-size: 10px; opacity: 0.6; }
     .nav-dropdown-menu {
       display: none; position: absolute; top: 100%; padding-top: 14px; left: 50%; transform: translateX(-50%);
       background: rgba(18,18,18,0.98); border: 1px solid rgba(255,255,255,0.1);
@@ -131,10 +131,13 @@
       backdrop-filter: blur(16px);
     }
     .nav-dropdown:hover .nav-dropdown-menu,
+    .nav-dropdown:focus-within .nav-dropdown-menu,
     .nav-dropdown-menu:hover {
       opacity: 1; pointer-events: auto;
       transform: translateX(-50%) translateY(0);
     }
+    .nav-dropdown > a:focus-visible { outline: 2px solid rgba(255,255,255,0.7); outline-offset: 3px; border-radius: 3px; }
+    .nav-dropdown-menu a:focus-visible { outline: 2px solid var(--red); outline-offset: 1px; }
     .nav-dropdown-menu a {
       text-decoration: none; color: rgba(255,255,255,0.7); font-size: 13px; font-weight: 500;
       padding: 8px 12px; border-radius: 6px; transition: background 0.15s, color 0.15s;
@@ -182,7 +185,7 @@
     .avail-cta { background: var(--red); color: var(--white); padding: 6px 16px; border-radius: 5px; font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; transition: background 0.2s; }
     .avail-cta:hover { background: var(--red2); }
 
-    /* ââ HERO ââ */
+    /* ── HERO ── */
     .hero { min-height: 88vh; display: grid; grid-template-columns: 1fr 1fr; overflow: hidden; }
     .hero-left {
       background: var(--bg); padding: 72px 60px 56px;
@@ -211,7 +214,7 @@
       font-family: 'Anton', sans-serif; font-size: clamp(60px, 7.5vw, 108px);
       line-height: 0.88; letter-spacing: 0.01em; color: var(--white); margin-bottom: 14px;
     }
-    /* ââ HERO LINE DROP ââ */
+    /* ── HERO LINE DROP ── */
     .hero-title-fall { display:flex; flex-direction:column; gap:0; margin-bottom:14px; line-height:0.88; font-family:'Anton',sans-serif; font-size:clamp(60px,7.5vw,108px); letter-spacing:0.01em; overflow:hidden; }
     .hero-title-fall .hero-line { display:block; white-space:nowrap; opacity:0; transform:translateY(-200px) scaleY(0.7); transform-origin:top center; will-change:transform,opacity; }
     .hero-title-fall .hero-line-red { color:var(--red); -webkit-text-fill-color:var(--red); }
@@ -279,14 +282,14 @@
     .hsb-icon { font-size: 20px; margin-bottom: 3px; }
     .hsb-label { font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: rgba(255,255,255,0.5); }
 
-    /* ââ TRUST STRIP ââ */
+    /* ── TRUST STRIP ── */
     .trust-strip { background: #0A0A0A; display: flex; justify-content: center; align-items: center; overflow: hidden; flex-wrap: wrap; padding: 20px 48px; gap: 12px; border-bottom: 1px solid rgba(255,255,255,0.06); }
     .ts-item { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 100px; padding: 9px 18px; font-size: 13px; font-weight: 600; color: rgba(255,255,255,0.85); white-space: nowrap; }
     .ts-item:last-child { }
     .ts-icon { font-size: 18px; }
     .ts-hl { font-weight: 800; color: var(--red); }
 
-    /* ââ SECTION COMMONS ââ */
+    /* ── SECTION COMMONS ── */
     .section-tag { font-size: 11px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--red); margin-bottom: 12px; display: flex; align-items: center; gap: 10px; }
     .section-tag::before { content: ''; width: 20px; height: 2px; background: var(--red); flex-shrink: 0; }
     h2.section-h { font-family: 'Anton', sans-serif; font-size: clamp(40px, 5vw, 72px); letter-spacing: 0.01em; line-height: 0.92; margin-bottom: 18px; }
@@ -294,7 +297,7 @@
     .reveal { opacity: 0; transform: translateY(22px); transition: opacity 0.7s ease, transform 0.7s ease; }
     .reveal.visible { opacity: 1; transform: translateY(0); }
 
-    /* ââ SERVICES ââ */
+    /* ── SERVICES ── */
     #services { padding: 88px 48px; background: var(--bg); }
     .services-header { margin-bottom: 52px; }
     .services-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); }
@@ -316,7 +319,7 @@
     .btn-sm { display: inline-flex; align-items: center; gap: 8px; background: var(--red); color: var(--white); padding: 13px 28px; border-radius: 6px; font-size: 14px; font-weight: 700; text-decoration: none; transition: background 0.2s; flex-shrink: 0; }
     .btn-sm:hover { background: var(--red2); }
 
-    /* ââ HOW IT WORKS ââ */
+    /* ── HOW IT WORKS ── */
     #how { padding: 88px 48px; background: #111111; border-top: 3px solid var(--red); position: relative; overflow: hidden; }
     #how::before { content: ''; position: absolute; inset: 0; pointer-events: none; background-image: repeating-linear-gradient(-45deg, transparent, transparent 30px, rgba(255,255,255,0.012) 30px, rgba(255,255,255,0.012) 31px); }
     #how .section-tag { color: var(--red); }
@@ -328,7 +331,7 @@
     .how-title { font-family: 'Anton', sans-serif; font-size: 21px; letter-spacing: 0.03em; color: var(--white); margin-bottom: 10px; }
     .how-desc { font-size: 14px; color: rgba(255,255,255,0.45); line-height: 1.7; }
 
-    /* ââ RESULTS ââ */
+    /* ── RESULTS ── */
     #results { padding: 88px 48px; background: var(--bg2); border-top: 1px solid rgba(217,38,38,0.2); }
     .results-stats { display: flex; align-items: center; justify-content: space-between; background: var(--bg3); border: 1px solid rgba(217,38,38,0.15); border-radius: 16px; padding: 40px 48px; margin-bottom: 56px; flex-wrap: wrap; gap: 24px; }
     .rs-stat { text-align: center; flex: 1; min-width: 120px; }
@@ -350,7 +353,7 @@
     .rj-saved { font-size: 13px; color: rgba(255,255,255,0.5); }
     .rj-saved strong { color: #4ADE80; }
 
-    /* ââ PRICING ââ */
+    /* ── PRICING ── */
     #pricing { padding: 88px 48px; background: #F4F4F4; border-top: 3px solid var(--red); }
     .pricing-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 52px; flex-wrap: wrap; gap: 20px; }
     #pricing .section-tag { color: var(--red); }
@@ -377,7 +380,7 @@
     .pc-features { list-style: none; display: flex; flex-direction: column; gap: 11px; margin-bottom: 28px; }
     .pc-features li { display: flex; align-items: flex-start; gap: 9px; font-size: 14px; color: #666; line-height: 1.5; }
     .price-card.popular .pc-features li { color: rgba(255,255,255,0.55); }
-    .pc-features li::before { content: 'â'; color: var(--red); font-weight: 700; flex-shrink: 0; }
+    .pc-features li::before { content: '✓'; color: var(--red); font-weight: 700; flex-shrink: 0; }
     .pc-btn { display: block; text-align: center; text-decoration: none; padding: 13px; border-radius: 6px; font-size: 14px; font-weight: 700; letter-spacing: 0.04em; transition: all 0.2s; }
     .pc-btn-outline { border: 1px solid #DDD; color: #333; }
     .pc-btn-outline:hover { border-color: var(--red); color: var(--red); }
@@ -389,7 +392,7 @@
     .gb-title { font-family: 'Anton', sans-serif; font-size: 17px; letter-spacing: 0.04em; color: var(--white); line-height: 1.1; }
     .gb-sub { font-size: 12px; color: var(--mid); margin-top: 3px; }
 
-    /* ââ COMPARE ââ */
+    /* ── COMPARE ── */
     #compare { padding: 88px 48px; background: #131313; border-top: 1px solid rgba(255,255,255,0.06); }
     .compare-header { margin-bottom: 52px; }
     .compare-table { width: 100%; border-collapse: collapse; }
@@ -413,7 +416,7 @@
     .faq-nudge-text strong { color: var(--white); }
     .faq-nudge-link { font-family: 'Anton', sans-serif; font-size: 14px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--red); text-decoration: none; border-bottom: 1px solid rgba(217,38,38,0.4); padding-bottom: 1px; }
 
-    /* ââ SERVICE AREA MAP ââ */
+    /* ── SERVICE AREA MAP ── */
     #area { padding: 0; background: var(--bg); border-top: 1px solid rgba(255,255,255,0.06); }
     .area-header { padding: 56px 48px 32px; border-bottom: 1px solid var(--line); display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 20px; }
     .area-stats { display: flex; gap: 32px; flex-shrink: 0; }
@@ -468,7 +471,7 @@
     .pop-detail strong { color: #111; }
     .pop-cta { font-size: 12px; font-weight: 700; color: var(--red); text-decoration: none; border-bottom: 1px solid rgba(217,38,38,0.3); padding-bottom: 1px; }
 
-    /* ââ REVIEWS ââ */
+    /* ── REVIEWS ── */
     #reviews { padding: 88px 48px; background: #1A1A1A; }
     .reviews-top { display: flex; gap: 48px; align-items: flex-end; flex-wrap: wrap; margin-bottom: 52px; }
     .reviews-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
@@ -484,7 +487,7 @@
     .reviews-stars { color: var(--red); font-size: 22px; letter-spacing: 3px; }
     .reviews-count { font-size: 14px; color: var(--mid); margin-top: 4px; }
 
-    /* ââ FAQ ââ */
+    /* ── FAQ ── */
     #faq { padding: 88px 48px; background: #F0F0F0; border-top: 3px solid var(--red); }
     .faq-header { margin-bottom: 52px; }
     .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: #DDD; border: 1px solid #DDD; max-width: 960px; }
@@ -496,7 +499,7 @@
     .faq-answer { display: none; padding: 0 24px 20px; font-size: 14px; color: #555; line-height: 1.75; }
     .faq-answer.open { display: block; }
 
-    /* ââ QUOTE ââ */
+    /* ── QUOTE ── */
     #quote { padding: 88px 48px; background: var(--red); position: relative; overflow: hidden; }
     #quote::before { content: 'FIX'; position: absolute; right: -40px; top: 50%; transform: translateY(-50%); font-family: 'Anton', sans-serif; font-size: 280px; color: rgba(0,0,0,0.08); line-height: 1; pointer-events: none; }
     .quote-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; position: relative; }
@@ -534,7 +537,7 @@
     .form-sms-link { display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 14px; font-weight: 700; color: #25D366; text-decoration: none; margin-top: 16px; padding-top: 16px; border-top: 1px solid #eee; }
     .form-sms-link:hover { opacity: 0.8; }
 
-    /* ââ FOOTER ââ */
+    /* ── FOOTER ── */
     footer { background: #080808; padding: 60px 48px 28px; border-top: 1px solid rgba(255,255,255,0.06); }
     .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 56px; margin-bottom: 48px; }
     .footer-brand-row { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
@@ -552,7 +555,7 @@
     .footer-links a:hover { color: var(--red); }
     .footer-bottom { border-top: 1px solid rgba(255,255,255,0.07); padding-top: 24px; display: flex; justify-content: space-between; font-size: 12px; color: rgba(255,255,255,0.2); flex-wrap: wrap; gap: 8px; }
 
-    /* ââ STICKY CTA BAR ââ */
+    /* ── STICKY CTA BAR ── */
     .sticky-cta { position: fixed; bottom: 0; left: 0; right: 0; z-index: 400; background: #080808; border-top: 2px solid var(--red); padding: 12px 48px; display: flex; justify-content: space-between; align-items: center; gap: 16px; transform: translateY(100%); transition: transform 0.4s cubic-bezier(0.16,1,0.3,1); }
     .sticky-cta.visible { transform: translateY(0); }
     .sticky-left { display: flex; align-items: center; gap: 14px; }
@@ -565,14 +568,14 @@
     .sticky-close { background: none; border: none; cursor: pointer; color: rgba(255,255,255,0.3); font-size: 20px; padding: 4px 8px; }
     .sticky-close:hover { color: var(--white); }
 
-    /* ââ WHATSAPP ââ */
+    /* ── WHATSAPP ── */
     .wa-btn { position: fixed; bottom: 88px; right: 24px; z-index: 500; width: 54px; height: 54px; border-radius: 50%; background: #25D366; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(37,211,102,0.4); text-decoration: none; font-size: 26px; transition: transform 0.2s, box-shadow 0.2s; animation: waPop 0.5s 2s cubic-bezier(0.175,0.885,0.32,1.275) both; }
     .wa-btn:hover { transform: scale(1.1); box-shadow: 0 6px 28px rgba(37,211,102,0.55); }
     @keyframes waPop { from{transform:scale(0);opacity:0} to{transform:scale(1);opacity:1} }
     .wa-tooltip { position: absolute; right: 62px; top: 50%; transform: translateY(-50%); background: #111; color: white; font-size: 12px; font-weight: 600; white-space: nowrap; padding: 6px 12px; border-radius: 6px; pointer-events: none; opacity: 0; transition: opacity 0.2s; }
     .wa-btn:hover .wa-tooltip { opacity: 1; }
 
-    /* ââ EXIT INTENT ââ */
+    /* ── EXIT INTENT ── */
     .exit-overlay { position: fixed; inset: 0; z-index: 9000; background: rgba(0,0,0,0.85); display: flex; align-items: center; justify-content: center; padding: 24px; opacity: 0; pointer-events: none; transition: opacity 0.3s; }
     .exit-overlay.show { opacity: 1; pointer-events: all; }
     .exit-modal { background: var(--bg2); border: 1px solid rgba(217,38,38,0.3); border-radius: 16px; padding: 48px 44px; max-width: 480px; width: 100%; position: relative; text-align: center; }
@@ -592,7 +595,7 @@
     .exit-dismiss { display: block; margin-top: 16px; font-size: 13px; color: var(--mid); background: none; border: none; cursor: pointer; text-decoration: underline; }
     .exit-dismiss:hover { color: var(--white); }
 
-    /* ââ RESPONSIVE ââ */
+    /* ── RESPONSIVE ── */
     @media (max-width: 960px) {
       nav, .topbar { padding-left: 20px; padding-right: 20px; }
       .nav-links { display: none; }
@@ -639,13 +642,13 @@
       .rs-divider { display: none; }
     }
 
-    /* ââ PHOTO UPLOAD in form ââ */
+    /* ── PHOTO UPLOAD in form ── */
     .qf-upload { width:100%; padding:14px; background:#F8F8F8; border:2px dashed #DDD; border-radius:8px; display:flex; align-items:center; justify-content:center; gap:10px; cursor:pointer; font-size:14px; color:#888; margin-bottom:12px; transition:border-color 0.2s, background 0.2s; }
     .qf-upload:hover { border-color:var(--red); background:#FFF5F5; color:var(--red); }
     .qf-upload input { display:none; }
     .qf-upload-preview { display:none; font-size:13px; color:#4ADE80; font-weight:600; }
 
-    /* ââ BOOKING CALENDAR ââ */
+    /* ── BOOKING CALENDAR ── */
     #booking { padding:88px 48px; background:#F7F7F7; border-top:3px solid var(--red); }
     #booking h2.section-h { color:#111; }
     #booking .section-tag { color:var(--red); }
@@ -691,7 +694,7 @@
     .cal-note-text strong { display:block; font-size:14px; color:#111; margin-bottom:3px; }
     .cal-note-text span { font-size:13px; color:#888; }
 
-    /* ââ TECHNICIAN SECTION ââ */
+    /* ── TECHNICIAN SECTION ── */
     #team { padding:88px 48px; background:var(--bg2); }
     .team-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-top:48px; }
     .tech-card { background:var(--bg3); border-radius:16px; overflow:hidden; border:1px solid rgba(255,255,255,0.07); transition:transform 0.3s, border-color 0.3s; }
@@ -706,7 +709,7 @@
     .tech-specs { display:flex; flex-wrap:wrap; gap:6px; }
     .tech-spec { background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.1); border-radius:100px; padding:4px 12px; font-size:11px; color:rgba(255,255,255,0.6); }
 
-    /* ââ COST CALCULATOR ââ */
+    /* ── COST CALCULATOR ── */
     #calculator { padding:88px 48px; background:#F4F4F4; border-top:3px solid var(--red); }
     #calculator h2.section-h { color:#111; }
     #calculator .section-tag { color:var(--red); }
@@ -722,7 +725,7 @@
     .calc-opt:hover { border-color:var(--red); color:var(--red); }
     .calc-opt.selected { background:var(--red); border-color:var(--red); color:#fff; }
 
-    /* ââ DAMAGE PHOTO SELECTOR ââ */
+    /* ── DAMAGE PHOTO SELECTOR ── */
     .calc-photo-opts { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; }
     .calc-photo-opt { background:#fff; border:2px solid #E0E0E0; border-radius:12px; overflow:hidden; cursor:pointer; transition:all 0.18s; text-align:center; padding:0; }
     .calc-photo-opt:hover { border-color:var(--red); transform:translateY(-2px); box-shadow:0 6px 20px rgba(217,38,38,0.12); }
@@ -735,7 +738,7 @@
     .cpo-desc { font-size:10px; color:#999; line-height:1.4; display:block; }
     .calc-photo-opt.selected .cpo-label { color:var(--red); }
 
-    /* ââ FOUNDER STORY ââ */
+    /* ── FOUNDER STORY ── */
     .founder-section { background:#080808; padding:96px 48px; border-top:1px solid rgba(255,255,255,0.06); }
     .founder-inner { max-width:840px; margin:0 auto; }
     .founder-tag { font-size:11px; font-weight:700; letter-spacing:0.18em; text-transform:uppercase; color:var(--red); margin-bottom:28px; display:flex; align-items:center; gap:10px; }
@@ -755,7 +758,7 @@
     .cr-cta:hover { background:var(--red2); }
     .cr-disclaimer { font-size:11px; color:rgba(255,255,255,0.25); margin-top:12px; text-align:center; line-height:1.5; }
 
-    /* ââ INSURANCE LOGOS ââ */
+    /* ── INSURANCE LOGOS ── */
     .insurance-strip { background:var(--bg); padding:40px 48px; border-top:1px solid rgba(255,255,255,0.06); }
     .ins-label { font-size:12px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--mid); text-align:center; margin-bottom:24px; }
     .ins-logos { display:flex; justify-content:center; align-items:center; gap:0; flex-wrap:wrap; }
@@ -763,7 +766,7 @@
     .ins-logo:last-child { border-right:none; }
     .ins-logo:hover { color:rgba(255,255,255,0.7); }
 
-    /* ââ LIVE CHAT BUBBLE ââ */
+    /* ── LIVE CHAT BUBBLE ── */
     .chat-btn { position:fixed; bottom:160px; right:24px; z-index:500; background:#111; border:2px solid var(--red); border-radius:50%; width:54px; height:54px; display:flex; align-items:center; justify-content:center; cursor:pointer; box-shadow:0 4px 20px rgba(0,0,0,0.4); transition:transform 0.2s, box-shadow 0.2s; animation:chatPop 0.5s 3s cubic-bezier(0.175,0.885,0.32,1.275) both; }
     .chat-btn:hover { transform:scale(1.1); box-shadow:0 6px 28px rgba(217,38,38,0.3); }
     @keyframes chatPop { from{transform:scale(0);opacity:0} to{transform:scale(1);opacity:1} }
@@ -791,18 +794,18 @@
     .chat-send { background:var(--red); color:#fff; border:none; border-radius:8px; padding:10px 16px; font-size:14px; font-weight:700; cursor:pointer; transition:background 0.2s; }
     .chat-send:hover { background:var(--red2); }
 
-    /* ââ PAYMENT OPTIONS ââ */
+    /* ── PAYMENT OPTIONS ── */
     .payment-strip { background:#111; padding:32px 48px; border-top:1px solid rgba(255,255,255,0.06); border-bottom:1px solid rgba(255,255,255,0.06); }
     .pay-label { font-size:12px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--mid); text-align:center; margin-bottom:18px; }
     .pay-methods { display:flex; justify-content:center; align-items:center; gap:12px; flex-wrap:wrap; }
     .pay-badge { display:inline-flex; align-items:center; gap:7px; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.1); border-radius:8px; padding:8px 16px; font-size:13px; font-weight:600; color:rgba(255,255,255,0.7); }
     .pay-badge .pay-icon { font-size:18px; }
 
-    /* ââ ESTABLISHED YEAR ââ */
+    /* ── ESTABLISHED YEAR ── */
     .estab-badge { display:inline-flex; align-items:center; gap:10px; background:rgba(217,38,38,0.08); border:1px solid rgba(217,38,38,0.2); border-radius:100px; padding:8px 20px; font-size:13px; font-weight:600; color:rgba(255,255,255,0.6); margin-top:12px; }
     .estab-badge strong { color:var(--white); }
 
-    /* ââ INSURANCE & OUT OF POCKET EXPLAINER ââ */
+    /* ── INSURANCE & OUT OF POCKET EXPLAINER ── */
     .insurance-explainer { background:#fff; border-radius:16px; padding:40px; margin-top:48px; border:1px solid #E0E0E0; }
     .ie-grid { display:grid; grid-template-columns:1fr 1fr; gap:32px; margin-top:24px; }
     .ie-col { padding:24px; border-radius:12px; }
@@ -813,13 +816,13 @@
     .ie-col.pocket .ie-title { color:#16A34A; }
     .ie-list { list-style:none; display:flex; flex-direction:column; gap:8px; }
     .ie-list li { font-size:14px; color:#555; display:flex; gap:9px; align-items:flex-start; line-height:1.5; }
-    .ie-list li::before { content:'â¢'; flex-shrink:0; font-weight:900; }
+    .ie-list li::before { content:'•'; flex-shrink:0; font-weight:900; }
     .ie-col.claim .ie-list li::before { color:#E74C3C; }
     .ie-col.pocket .ie-list li::before { color:#16A34A; }
     .ie-verdict { margin-top:20px; padding:16px 20px; background:#111; border-radius:10px; font-size:14px; color:rgba(255,255,255,0.8); line-height:1.6; }
     .ie-verdict strong { color:var(--white); }
 
-    /* ââ FOOTER RAINBOW STRIPE ââ */
+    /* ── FOOTER RAINBOW STRIPE ── */
     .footer-rainbow-stripe { height:4px; background:var(--rainbow); }
 
     @media (max-width:960px) {
@@ -838,7 +841,7 @@
     #faq .section-tag { color: var(--red); }
     #faq .section-p { color: #555; }
 
-    /* ââ BOOKING MODAL ââ */
+    /* ── BOOKING MODAL ── */
     .booking-modal-overlay {
       position: fixed;
       inset: 0;
@@ -951,7 +954,7 @@
 </head>
 <body>
 
-<!-- ââ HEADER ââ -->
+<!-- ══ HEADER ══ -->
 <div class="site-header">
   <div class="topbar">
     <div class="topbar-track">
@@ -959,7 +962,7 @@
       <span class="topbar-item">San Diego Mobile collision authority and mobile repair<span class="topbar-sep"></span></span>
       <span class="topbar-item">Professional Cosmetic Auto Body Repair<span class="topbar-sep"></span></span>
       <span class="topbar-item">We Come to Your Home or Office<span class="topbar-sep"></span></span>
-      <span class="topbar-item">Fast Quotes Â· Clean Repairs Â· No Shop Drop-Off<span class="topbar-sep"></span></span>
+      <span class="topbar-item">Fast Quotes · Clean Repairs · No Shop Drop-Off<span class="topbar-sep"></span></span>
       <span class="topbar-item">Serving San Diego County<span class="topbar-sep"></span></span>
       <span class="topbar-item">Call <a href="tel:+18589880325">(858) 988-0325</a><span class="topbar-sep"></span></span>
       <!-- duplicate for loop -->
@@ -967,7 +970,7 @@
       <span class="topbar-item">San Diego Mobile collision authority and mobile repair<span class="topbar-sep"></span></span>
       <span class="topbar-item">Professional Cosmetic Auto Body Repair<span class="topbar-sep"></span></span>
       <span class="topbar-item">We Come to Your Home or Office<span class="topbar-sep"></span></span>
-      <span class="topbar-item">Fast Quotes Â· Clean Repairs Â· No Shop Drop-Off<span class="topbar-sep"></span></span>
+      <span class="topbar-item">Fast Quotes · Clean Repairs · No Shop Drop-Off<span class="topbar-sep"></span></span>
       <span class="topbar-item">Serving San Diego County<span class="topbar-sep"></span></span>
       <span class="topbar-item">Call <a href="tel:+18589880325">(858) 988-0325</a><span class="topbar-sep"></span></span>
     </div>
@@ -999,7 +1002,7 @@
           <a href="rancho-bernardo.html">Rancho Bernardo</a>
           <a href="santee.html">Santee</a>
           <a href="vista.html">Vista</a>
-          <a href="service-area.html" class="dd-all">View All Service Areas â</a>
+          <a href="service-area.html" class="dd-all">View All Service Areas →</a>
         </div>
       </div>
       <a href="contact.html">Contact</a>
@@ -1015,25 +1018,25 @@
     <a href="pricing.html">Pricing</a>
     <a href="service-area.html">Service Area</a>
     <a href="contact.html">Contact</a>
-    <a href="carlsbad.html" style="font-size:13px;padding:8px 0;color:rgba(255,255,255,0.55);">â³ Carlsbad</a>
-    <a href="chula-vista.html" style="font-size:13px;padding:8px 0;color:rgba(255,255,255,0.55);">â³ Chula Vista</a>
-    <a href="coronado.html" style="font-size:13px;padding:8px 0;color:rgba(255,255,255,0.55);">â³ Coronado</a>
-    <a href="downtown-san-diego.html" style="font-size:13px;padding:8px 0;color:rgba(255,255,255,0.55);">â³ Downtown San Diego</a>
-    <a href="el-cajon.html" style="font-size:13px;padding:8px 0;color:rgba(255,255,255,0.55);">â³ El Cajon</a>
-    <a href="escondido.html" style="font-size:13px;padding:8px 0;color:rgba(255,255,255,0.55);">â³ Escondido</a>
-    <a href="la-jolla.html" style="font-size:13px;padding:8px 0;color:rgba(255,255,255,0.55);">â³ La Jolla</a>
-    <a href="mira-mesa.html" style="font-size:13px;padding:8px 0;color:rgba(255,255,255,0.55);">â³ Mira Mesa</a>
-    <a href="mission-valley.html" style="font-size:13px;padding:8px 0;color:rgba(255,255,255,0.55);">â³ Mission Valley</a>
-    <a href="national-city.html" style="font-size:13px;padding:8px 0;color:rgba(255,255,255,0.55);">â³ National City</a>
-    <a href="ocean-beach.html" style="font-size:13px;padding:8px 0;color:rgba(255,255,255,0.55);">â³ Ocean Beach</a>
-    <a href="oceanside.html" style="font-size:13px;padding:8px 0;color:rgba(255,255,255,0.55);">â³ Oceanside</a>
-    <a href="pacific-beach.html" style="font-size:13px;padding:8px 0;color:rgba(255,255,255,0.55);">â³ Pacific Beach</a>
-    <a href="poway.html" style="font-size:13px;padding:8px 0;color:rgba(255,255,255,0.55);">â³ Poway</a>
-    <a href="rancho-bernardo.html" style="font-size:13px;padding:8px 0;color:rgba(255,255,255,0.55);">â³ Rancho Bernardo</a>
-    <a href="santee.html" style="font-size:13px;padding:8px 0;color:rgba(255,255,255,0.55);">â³ Santee</a>
-    <a href="vista.html" style="font-size:13px;padding:8px 0;color:rgba(255,255,255,0.55);">â³ Vista</a>
+    <a href="carlsbad.html" style="font-size:13px;padding:8px 0;color:rgba(255,255,255,0.55);">↳ Carlsbad</a>
+    <a href="chula-vista.html" style="font-size:13px;padding:8px 0;color:rgba(255,255,255,0.55);">↳ Chula Vista</a>
+    <a href="coronado.html" style="font-size:13px;padding:8px 0;color:rgba(255,255,255,0.55);">↳ Coronado</a>
+    <a href="downtown-san-diego.html" style="font-size:13px;padding:8px 0;color:rgba(255,255,255,0.55);">↳ Downtown San Diego</a>
+    <a href="el-cajon.html" style="font-size:13px;padding:8px 0;color:rgba(255,255,255,0.55);">↳ El Cajon</a>
+    <a href="escondido.html" style="font-size:13px;padding:8px 0;color:rgba(255,255,255,0.55);">↳ Escondido</a>
+    <a href="la-jolla.html" style="font-size:13px;padding:8px 0;color:rgba(255,255,255,0.55);">↳ La Jolla</a>
+    <a href="mira-mesa.html" style="font-size:13px;padding:8px 0;color:rgba(255,255,255,0.55);">↳ Mira Mesa</a>
+    <a href="mission-valley.html" style="font-size:13px;padding:8px 0;color:rgba(255,255,255,0.55);">↳ Mission Valley</a>
+    <a href="national-city.html" style="font-size:13px;padding:8px 0;color:rgba(255,255,255,0.55);">↳ National City</a>
+    <a href="ocean-beach.html" style="font-size:13px;padding:8px 0;color:rgba(255,255,255,0.55);">↳ Ocean Beach</a>
+    <a href="oceanside.html" style="font-size:13px;padding:8px 0;color:rgba(255,255,255,0.55);">↳ Oceanside</a>
+    <a href="pacific-beach.html" style="font-size:13px;padding:8px 0;color:rgba(255,255,255,0.55);">↳ Pacific Beach</a>
+    <a href="poway.html" style="font-size:13px;padding:8px 0;color:rgba(255,255,255,0.55);">↳ Poway</a>
+    <a href="rancho-bernardo.html" style="font-size:13px;padding:8px 0;color:rgba(255,255,255,0.55);">↳ Rancho Bernardo</a>
+    <a href="santee.html" style="font-size:13px;padding:8px 0;color:rgba(255,255,255,0.55);">↳ Santee</a>
+    <a href="vista.html" style="font-size:13px;padding:8px 0;color:rgba(255,255,255,0.55);">↳ Vista</a>
     <a href="tel:+18589880325" class="mm-phone">(858) 988-0325</a>
-    <a href="contact.html" class="mm-cta">Get a Quote â</a>
+    <a href="contact.html" class="mm-cta">Get a Quote →</a>
   </div>
   <div class="avail-bar" id="availBar">
     <div class="avail-left">
@@ -1041,7 +1044,7 @@
       <div class="avail-divider"></div>
       <div class="avail-slots" id="availSlots"></div>
       <div class="avail-divider"></div>
-      <div class="avail-zone">ð Serving <strong>San Diego County</strong> now</div>
+      <div class="avail-zone">📍 Serving <strong>San Diego County</strong> now</div>
     </div>
     <div class="avail-right">
       <a href="tel:+18589880325" class="avail-phone">(858) 988-0325</a>
@@ -1050,12 +1053,12 @@
   </div>
 </div>
 
-<!-- ââ HERO ââ -->
+<!-- ══ HERO ══ -->
 <section class="hero">
   <div class="hero-left">
     <div class="hero-left-bg"></div>
     <div class="hero-left-texture"></div>
-    <div class="hero-badge"><div class="badge-pulse"></div> Mobile collision authority and mobile repair Â· San Diego County</div>
+    <div class="hero-badge"><div class="badge-pulse"></div> Mobile collision authority and mobile repair · San Diego County</div>
     <h1 class="hero-title-fall" aria-label="collision authority and mobile repair, without the body shop.">
       <span class="hero-line">collision authority and mobile repair,</span>
       <span class="hero-line">WITHOUT THE</span>
@@ -1077,18 +1080,18 @@
     <div class="hero-map">
       <iframe loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d212948.1268398!2d-117.28!3d32.72!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80d9530fad921e4b%3A0xd3a21fdfd15df79!2sSan%20Diego%2C%20CA!5e0!3m2!1sen!2sus!4v1700000000000"
-        title="Smart Collision Authority â San Diego County Service Area">
+        title="Smart Collision Authority — San Diego County Service Area">
       </iframe>
       <div class="hero-map-pin">
-        <div class="hero-map-pin-body"><span>ð§</span></div>
+        <div class="hero-map-pin-body"><span>🔧</span></div>
       </div>
-      <div class="hero-map-label">ð Serving All of San Diego County</div>
+      <div class="hero-map-label">📍 Serving All of San Diego County</div>
     </div>
 
   </div>
 </section>
 
-<!-- ââ TRUST STRIP ââ -->
+<!-- ══ TRUST STRIP ══ -->
 <div class="trust-strip">
   <div class="ts-item"><span>We Come to Your Home or Office</span></div>
   <div class="ts-item"><span>Cosmetic Bumper &amp; Scratch Repair</span></div>
@@ -1097,7 +1100,7 @@
   <div class="ts-item"><span>San Diego County Mobile Service</span></div>
 </div>
 
-<!-- ââ SERVICES ââ -->
+<!-- ══ SERVICES ══ -->
 <section id="services">
   <div class="services-header">
     <div class="section-tag reveal">Why Drivers Use Smart Collision Authority</div>
@@ -1106,45 +1109,45 @@
   </div>
   <div class="services-grid">
     <div class="service-card reveal">
-      <div class="sc-icon">ð</div>
+      <div class="sc-icon">🚗</div>
       <div class="sc-title">collision authority and mobile repair</div>
       <p class="sc-desc">Cracks, scrapes, gouges, and impact damage repaired and refinished for a clean cosmetic result without the normal body shop process.</p>
-      <div class="sc-time">â± Typical mobile service</div>
+      <div class="sc-time">⏱ Typical mobile service</div>
       <div class="sc-num">01</div>
     </div>
     <div class="service-card reveal">
-      <div class="sc-icon">ð¨</div>
+      <div class="sc-icon">🎨</div>
       <div class="sc-title">Color-Matched Paintwork</div>
       <p class="sc-desc">Refinishing and paint correction designed to restore appearance cleanly and professionally with color-matched repair methods.</p>
-      <div class="sc-time">â± Photo review first</div>
+      <div class="sc-time">⏱ Photo review first</div>
       <div class="sc-num">02</div>
     </div>
     <div class="service-card reveal">
-      <div class="sc-icon">â¦</div>
+      <div class="sc-icon">✦</div>
       <div class="sc-title">Scratch &amp; Scuff Removal</div>
       <p class="sc-desc">Surface damage and cosmetic blemishes corrected on-site for drivers who want the vehicle looking right again without a full shop stay.</p>
-      <div class="sc-time">â± Fast quote response</div>
+      <div class="sc-time">⏱ Fast quote response</div>
       <div class="sc-num">03</div>
     </div>
     <div class="service-card reveal">
-      <div class="sc-icon">âï¸</div>
+      <div class="sc-icon">⚙️</div>
       <div class="sc-title">Minor Dent Solutions</div>
       <p class="sc-desc">Eligible dents and cosmetic panel damage reviewed case by case to determine whether mobile repair is the right fit.</p>
-      <div class="sc-time">â± Case-dependent</div>
+      <div class="sc-time">⏱ Case-dependent</div>
       <div class="sc-num">04</div>
     </div>
     <div class="service-card reveal">
-      <div class="sc-icon">ð¡ï¸</div>
+      <div class="sc-icon">🛡️</div>
       <div class="sc-title">Convenience-First Service</div>
       <p class="sc-desc">Home, office, condo, apartment, or workplace appointments designed around your schedule so you do not have to rearrange your week.</p>
-      <div class="sc-time">â± We come to you</div>
+      <div class="sc-time">⏱ We come to you</div>
       <div class="sc-num">05</div>
     </div>
     <div class="service-card reveal">
-      <div class="sc-icon">ð±</div>
+      <div class="sc-icon">📱</div>
       <div class="sc-title">Photo-Based Quoting</div>
       <p class="sc-desc">Send a photo first. That lets Smart Collision Authority review the damage quickly and tell you whether the repair is a strong fit for mobile service.</p>
-      <div class="sc-time">â± Simple first step</div>
+      <div class="sc-time">⏱ Simple first step</div>
       <div class="sc-num">06</div>
     </div>
   </div>
@@ -1159,7 +1162,7 @@
   <a href="#quote" class="btn-sm">Get a Quote</a>
 </div>
 
-<!-- ââ HOW IT WORKS ââ -->
+<!-- ══ HOW IT WORKS ══ -->
 <section id="how">
   <div class="how-header">
     <div class="section-tag reveal">How It Works</div>
@@ -1198,7 +1201,7 @@
   </div>
 </section>
 
-<!-- ââ RESULTS ââ -->
+<!-- ══ RESULTS ══ -->
 <section id="results">
   <div style="margin-bottom:52px;">
     <div class="section-tag reveal">Track Record</div>
@@ -1234,7 +1237,7 @@
     </div>
   </div>
   <div class="reveal" style="margin-top:32px;padding:24px 32px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:12px;display:flex;align-items:flex-start;gap:16px;max-width:920px;">
-    <div style="font-size:28px;line-height:1;">ð¸</div>
+    <div style="font-size:28px;line-height:1;">📸</div>
     <div>
       <div style="font-size:15px;font-weight:600;color:var(--white);margin-bottom:6px;">Photo-first quoting. Real mobile workflow.</div>
       <div style="font-size:13px;color:rgba(255,255,255,0.55);line-height:1.75;">
@@ -1244,7 +1247,7 @@
   </div>
 </section>
 
-<!-- ââ BOOKING CALENDAR ââ -->
+<!-- ══ BOOKING CALENDAR ══ -->
 <section id="booking">
   <div class="section-tag reveal">Scheduling</div>
   <h2 class="section-h reveal">Choose a Time.<br>We'll Come to You.</h2>
@@ -1256,8 +1259,8 @@
       <div class="cal-header">
         <div class="cal-month" id="calMonthLabel">March 2026</div>
         <div class="cal-nav">
-          <button id="calPrev">â¹</button>
-          <button id="calNext">âº</button>
+          <button id="calPrev">‹</button>
+          <button id="calNext">›</button>
         </div>
       </div>
       <div class="cal-days-header">
@@ -1282,28 +1285,28 @@
     <div class="cal-note">
       <h3 style="font-family:'Anton',sans-serif;font-size:22px;letter-spacing:0.03em;color:#111;">What Happens After Booking</h3>
       <div class="cal-note-item">
-        <div class="cal-note-icon">ð±</div>
+        <div class="cal-note-icon">📱</div>
         <div class="cal-note-text">
           <strong>We confirm by text</strong>
           <span>You get a fast confirmation with your appointment details and next steps.</span>
         </div>
       </div>
       <div class="cal-note-item">
-        <div class="cal-note-icon">ð¸</div>
+        <div class="cal-note-icon">📸</div>
         <div class="cal-note-text">
           <strong>You send photos if needed</strong>
           <span>This helps us confirm the repair type and arrive prepared for the job.</span>
         </div>
       </div>
       <div class="cal-note-item">
-        <div class="cal-note-icon">ð</div>
+        <div class="cal-note-icon">🚐</div>
         <div class="cal-note-text">
           <strong>We arrive at your location</strong>
           <span>Home, office, or another approved spot anywhere in San Diego County.</span>
         </div>
       </div>
       <div class="cal-note-item">
-        <div class="cal-note-icon">â</div>
+        <div class="cal-note-icon">✅</div>
         <div class="cal-note-text">
           <strong>The repair gets completed on-site</strong>
           <span>Simple process, no shop drop-off, and no unnecessary downtime.</span>
@@ -1316,7 +1319,7 @@
   </div>
 </section>
 
-<!-- ââ PRICING ââ -->
+<!-- ══ PRICING ══ -->
 <section id="pricing">
   <div class="pricing-header">
     <div>
@@ -1373,7 +1376,7 @@
   <p style="text-align:center;font-size:14px;color:#888;margin-top:32px;margin-bottom:0;">Most customers are not looking for the cheapest repair. They are looking for the smartest repair: clean cosmetic work, less downtime, and a straightforward price before the job starts.</p>
   <div style="padding: 28px 0 0; display:flex; justify-content:center;">
     <div class="guarantee-badge reveal">
-      <div class="gb-icon">ð¡ï¸</div>
+      <div class="gb-icon">🛡️</div>
       <div>
         <div class="gb-title">Quoted Before Work Begins</div>
         <div class="gb-sub">You review the pricing first. No surprise add-ons, no vague body shop-style guessing after the fact.</div>
@@ -1382,7 +1385,7 @@
   </div>
 </section>
 
-<!-- ââ COMPARE ââ -->
+<!-- ══ COMPARE ══ -->
 <section id="compare">
   <div class="compare-header">
     <div class="section-tag reveal">Why Mobile Makes Sense</div>
@@ -1395,14 +1398,14 @@
         <tr>
           <th></th>
           <th class="shop-col">Traditional Body Shop</th>
-          <th class="bf-col">Smart Collision Authority <span class="bf-badge">â Mobile Â· San Diego</span></th>
+          <th class="bf-col">Smart Collision Authority <span class="bf-badge">✓ Mobile · San Diego</span></th>
         </tr>
       </thead>
       <tbody>
         <tr><td>Best fit</td><td class="shop-val c-neutral">Major accidents, insurance claims, multi-panel damage</td><td class="bf-val c-good">Cosmetic bumper, scratch, scuff, and single-panel repairs</td></tr>
         <tr><td>Where service happens</td><td class="shop-val c-bad">You drive the vehicle to their facility</td><td class="bf-val c-good">We come to your home, office, or parking location</td></tr>
-        <tr><td>Time commitment</td><td class="shop-val c-bad">Drop-off, wait days, coordinate pickup</td><td class="bf-val c-good">2â4 hours on-site during one appointment</td></tr>
-        <tr><td>Vehicle downtime</td><td class="shop-val c-bad">2â5 days minimum, rental often needed</td><td class="bf-val c-good">None â vehicle stays with you throughout</td></tr>
+        <tr><td>Time commitment</td><td class="shop-val c-bad">Drop-off, wait days, coordinate pickup</td><td class="bf-val c-good">2–4 hours on-site during one appointment</td></tr>
+        <tr><td>Vehicle downtime</td><td class="shop-val c-bad">2–5 days minimum, rental often needed</td><td class="bf-val c-good">None — vehicle stays with you throughout</td></tr>
         <tr><td>Process complexity</td><td class="shop-val c-bad">Intake forms, insurance coordination, part orders</td><td class="bf-val c-good">Photo review, booking, repair in one visit</td></tr>
         <tr><td>Pricing experience</td><td class="shop-val c-neutral">Estimate at drop-off, adjusted at completion</td><td class="bf-val c-good">Price confirmed before any work begins</td></tr>
         <tr><td>For everyday cosmetic damage</td><td class="shop-val c-neutral">Available but often mismatched in scope and cost</td><td class="bf-val c-good">Designed specifically for this type of repair</td></tr>
@@ -1410,10 +1413,10 @@
       </tbody>
     </table>
   </div>
-  <p class="section-p reveal" style="margin-top:28px;max-width:760px;margin-left:auto;margin-right:auto;text-align:center;font-size:15px;">The point is not that every repair should be mobile â it's that for cosmetic bumper damage, scratches, and single-panel work, the mobile model typically makes more practical sense.</p>
+  <p class="section-p reveal" style="margin-top:28px;max-width:760px;margin-left:auto;margin-right:auto;text-align:center;font-size:15px;">The point is not that every repair should be mobile — it's that for cosmetic bumper damage, scratches, and single-panel work, the mobile model typically makes more practical sense.</p>
 </section>
 
-<!-- ââ OUR STANDARD ââ -->
+<!-- ══ OUR STANDARD ══ -->
 <section id="team" style="padding:72px 48px;background:var(--bg);">
   <div style="max-width:820px;">
     <div class="section-tag reveal">Our Standard</div>
@@ -1443,7 +1446,7 @@
     </div>
 
     <p style="font-size:14px;color:rgba(255,255,255,0.42);line-height:1.8;margin-top:32px;max-width:760px;" class="reveal">
-      That standard is what makes mobile cosmetic repair work: not shortcuts, not noise, not hype â just focused repair execution handled the way it should be.
+      That standard is what makes mobile cosmetic repair work: not shortcuts, not noise, not hype — just focused repair execution handled the way it should be.
     </p>
   </div>
 </section>
@@ -1451,10 +1454,10 @@
 <!-- FAQ nudge -->
 <div class="faq-nudge">
   <div class="faq-nudge-text">Questions about paint matching, timing, service area, or whether mobile repair is the right fit?</div>
-  <a href="#faq" class="faq-nudge-link">See FAQ â</a>
+  <a href="#faq" class="faq-nudge-link">See FAQ →</a>
 </div>
 
-<!-- ââ COST CALCULATOR ââ -->
+<!-- ══ COST CALCULATOR ══ -->
 <section id="calculator">
   <div class="section-tag reveal">Estimate</div>
   <h2 class="section-h reveal">Get a Realistic<br>Price Range First.</h2>
@@ -1466,7 +1469,7 @@
         <div class="calc-label">Damage Type</div>
         <div class="calc-options">
           <div class="calc-opt" data-type="scratch" data-min="149" data-max="299">Scratch / Scuff</div>
-          <div class="calc-opt" data-type="bumper" data-min="249" data-max="499">Bumper Damage</div>
+          <div class="calc-opt" data-type="bumper" data-min="299" data-max="499">Bumper Damage</div>
           <div class="calc-opt" data-type="dent" data-min="99" data-max="249">Dent</div>
           <div class="calc-opt" data-type="paint" data-min="349" data-max="699">Full Panel Repaint</div>
           <div class="calc-opt" data-type="keying" data-min="199" data-max="449">Keying / Vandalism</div>
@@ -1494,15 +1497,15 @@
 
     <div class="calc-result reveal">
       <div class="cr-label">Estimated Range</div>
-      <div class="cr-range" id="calcRange">$<span>â</span></div>
+      <div class="cr-range" id="calcRange">$<span>—</span></div>
       <div class="cr-vs" id="calcVs" style="display:none;">Traditional shop range: <s id="calcShopRange"></s></div>
-      <div class="cr-saving" id="calcSaving" style="display:none;">ð <span id="calcSavingText">Potential savings shown here</span></div>
+      <div class="cr-saving" id="calcSaving" style="display:none;">💚 <span id="calcSavingText">Potential savings shown here</span></div>
 
       <p style="font-size:14px;color:rgba(255,255,255,0.5);margin-top:20px;line-height:1.7;" id="calcNote">
         Use this as a starting point. Final pricing depends on the actual damage, panel condition, and photo review.
       </p>
 
-      <a href="#quote" class="cr-cta" id="calcCta">Send a Photo for Exact Pricing â</a>
+      <a href="#quote" class="cr-cta" id="calcCta">Send a Photo for Exact Pricing →</a>
 
       <p class="cr-disclaimer">
         This estimator is for guidance only. Exact quote is confirmed after reviewing photos of the damage.
@@ -1522,7 +1525,7 @@
   </div>
 </section>
 
-<!-- ââ SERVICE AREA MAP ââ -->
+<!-- ══ SERVICE AREA MAP ══ -->
 <section id="area">
   <div class="area-header">
     <div>
@@ -1547,18 +1550,18 @@
 
   <div class="area-map-wrap">
     <div id="bf-map" style="width:100%;height:100%;position:relative;">
-      <iframe allowfullscreen referrerpolicy="no-referrer-when-downgrade"
+      <iframe loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"
         src="https://maps.google.com/maps?q=San+Diego+County,+CA&t=&z=10&ie=UTF8&iwloc=&output=embed"
         style="width:100%;height:100%;border:0;display:block;"
-        title="Smart Collision Authority â San Diego County Service Area">
+        title="Smart Collision Authority — San Diego County Service Area">
       </iframe>
     </div>
     <div id="bf-fallback">
       <!--
         Geographic SVG map of San Diego County.
         Coordinate system: viewBox 0 0 800 510
-          x = (lng + 117.65) * 500   [lng range -117.65 to -116.05 â x 0..800]
-          y = (33.47 - lat) * 500    [lat range 32.47 to 33.47 â y 0..500]
+          x = (lng + 117.65) * 500   [lng range -117.65 to -116.05 → x 0..800]
+          y = (33.47 - lat) * 500    [lat range 32.47 to 33.47 → y 0..500]
         Key: NW coast (33.39,-117.60)=(30,40), NE=(785,0), SE=(785,470), coast border=(260,472)
       -->
       <svg viewBox="0 0 800 510" style="position:absolute;inset:0;width:100%;height:100%;display:block;" xmlns="http://www.w3.org/2000/svg">
@@ -1581,15 +1584,15 @@
           </linearGradient>
         </defs>
 
-        <!-- ââ BACKGROUND ââ -->
+        <!-- ── BACKGROUND ── -->
         <rect width="800" height="510" fill="#181818"/>
         <rect width="800" height="510" fill="url(#mgrid)"/>
 
-        <!-- ââ COUNTY LAND BASE ââ -->
+        <!-- ── COUNTY LAND BASE ── -->
         <path d="M30,40 L785,0 L785,470 L590,470 L360,470 L260,472 L255,452 L235,430 L205,402 L200,367 L196,352 L200,336 L192,317 L190,257 L178,217 L150,162 L135,137 Z"
               fill="#202020"/>
 
-        <!-- ââ DISTRICT COLOR FILLS (clipped to county boundary) ââ -->
+        <!-- ── DISTRICT COLOR FILLS (clipped to county boundary) ── -->
         <g clip-path="url(#countyClip)">
           <!-- Coastal strip (west of ~lng -117.13) -->
           <rect x="0" y="0" width="260" height="510" fill="rgba(59,130,246,0.11)"/>
@@ -1603,34 +1606,34 @@
           <rect x="260" y="415" width="525" height="100" fill="rgba(245,158,11,0.11)"/>
         </g>
 
-        <!-- ââ PACIFIC OCEAN ââ -->
+        <!-- ── PACIFIC OCEAN ── -->
         <path d="M0,0 L30,40 L135,137 L150,162 L178,217 L190,257 L192,317 L200,336 L196,352 L200,367 L205,402 L235,430 L255,452 L260,472 L0,510 Z"
               fill="url(#oceanG)"/>
 
-        <!-- ââ SAN DIEGO BAY ââ -->
+        <!-- ── SAN DIEGO BAY ── -->
         <!-- Bay sits east of Silver Strand/Coronado, between Pt Loma and downtown -->
         <path d="M238,390 C248,383 258,385 262,390 L272,415 L274,437 L262,450 L248,450 L235,436 L230,418 Z"
               fill="url(#bayG)" stroke="rgba(40,100,200,0.3)" stroke-width="0.8"/>
 
-        <!-- ââ COUNTY OUTLINE ââ -->
+        <!-- ── COUNTY OUTLINE ── -->
         <path d="M30,40 L785,0 L785,470 L590,470 L360,470 L260,472 L255,452 L235,430 L205,402 L200,367 L196,352 L200,336 L192,317 L190,257 L178,217 L150,162 L135,137 Z"
               fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/>
 
-        <!-- ââ MEXICO BORDER ââ -->
+        <!-- ── MEXICO BORDER ── -->
         <line x1="260" y1="472" x2="785" y2="470" stroke="rgba(200,60,60,0.6)" stroke-width="2" stroke-dasharray="6,4"/>
         <text x="522" y="494" fill="rgba(200,60,60,0.45)" font-size="10" text-anchor="middle" letter-spacing="4" font-family="Arial, sans-serif">MEXICO</text>
 
-        <!-- ââ FREEWAYS ââ -->
-        <!-- I-5 (coastal, NâS) -->
+        <!-- ── FREEWAYS ── -->
+        <!-- I-5 (coastal, N→S) -->
         <path d="M135,137 C148,150 162,174 178,217 C185,238 189,258 192,317 L200,336 L196,352 C200,360 206,372 212,390 L238,410 L255,432 L260,472"
               fill="none" stroke="rgba(255,210,70,0.42)" stroke-width="1.8" stroke-linecap="round"/>
-        <!-- I-15 (inland NâS through Mira Mesa/Poway/RB) -->
+        <!-- I-15 (inland N→S through Mira Mesa/Poway/RB) -->
         <path d="M290,0 L290,80 L288,162 L282,200 L276,237 L268,282 L258,336 L252,358 L252,392 L257,415 L260,450 L260,472"
               fill="none" stroke="rgba(255,210,70,0.35)" stroke-width="1.6" stroke-linecap="round"/>
         <!-- I-8 (E-W through Mission Valley / El Cajon) -->
         <path d="M200,367 C216,360 236,354 260,348 L322,340 L398,332 L478,325 L568,318 L672,314 L785,312"
               fill="none" stroke="rgba(255,210,70,0.3)" stroke-width="1.5" stroke-linecap="round"/>
-        <!-- SR-78 (E-W through N County: OceansideâEscondido) -->
+        <!-- SR-78 (E-W through N County: Oceanside→Escondido) -->
         <path d="M135,137 L178,134 L242,130 L300,126 L378,121 L442,116"
               fill="none" stroke="rgba(255,210,70,0.24)" stroke-width="1.2"/>
         <!-- I-805 (parallel to I-5, through Chula Vista) -->
@@ -1643,7 +1646,7 @@
         <text x="778" y="308" fill="rgba(255,210,70,0.52)" font-size="8" font-weight="bold" font-family="Arial" text-anchor="end">I-8</text>
         <text x="446" y="112" fill="rgba(255,210,70,0.44)" font-size="7.5" font-family="Arial">SR-78</text>
 
-        <!-- ââ DISTRICT LABELS ââ -->
+        <!-- ── DISTRICT LABELS ── -->
         <text x="490" y="102" fill="rgba(56,190,110,0.6)" font-size="12" font-weight="700" text-anchor="middle" font-family="Arial, sans-serif" letter-spacing="2">NORTH COUNTY</text>
         <text x="356" y="316" fill="rgba(220,72,72,0.56)" font-size="11" font-weight="700" text-anchor="middle" font-family="Arial, sans-serif" letter-spacing="1.5">CENTRAL SD</text>
         <text x="636" y="322" fill="rgba(152,100,240,0.56)" font-size="11" font-weight="700" text-anchor="middle" font-family="Arial, sans-serif" letter-spacing="1.5">EAST COUNTY</text>
@@ -1653,7 +1656,7 @@
         <!-- Pacific Ocean label -->
         <text x="56" y="285" fill="rgba(100,165,230,0.36)" font-size="11" font-style="italic" letter-spacing="2" font-family="Georgia, serif" transform="rotate(-75,56,285)">PACIFIC OCEAN</text>
 
-        <!-- ââ CITY DOTS (match pin positions below) ââ -->
+        <!-- ── CITY DOTS (match pin positions below) ── -->
         <!-- x=lng-based, y=lat-based per scale above -->
         <circle cx="190" cy="315" r="2.2" fill="rgba(255,255,255,0.28)"/><!-- La Jolla -->
         <circle cx="205" cy="335" r="2.2" fill="rgba(255,255,255,0.28)"/><!-- Pacific Beach -->
@@ -1682,36 +1685,36 @@
         Pins: left = SVG_x / 800 * 100, top = SVG_y / 510 * 100
         The transform:translate(-50%,-100%) anchors the pin bottom-center to the (left,top) point.
       -->
-      <div class="bf-pin" style="left:23.75%;top:61.8%;" data-pin="0"><div class="bf-pin-label">La Jolla</div><div class="bf-pin-body"><span class="bf-pin-inner">ð§</span></div></div>
-      <div class="bf-pin" style="left:25.6%;top:65.7%;" data-pin="1"><div class="bf-pin-label">Pacific Beach</div><div class="bf-pin-body"><span class="bf-pin-inner">ð§</span></div></div>
-      <div class="bf-pin" style="left:25%;top:71.6%;" data-pin="2"><div class="bf-pin-label">Ocean Beach</div><div class="bf-pin-body"><span class="bf-pin-inner">ð§</span></div></div>
-      <div class="bf-pin" style="left:31.3%;top:54.9%;" data-pin="3"><div class="bf-pin-label">Mira Mesa</div><div class="bf-pin-body"><span class="bf-pin-inner">ð§</span></div></div>
-      <div class="bf-pin" style="left:35%;top:45.1%;" data-pin="4"><div class="bf-pin-label">Rancho Bernardo</div><div class="bf-pin-body"><span class="bf-pin-inner">ð§</span></div></div>
-      <div class="bf-pin" style="left:31.3%;top:68.6%;" data-pin="5"><div class="bf-pin-label">Mission Valley</div><div class="bf-pin-body"><span class="bf-pin-inner">ð§</span></div></div>
-      <div class="bf-pin" style="left:30.5%;top:73.5%;" data-pin="6"><div class="bf-pin-label">Downtown SD</div><div class="bf-pin-body"><span class="bf-pin-inner">ð§</span></div></div>
-      <div class="bf-pin" style="left:42.5%;top:61.8%;" data-pin="7"><div class="bf-pin-label">Santee</div><div class="bf-pin-body"><span class="bf-pin-inner">ð§</span></div></div>
-      <div class="bf-pin" style="left:43.1%;top:66.7%;" data-pin="8"><div class="bf-pin-label">El Cajon</div><div class="bf-pin-body"><span class="bf-pin-inner">ð§</span></div></div>
-      <div class="bf-pin" style="left:34.4%;top:77.5%;" data-pin="9"><div class="bf-pin-label">National City</div><div class="bf-pin-body"><span class="bf-pin-inner">ð§</span></div></div>
-      <div class="bf-pin" style="left:35.6%;top:82.4%;" data-pin="10"><div class="bf-pin-label">Chula Vista</div><div class="bf-pin-body"><span class="bf-pin-inner">ð§</span></div></div>
-      <div class="bf-pin" style="left:29.4%;top:77.5%;" data-pin="11"><div class="bf-pin-label">Coronado</div><div class="bf-pin-body"><span class="bf-pin-inner">ð§</span></div></div>
+      <div class="bf-pin" style="left:23.75%;top:61.8%;" data-pin="0"><div class="bf-pin-label">La Jolla</div><div class="bf-pin-body"><span class="bf-pin-inner">🔧</span></div></div>
+      <div class="bf-pin" style="left:25.6%;top:65.7%;" data-pin="1"><div class="bf-pin-label">Pacific Beach</div><div class="bf-pin-body"><span class="bf-pin-inner">🔧</span></div></div>
+      <div class="bf-pin" style="left:25%;top:71.6%;" data-pin="2"><div class="bf-pin-label">Ocean Beach</div><div class="bf-pin-body"><span class="bf-pin-inner">🔧</span></div></div>
+      <div class="bf-pin" style="left:31.3%;top:54.9%;" data-pin="3"><div class="bf-pin-label">Mira Mesa</div><div class="bf-pin-body"><span class="bf-pin-inner">🔧</span></div></div>
+      <div class="bf-pin" style="left:35%;top:45.1%;" data-pin="4"><div class="bf-pin-label">Rancho Bernardo</div><div class="bf-pin-body"><span class="bf-pin-inner">🔧</span></div></div>
+      <div class="bf-pin" style="left:31.3%;top:68.6%;" data-pin="5"><div class="bf-pin-label">Mission Valley</div><div class="bf-pin-body"><span class="bf-pin-inner">🔧</span></div></div>
+      <div class="bf-pin" style="left:30.5%;top:73.5%;" data-pin="6"><div class="bf-pin-label">Downtown SD</div><div class="bf-pin-body"><span class="bf-pin-inner">🔧</span></div></div>
+      <div class="bf-pin" style="left:42.5%;top:61.8%;" data-pin="7"><div class="bf-pin-label">Santee</div><div class="bf-pin-body"><span class="bf-pin-inner">🔧</span></div></div>
+      <div class="bf-pin" style="left:43.1%;top:66.7%;" data-pin="8"><div class="bf-pin-label">El Cajon</div><div class="bf-pin-body"><span class="bf-pin-inner">🔧</span></div></div>
+      <div class="bf-pin" style="left:34.4%;top:77.5%;" data-pin="9"><div class="bf-pin-label">National City</div><div class="bf-pin-body"><span class="bf-pin-inner">🔧</span></div></div>
+      <div class="bf-pin" style="left:35.6%;top:82.4%;" data-pin="10"><div class="bf-pin-label">Chula Vista</div><div class="bf-pin-body"><span class="bf-pin-inner">🔧</span></div></div>
+      <div class="bf-pin" style="left:29.4%;top:77.5%;" data-pin="11"><div class="bf-pin-label">Coronado</div><div class="bf-pin-body"><span class="bf-pin-inner">🔧</span></div></div>
 
       <div class="fb-watermark">Connect Google Maps API to activate full live map view</div>
     </div>
 
     <div id="bf-api-banner" style="position:absolute;top:12px;left:50%;transform:translateX(-50%);background:rgba(217,38,38,0.95);color:white;padding:8px 18px;border-radius:8px;font-size:12px;font-weight:600;z-index:10;text-align:center;pointer-events:none;display:none;white-space:nowrap;">
-      Map preview mode active â live Google map will appear once API configuration is valid.
+      Map preview mode active — live Google map will appear once API configuration is valid.
     </div>
 
     <div id="bf-popup">
       <div class="pop-head">
         <div>
           <div class="pop-service" id="popService">Mobile Cosmetic Repair Example</div>
-          <div class="pop-location" id="popLocation">ð San Diego County</div>
+          <div class="pop-location" id="popLocation">📍 San Diego County</div>
         </div>
-        <button class="pop-close" id="popClose">Ã</button>
+        <button class="pop-close" id="popClose">×</button>
       </div>
       <div class="pop-body">
-        <div class="pop-stars">âââââ</div>
+        <div class="pop-stars">★★★★★</div>
         <p class="pop-text" id="popText">Example repair scenario shown to demonstrate service coverage and mobile workflow.</p>
         <div class="pop-author">
           <div class="pop-avatar" id="popAvatar">BF</div>
@@ -1722,8 +1725,8 @@
         </div>
       </div>
       <div class="pop-footer">
-        <div class="pop-detail">Time: <strong id="popTime">2 hrs</strong> Â· Typical range: <strong id="popSaved">Varies</strong></div>
-        <a href="#quote" class="pop-cta">Check Your Area â</a>
+        <div class="pop-detail">Time: <strong id="popTime">2 hrs</strong> · Typical range: <strong id="popSaved">Varies</strong></div>
+        <a href="#quote" class="pop-cta">Check Your Area →</a>
       </div>
     </div>
   </div>
@@ -1760,13 +1763,13 @@
   </div>
 </section>
 
-<!-- ââ REVIEWS ââ -->
+<!-- ══ REVIEWS ══ -->
 <section id="reviews">
   <div class="reviews-top">
     <div>
       <div class="section-tag reveal">What Customers Say</div>
       <h2 class="section-h reveal">The Convenience<br>Is the Point.</h2>
-      <p class="section-p reveal">Customers choose Smart Collision Authority because the mobile model removes the friction. No drop-off, no rental car, no multi-day wait â just clean cosmetic repair done at their location.</p>
+      <p class="section-p reveal">Customers choose Smart Collision Authority because the mobile model removes the friction. No drop-off, no rental car, no multi-day wait — just clean cosmetic repair done at their location.</p>
     </div>
     <div class="reveal">
       <div class="reviews-score">Mobile</div>
@@ -1776,35 +1779,35 @@
   </div>
   <div class="reviews-grid">
     <div class="review-card reveal">
-      <div class="review-stars">âââââ</div>
+      <div class="review-stars">★★★★★</div>
       <p class="review-text">"I wanted something easier than dropping my car off at a body shop for days. The convenience of having the repair done on-site made the whole process feel simple and professional."</p>
       <div class="review-author">
         <div class="review-avatar">JM</div>
         <div>
           <div class="review-name">Jason M.</div>
-          <div class="review-car">collision authority and mobile repair inquiry Â· San Diego</div>
+          <div class="review-car">collision authority and mobile repair inquiry · San Diego</div>
         </div>
       </div>
     </div>
     <div class="review-card reveal">
-      <div class="review-stars">âââââ</div>
+      <div class="review-stars">★★★★★</div>
       <p class="review-text">"What stood out most was the mobile setup. For the right customer, this is a much smarter option than dealing with shop scheduling, rental cars, and extra downtime."</p>
       <div class="review-author">
         <div class="review-avatar">AL</div>
         <div>
           <div class="review-name">Alicia L.</div>
-          <div class="review-car">Scratch and paint correction inquiry Â· San Diego County</div>
+          <div class="review-car">Scratch and paint correction inquiry · San Diego County</div>
         </div>
       </div>
     </div>
     <div class="review-card reveal">
-      <div class="review-stars">âââââ</div>
+      <div class="review-stars">★★★★★</div>
       <p class="review-text">"The offer is strong because it solves a real problem: fast cosmetic repair without the normal body shop process. It feels direct, practical, and customer-friendly."</p>
       <div class="review-author">
         <div class="review-avatar">RC</div>
         <div>
           <div class="review-name">Robert C.</div>
-          <div class="review-car">Mobile repair prospect Â· San Diego</div>
+          <div class="review-car">Mobile repair prospect · San Diego</div>
         </div>
       </div>
     </div>
@@ -1818,7 +1821,7 @@
   </div>
 </section>
 
-<!-- ââ FAQ ââ -->
+<!-- ══ FAQ ══ -->
 <section id="faq">
   <div class="faq-header">
     <div class="section-tag reveal">Questions</div>
@@ -1877,7 +1880,7 @@
   </div>
 </section>
 
-<!-- ââ QUOTE ââ -->
+<!-- ══ QUOTE ══ -->
 <section id="quote">
   <div class="quote-inner">
     <div>
@@ -1886,20 +1889,20 @@
 
       <div style="margin-top:28px;display:flex;flex-direction:column;gap:14px;">
         <a href="tel:+18589880325" style="font-family:'Anton',sans-serif;font-size:28px;letter-spacing:0.04em;color:white;text-decoration:none;display:block;">(858) 988-0325</a>
-        <a href="sms:+18589880325" style="display:inline-flex;align-items:center;gap:10px;color:#4ADE80;text-decoration:none;font-size:15px;font-weight:600;">ð¬ Text a Photo Instead</a>
+        <a href="sms:+18589880325" style="display:inline-flex;align-items:center;gap:10px;color:#4ADE80;text-decoration:none;font-size:15px;font-weight:600;">💬 Text a Photo Instead</a>
       </div>
 
       <div style="margin-top:28px;display:grid;gap:12px;">
         <div style="display:flex;align-items:flex-start;gap:10px;color:rgba(255,255,255,0.85);font-size:14px;line-height:1.7;">
-          <span style="font-size:16px;">â</span>
+          <span style="font-size:16px;">✓</span>
           <span>Mobile cosmetic repair across San Diego County</span>
         </div>
         <div style="display:flex;align-items:flex-start;gap:10px;color:rgba(255,255,255,0.85);font-size:14px;line-height:1.7;">
-          <span style="font-size:16px;">â</span>
+          <span style="font-size:16px;">✓</span>
           <span>Home or office appointments available</span>
         </div>
         <div style="display:flex;align-items:flex-start;gap:10px;color:rgba(255,255,255,0.85);font-size:14px;line-height:1.7;">
-          <span style="font-size:16px;">â</span>
+          <span style="font-size:16px;">✓</span>
           <span>Fast photo-first review process</span>
         </div>
       </div>
@@ -1907,7 +1910,7 @@
 
     <div class="quote-form">
       <div class="qf-title">Request a Quote</div>
-      <div class="qf-sub">Fast photo-first review Â· Mobile service across San Diego County</div>
+      <div class="qf-sub">Fast photo-first review · Mobile service across San Diego County</div>
 
       <div class="qf-row">
         <input class="qf-input" type="text" id="qf-name" placeholder="Your Name" required>
@@ -1916,7 +1919,7 @@
 
       <label class="qf-upload" id="uploadLabel">
         <input type="file" id="photoUpload" accept="image/*" capture="environment">
-        <span id="uploadIcon">ð·</span>
+        <span id="uploadIcon">📷</span>
         <span id="uploadText">Attach a photo of the damage</span>
         <span class="qf-upload-preview" id="uploadPreview"></span>
       </label>
@@ -1940,15 +1943,15 @@
           <div class="hours-dot"></div>
           <span id="hoursText">Open Now</span>
         </div>
-        <span>MonâFri 7amâ7pm Â· SatâSun 8amâ5pm</span>
+        <span>Mon–Fri 7am–7pm · Sat–Sun 8am–5pm</span>
       </div>
 
-      <a href="sms:+18589880325&body=Hi, I need a quote for my vehicle." class="form-sms-link">ð¬ Prefer text? Send a photo directly</a>
+      <a href="sms:+18589880325&body=Hi, I need a quote for my vehicle." class="form-sms-link">💬 Prefer text? Send a photo directly</a>
     </div>
   </div>
 </section>
 
-<!-- ââ FOUNDER STORY ââ -->
+<!-- ══ FOUNDER STORY ══ -->
 <section class="founder-section">
   <div class="founder-inner">
     <div class="founder-tag">Why This Exists</div>
@@ -1956,13 +1959,13 @@
       "I watched my neighbor pay $1,100 and wait five days for a scuff that took <em>two hours of actual work.</em>"
     </h2>
     <p class="founder-body">
-      Three years doing mobile cosmetic repair across San Diego taught me one thing: body shops charge body shop rates â rent, staff, overhead â even when the job is a straightforward bumper touch-up. That gap never made sense to me. Smart Collision Authority exists for drivers who want the damage fixed without absorbing the full overhead of a shop that wasn't built for their problem. Mobile service, clear photo quoting, no shop delays.
+      Three years doing mobile cosmetic repair across San Diego taught me one thing: body shops charge body shop rates — rent, staff, overhead — even when the job is a straightforward bumper touch-up. That gap never made sense to me. Smart Collision Authority exists for drivers who want the damage fixed without absorbing the full overhead of a shop that wasn't built for their problem. Mobile service, clear photo quoting, no shop delays.
     </p>
-    <div class="founder-sig">â Smart Collision Authority &nbsp;Â·&nbsp; San Diego, CA</div>
+    <div class="founder-sig">— Smart Collision Authority &nbsp;·&nbsp; San Diego, CA</div>
   </div>
 </section>
 
-<!-- ââ FOOTER ââ -->
+<!-- ══ FOOTER ══ -->
 <div class="footer-rainbow-stripe"></div>
 <footer>
   <div class="footer-grid">
@@ -1971,26 +1974,26 @@
         <img src="logo.png" alt="Smart Collision Authority" style="width:100%;max-width:420px;height:auto;display:block;margin-bottom:8px;">
       </div>
 
-      <p class="footer-tagline">Mobile collision authority and mobile repair, scratch removal, and cosmetic paintwork â we come to you across all of San Diego County.</p>
+      <p class="footer-tagline">Mobile collision authority and mobile repair, scratch removal, and cosmetic paintwork — we come to you across all of San Diego County.</p>
 
       <!-- Trust stars -->
       <div style="display:flex;align-items:center;gap:6px;margin-bottom:16px;">
-        <span style="color:#FFB800;font-size:15px;letter-spacing:1px;">âââââ</span>
-        <span style="font-size:12px;color:rgba(255,255,255,0.35);">4.9 Â· 47+ reviews</span>
+        <span style="color:#FFB800;font-size:15px;letter-spacing:1px;">★★★★★</span>
+        <span style="font-size:12px;color:rgba(255,255,255,0.35);">4.9 · 47+ reviews</span>
       </div>
 
       <a href="tel:+18589880325" class="footer-phone">(858) 988-0325</a>
 
       <div style="font-size:12px;color:rgba(255,255,255,0.35);margin-top:10px;line-height:1.9;">
-        MonâFri 7amâ7pm<br>
-        SatâSun 8amâ5pm
+        Mon–Fri 7am–7pm<br>
+        Sat–Sun 8am–5pm
       </div>
 
       <!-- Contact buttons -->
       <div style="display:flex;gap:10px;margin-top:20px;flex-wrap:wrap;">
-        <a href="sms:+18589880325" style="display:inline-flex;align-items:center;gap:6px;padding:8px 14px;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.1);border-radius:6px;font-size:12px;color:rgba(255,255,255,0.6);text-decoration:none;transition:all 0.2s;" onmouseover="this.style.borderColor='var(--red)';this.style.color='#fff'" onmouseout="this.style.borderColor='rgba(255,255,255,0.1)';this.style.color='rgba(255,255,255,0.6)'">ð¬ Text Us</a>
-        <a href="https://wa.me/18589880325" target="_blank" style="display:inline-flex;align-items:center;gap:6px;padding:8px 14px;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.1);border-radius:6px;font-size:12px;color:rgba(255,255,255,0.6);text-decoration:none;transition:all 0.2s;" onmouseover="this.style.borderColor='var(--red)';this.style.color='#fff'" onmouseout="this.style.borderColor='rgba(255,255,255,0.1)';this.style.color='rgba(255,255,255,0.6)'">ð± WhatsApp</a>
-        <a href="contact.html" style="display:inline-flex;align-items:center;gap:6px;padding:8px 14px;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.1);border-radius:6px;font-size:12px;color:rgba(255,255,255,0.6);text-decoration:none;transition:all 0.2s;" onmouseover="this.style.borderColor='var(--red)';this.style.color='#fff'" onmouseout="this.style.borderColor='rgba(255,255,255,0.1)';this.style.color='rgba(255,255,255,0.6)'">ð Get a Quote</a>
+        <a href="sms:+18589880325" style="display:inline-flex;align-items:center;gap:6px;padding:8px 14px;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.1);border-radius:6px;font-size:12px;color:rgba(255,255,255,0.6);text-decoration:none;transition:all 0.2s;" onmouseover="this.style.borderColor='var(--red)';this.style.color='#fff'" onmouseout="this.style.borderColor='rgba(255,255,255,0.1)';this.style.color='rgba(255,255,255,0.6)'">💬 Text Us</a>
+        <a href="https://wa.me/18589880325" target="_blank" style="display:inline-flex;align-items:center;gap:6px;padding:8px 14px;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.1);border-radius:6px;font-size:12px;color:rgba(255,255,255,0.6);text-decoration:none;transition:all 0.2s;" onmouseover="this.style.borderColor='var(--red)';this.style.color='#fff'" onmouseout="this.style.borderColor='rgba(255,255,255,0.1)';this.style.color='rgba(255,255,255,0.6)'">📱 WhatsApp</a>
+        <a href="contact.html" style="display:inline-flex;align-items:center;gap:6px;padding:8px 14px;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.1);border-radius:6px;font-size:12px;color:rgba(255,255,255,0.6);text-decoration:none;transition:all 0.2s;" onmouseover="this.style.borderColor='var(--red)';this.style.color='#fff'" onmouseout="this.style.borderColor='rgba(255,255,255,0.1)';this.style.color='rgba(255,255,255,0.6)'">📋 Get a Quote</a>
       </div>
 
       <!-- Service badges -->
@@ -2050,34 +2053,34 @@
   </div>
 
   <div class="footer-bottom">
-    <span>Â© 2026 Smart Collision Authority. All rights reserved. San Diego, CA.</span>
+    <span>© 2026 Smart Collision Authority. All rights reserved. San Diego, CA.</span>
     <span>Mobile cosmetic auto body service designed for fast, on-site convenience.</span>
   </div>
 </footer>
 
-<!-- ââ LIVE CHAT BUBBLE ââ -->
-<div class="chat-btn" id="chatBtn">
-  <span class="chat-btn-icon">ð¬</span>
-  <span class="chat-badge">1</span>
-  <span class="chat-tooltip">Ask us anything</span>
-</div>
-<div class="chat-panel" id="chatPanel">
+<!-- ── LIVE CHAT BUBBLE ── -->
+<button class="chat-btn" id="chatBtn" type="button" aria-label="Open quick answers" aria-haspopup="dialog" aria-expanded="false">
+  <span class="chat-btn-icon" aria-hidden="true">💬</span>
+  <span class="chat-badge" aria-hidden="true">1</span>
+  <span class="chat-tooltip">Quick answers</span>
+</button>
+<div class="chat-panel" id="chatPanel" role="dialog" aria-label="Quick answers">
   <div class="chat-panel-head">
     <div>
-      <div class="chat-panel-title">Smart Collision Authority Support</div>
-      <div class="chat-panel-sub">Usually replies within minutes</div>
+      <div class="chat-panel-title">Quick Answers</div>
+      <div class="chat-panel-sub">Common questions, instant answers · text us for a real reply</div>
     </div>
-    <button class="chat-panel-close" id="chatClose">Ã</button>
+    <button class="chat-panel-close" id="chatClose">×</button>
   </div>
   <div class="chat-messages" id="chatMessages">
     <div class="chat-msg bot">What kind of damage are you dealing with?</div>
   </div>
   <div class="chat-options" id="chatOptions">
-    <button class="chat-option" data-reply="bumper">ð Bumper damage</button>
-    <button class="chat-option" data-reply="scratch">â¦ Scratch or scuff</button>
-    <button class="chat-option" data-reply="dent">âï¸ Dent repair</button>
-    <button class="chat-option" data-reply="price">ð° How much does it cost?</button>
-    <button class="chat-option" data-reply="area">ð Do you come to my area?</button>
+    <button class="chat-option" data-reply="bumper"><span aria-hidden="true">🚗</span> Bumper damage</button>
+    <button class="chat-option" data-reply="scratch"><span aria-hidden="true">✦</span> Scratch or scuff</button>
+    <button class="chat-option" data-reply="dent"><span aria-hidden="true">⚙️</span> Dent repair</button>
+    <button class="chat-option" data-reply="price"><span aria-hidden="true">💰</span> How much does it cost?</button>
+    <button class="chat-option" data-reply="area"><span aria-hidden="true">📍</span> Do you come to my area?</button>
   </div>
   <div class="chat-input-row">
     <input class="chat-input" type="text" id="chatInput" placeholder="Type a message...">
@@ -2088,13 +2091,13 @@
 <!-- Exit intent overlay -->
 <div class="exit-overlay" id="exitOverlay">
   <div class="exit-modal">
-    <button class="exit-close" id="exitClose">Ã</button>
-    <div class="exit-icon">ð§</div>
+    <button class="exit-close" id="exitClose">×</button>
+    <div class="exit-icon">🔧</div>
     <div class="exit-title">One Quick<br><span>Question.</span></div>
-    <div class="exit-sub">What's the damage? Text us a photo and we'll reply with a price â usually within the hour.</div>
+    <div class="exit-sub">What's the damage? Text us a photo and we'll reply with a price — usually within the hour.</div>
     <div class="exit-form">
       <input class="exit-input" type="tel" id="exitPhone" placeholder="Your phone number">
-      <button class="exit-submit" id="exitSubmit">TEXT ME â</button>
+      <button class="exit-submit" id="exitSubmit">TEXT ME →</button>
     </div>
     <p class="exit-note">One message only. We never spam.</p>
     <button class="exit-dismiss" id="exitDismiss">No thanks</button>
@@ -2103,7 +2106,7 @@
 
 <!-- WhatsApp -->
 <a href="https://wa.me/18589880325?text=Hi! I need a quote for collision authority and mobile repair in San Diego." target="_blank" rel="noopener" class="wa-btn" aria-label="WhatsApp us">
-  <span>ð¬</span>
+  <span>💬</span>
   <span class="wa-tooltip">WhatsApp Us</span>
 </a>
 
@@ -2111,30 +2114,30 @@
 <div class="sticky-cta" id="stickyCta">
   <div class="sticky-left">
     <div class="sticky-brand">BUMPER FIX</div>
-    <div class="sticky-tagline">Mobile Auto Body Â· San Diego County</div>
+    <div class="sticky-tagline">Mobile Auto Body · San Diego County</div>
   </div>
   <div class="sticky-actions">
     <a href="tel:+18589880325" class="sticky-phone">(858) 988-0325</a>
     <a href="contact.html" class="sticky-btn" id="stickyQuoteBtn">Request a Quote</a>
-    <button class="sticky-close" id="stickyClose">Ã</button>
+    <button class="sticky-close" id="stickyClose">×</button>
   </div>
 </div>
 
 <script>
-// ââ REVIEW DATA ââââââââââââââââââââââââââââââââââââââââââââââââ
+// ── REVIEW DATA ────────────────────────────────────────────────
 const BF_REVIEWS = [
-  {n:"La Jolla",lat:32.8328,lng:-117.2713,s:"collision authority and mobile repair & Refinish",t:"Rear bumper damage example in La Jolla. Mobile on-site repair, refinish, and color-match service completed at the customer's location without shop drop-off.",a:"Service Example",i:"BF",c:"Honda CR-V Â· collision authority and mobile repair and refinish",tm:"2 hrs",sv:"~$420"},
-  {n:"Pacific Beach",lat:32.7998,lng:-117.2380,s:"Door Scratch Repair",t:"Door scratch damage example in Pacific Beach. Mobile scratch repair and paint refinish service completed on-site at the customer's location.",a:"Service Example",i:"BF",c:"Mazda CX-5 Â· Scratch and refinish",tm:"1.5 hrs",sv:"~$300"},
-  {n:"Ocean Beach",lat:32.7448,lng:-117.2512,s:"Front Bumper Scuff Repair",t:"Front bumper scuff example in Ocean Beach. Mobile cosmetic repair completed at the customer's location â no tow, no shop wait.",a:"Service Example",i:"BF",c:"Subaru Outback Â· Scuff repair",tm:"2 hrs",sv:"~$350"},
-  {n:"Mira Mesa",lat:32.9116,lng:-117.1484,s:"Rear Bumper Crack & Repaint",t:"Rear bumper impact damage example in Mira Mesa. Mobile repair and color-matched refinish completed on-site at the customer's residence.",a:"Service Example",i:"BF",c:"Toyota Camry Â· collision authority and mobile repair",tm:"2.5 hrs",sv:"~$450"},
-  {n:"Rancho Bernardo",lat:33.0122,lng:-117.0727,s:"Paintless Dent Repair",t:"Hood and roof dent example in Rancho Bernardo. Paintless dent repair technique used on eligible panels â no repainting required.",a:"Service Example",i:"BF",c:"BMW 3 Series Â· Paintless dent repair",tm:"3 hrs",sv:"~$600"},
-  {n:"Mission Valley",lat:32.7680,lng:-117.1480,s:"Side Panel Paint Blend",t:"Side panel cosmetic damage example in Mission Valley. Mobile paint blend and refinish service completed at the customer's parking location.",a:"Service Example",i:"BF",c:"Ford Explorer Â· Panel paint blend",tm:"3 hrs",sv:"~$500"},
-  {n:"Downtown SD",lat:32.7157,lng:-117.1611,s:"Bumper Scuff & Respray",t:"Bumper scuff example in Downtown San Diego. Mobile cosmetic repair completed in a private parking structure â no shop drop-off needed.",a:"Service Example",i:"BF",c:"Honda Civic Â· Bumper scuff repair",tm:"2 hrs",sv:"~$380"},
-  {n:"Santee",lat:32.8384,lng:-116.9739,s:"Full Bumper Refinish",t:"Full bumper refinish example in Santee. Mobile service completed at the customer's home with color-matched respray across the full bumper panel.",a:"Service Example",i:"BF",c:"Ford F-150 Â· Full bumper refinish",tm:"3 hrs",sv:"~$550"},
-  {n:"El Cajon",lat:32.7948,lng:-116.9625,s:"Quarter Panel Scratch Repair",t:"Quarter panel scratch example in El Cajon. Mobile scratch repair and spot refinish service completed at the customer's residence.",a:"Service Example",i:"BF",c:"Chevrolet Equinox Â· Scratch repair",tm:"2.5 hrs",sv:"~$400"},
-  {n:"National City",lat:32.6781,lng:-117.0992,s:"Front Bumper Crack Repair",t:"Front bumper crack example in National City. Mobile repair and refinish completed at the customer's location â straightforward cosmetic restoration.",a:"Service Example",i:"BF",c:"Toyota Tacoma Â· Bumper crack repair",tm:"2.5 hrs",sv:"~$420"},
-  {n:"Chula Vista",lat:32.6401,lng:-117.0842,s:"Door Keying Repair",t:"Deep keying damage example in Chula Vista. Mobile cosmetic repair completed at the customer's home â on-site refinish across the affected door panel.",a:"Service Example",i:"BF",c:"Ford F-150 Â· Door keying repair",tm:"3 hrs",sv:"~$500"},
-  {n:"Coronado",lat:32.6859,lng:-117.1831,s:"Bumper Scuff & Polish",t:"Bumper scuff example in Coronado. Mobile cosmetic touch-up and light refinish completed at the customer's location in under two hours.",a:"Service Example",i:"BF",c:"Tesla Model 3 Â· Scuff repair",tm:"1.5 hrs",sv:"~$300"}
+  {n:"La Jolla",lat:32.8328,lng:-117.2713,s:"collision authority and mobile repair & Refinish",t:"Rear bumper damage example in La Jolla. Mobile on-site repair, refinish, and color-match service completed at the customer's location without shop drop-off.",a:"Service Example",i:"BF",c:"Honda CR-V · collision authority and mobile repair and refinish",tm:"2 hrs",sv:"~$420"},
+  {n:"Pacific Beach",lat:32.7998,lng:-117.2380,s:"Door Scratch Repair",t:"Door scratch damage example in Pacific Beach. Mobile scratch repair and paint refinish service completed on-site at the customer's location.",a:"Service Example",i:"BF",c:"Mazda CX-5 · Scratch and refinish",tm:"1.5 hrs",sv:"~$300"},
+  {n:"Ocean Beach",lat:32.7448,lng:-117.2512,s:"Front Bumper Scuff Repair",t:"Front bumper scuff example in Ocean Beach. Mobile cosmetic repair completed at the customer's location — no tow, no shop wait.",a:"Service Example",i:"BF",c:"Subaru Outback · Scuff repair",tm:"2 hrs",sv:"~$350"},
+  {n:"Mira Mesa",lat:32.9116,lng:-117.1484,s:"Rear Bumper Crack & Repaint",t:"Rear bumper impact damage example in Mira Mesa. Mobile repair and color-matched refinish completed on-site at the customer's residence.",a:"Service Example",i:"BF",c:"Toyota Camry · collision authority and mobile repair",tm:"2.5 hrs",sv:"~$450"},
+  {n:"Rancho Bernardo",lat:33.0122,lng:-117.0727,s:"Paintless Dent Repair",t:"Hood and roof dent example in Rancho Bernardo. Paintless dent repair technique used on eligible panels — no repainting required.",a:"Service Example",i:"BF",c:"BMW 3 Series · Paintless dent repair",tm:"3 hrs",sv:"~$600"},
+  {n:"Mission Valley",lat:32.7680,lng:-117.1480,s:"Side Panel Paint Blend",t:"Side panel cosmetic damage example in Mission Valley. Mobile paint blend and refinish service completed at the customer's parking location.",a:"Service Example",i:"BF",c:"Ford Explorer · Panel paint blend",tm:"3 hrs",sv:"~$500"},
+  {n:"Downtown SD",lat:32.7157,lng:-117.1611,s:"Bumper Scuff & Respray",t:"Bumper scuff example in Downtown San Diego. Mobile cosmetic repair completed in a private parking structure — no shop drop-off needed.",a:"Service Example",i:"BF",c:"Honda Civic · Bumper scuff repair",tm:"2 hrs",sv:"~$380"},
+  {n:"Santee",lat:32.8384,lng:-116.9739,s:"Full Bumper Refinish",t:"Full bumper refinish example in Santee. Mobile service completed at the customer's home with color-matched respray across the full bumper panel.",a:"Service Example",i:"BF",c:"Ford F-150 · Full bumper refinish",tm:"3 hrs",sv:"~$550"},
+  {n:"El Cajon",lat:32.7948,lng:-116.9625,s:"Quarter Panel Scratch Repair",t:"Quarter panel scratch example in El Cajon. Mobile scratch repair and spot refinish service completed at the customer's residence.",a:"Service Example",i:"BF",c:"Chevrolet Equinox · Scratch repair",tm:"2.5 hrs",sv:"~$400"},
+  {n:"National City",lat:32.6781,lng:-117.0992,s:"Front Bumper Crack Repair",t:"Front bumper crack example in National City. Mobile repair and refinish completed at the customer's location — straightforward cosmetic restoration.",a:"Service Example",i:"BF",c:"Toyota Tacoma · Bumper crack repair",tm:"2.5 hrs",sv:"~$420"},
+  {n:"Chula Vista",lat:32.6401,lng:-117.0842,s:"Door Keying Repair",t:"Deep keying damage example in Chula Vista. Mobile cosmetic repair completed at the customer's home — on-site refinish across the affected door panel.",a:"Service Example",i:"BF",c:"Ford F-150 · Door keying repair",tm:"3 hrs",sv:"~$500"},
+  {n:"Coronado",lat:32.6859,lng:-117.1831,s:"Bumper Scuff & Polish",t:"Bumper scuff example in Coronado. Mobile cosmetic touch-up and light refinish completed at the customer's location in under two hours.",a:"Service Example",i:"BF",c:"Tesla Model 3 · Scuff repair",tm:"1.5 hrs",sv:"~$300"}
 ];
 const BF_DISTRICTS = [
   {id:"coastal",center:{lat:32.790,lng:-117.255},zoom:13,coords:[{lat:32.870,lng:-117.270},{lat:32.870,lng:-117.220},{lat:32.730,lng:-117.235},{lat:32.700,lng:-117.260},{lat:32.700,lng:-117.280}],color:"#3B82F6"},
@@ -2147,7 +2150,7 @@ const BF_DISTRICTS = [
 function bfShowReview(idx, x, y) {
   const r = BF_REVIEWS[idx];
   document.getElementById('popService').textContent = r.s;
-  document.getElementById('popLocation').textContent = 'ð ' + r.n + ', San Diego';
+  document.getElementById('popLocation').textContent = '📍 ' + r.n + ', San Diego';
   document.getElementById('popText').textContent = r.t;
   document.getElementById('popAvatar').textContent = r.i;
   document.getElementById('popName').textContent = r.a;
@@ -2165,7 +2168,7 @@ function bfClosePopup() {
 }
 document.getElementById('popClose').addEventListener('click', bfClosePopup);
 
-// ââ SCROLL REVEAL ââââââââââââââââââââââââââââââââââââââââââââââ
+// ── SCROLL REVEAL ──────────────────────────────────────────────
 const revealObs = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -2177,7 +2180,7 @@ const revealObs = new IntersectionObserver((entries) => {
 }, { threshold: 0.1 });
 document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
 
-// ââ HERO LINE DROP âââââââââââââââââââââââââââââââââââââââââââ
+// ── HERO LINE DROP ───────────────────────────────────────────
 (function () {
   const title = document.querySelector('.hero-title-fall');
   if (!title) return;
@@ -2187,13 +2190,13 @@ document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
   requestAnimationFrame(() => title.classList.add('is-animating'));
 })();
 
-// ââ HAMBURGER ââââââââââââââââââââââââââââââââââââââââââââââââââ
+// ── HAMBURGER ──────────────────────────────────────────────────
 const hamburger = document.getElementById('hamburger');
 const mobileMenu = document.getElementById('mobileMenu');
 hamburger.addEventListener('click', () => mobileMenu.classList.toggle('open'));
 mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.remove('open')));
 
-// ââ SCROLL BEHAVIORS âââââââââââââââââââââââââââââââââââââââââââ
+// ── SCROLL BEHAVIORS ───────────────────────────────────────────
 const topbar = document.querySelector('.topbar');
 const availBar = document.getElementById('availBar');
 const stickyCta = document.getElementById('stickyCta');
@@ -2203,10 +2206,10 @@ let stickyDismissed = false;
 const hr = new Date().getHours();
 const slotsEl = availBar.querySelector('.avail-slots');
 if (slotsEl) {
-  if (hr>=7&&hr<12) slotsEl.innerHTML='â¡ <strong>3 spots</strong> open this morning';
-  else if (hr>=12&&hr<16) slotsEl.innerHTML='â¡ <strong>2 spots</strong> left this afternoon';
-  else if (hr>=16&&hr<20) slotsEl.innerHTML='â¡ <strong>1 spot</strong> left today';
-  else slotsEl.innerHTML='â¡ Booking for tomorrow';
+  if (hr>=7&&hr<12) slotsEl.innerHTML='⚡ <strong>3 spots</strong> open this morning';
+  else if (hr>=12&&hr<16) slotsEl.innerHTML='⚡ <strong>2 spots</strong> left this afternoon';
+  else if (hr>=16&&hr<20) slotsEl.innerHTML='⚡ <strong>1 spot</strong> left today';
+  else slotsEl.innerHTML='⚡ Booking for tomorrow';
 }
 
 window.addEventListener('scroll', () => {
@@ -2225,7 +2228,7 @@ document.getElementById('stickyClose').addEventListener('click', () => {
 
 // Scarcity element removed
 
-// ââ HOURS STATUS âââââââââââââââââââââââââââââââââââââââââââââââ
+// ── HOURS STATUS ───────────────────────────────────────────────
 (function() {
   const day = new Date().getDay();
   const isWknd = day===0||day===6;
@@ -2237,7 +2240,7 @@ document.getElementById('stickyClose').addEventListener('click', () => {
   }
 })();
 
-// ââ PRESELECT SERVICE ââââââââââââââââââââââââââââââââââââââââââ
+// ── PRESELECT SERVICE ──────────────────────────────────────────
 function preSelectService(val) {
   const sel = document.getElementById('qf-service');
   if (sel) sel.value = val;
@@ -2245,7 +2248,7 @@ function preSelectService(val) {
 const urlP = new URLSearchParams(window.location.search);
 if (urlP.get('service')) preSelectService(urlP.get('service'));
 
-// ââ QUOTE FORM SUBMIT ââââââââââââââââââââââââââââââââââââââââââ
+// ── QUOTE FORM SUBMIT ──────────────────────────────────────────
 document.getElementById('qfBtn').addEventListener('click', () => {
   const name = document.getElementById('qf-name').value;
   const phone = document.getElementById('qf-phone').value;
@@ -2253,11 +2256,11 @@ document.getElementById('qfBtn').addEventListener('click', () => {
   document.getElementById('qf-phone').style.borderColor = phone.length>=7 ? '' : '#D92626';
   if (!name || phone.length < 7) return;
   const btn = document.getElementById('qfBtn');
-  btn.textContent = 'â QUOTE REQUEST SENT!';
+  btn.textContent = '✅ QUOTE REQUEST SENT!';
   btn.disabled = true;
 });
 
-// ââ FAQ ACCORDION ââââââââââââââââââââââââââââââââââââââââââââââ
+// ── FAQ ACCORDION ──────────────────────────────────────────────
 document.querySelectorAll('.faq-question').forEach(btn => {
   btn.addEventListener('click', () => {
     const isOpen = btn.classList.contains('open');
@@ -2266,7 +2269,7 @@ document.querySelectorAll('.faq-question').forEach(btn => {
   });
 });
 
-// ââ EXIT INTENT ââââââââââââââââââââââââââââââââââââââââââââââââ
+// ── EXIT INTENT ────────────────────────────────────────────────
 let exitShown = false;
 document.addEventListener('mouseleave', function(e) {
   if (e.clientY < 20 && !exitShown) {
@@ -2294,30 +2297,30 @@ document.addEventListener('mouseleave', function(e) {
     const ph = document.getElementById('exitPhone') ? document.getElementById('exitPhone').value : '';
     if (ph.length>=7) {
       const ov = document.getElementById('exitOverlay');
-      if (ov) ov.innerHTML='<div class="exit-modal" style="text-align:center;"><div style="font-size:56px;margin-bottom:16px;">â</div><div class="exit-title" style="margin-bottom:12px;">Got it!</div><div class="exit-sub">We\'ll text you a quote within 30 minutes.</div></div>';
+      if (ov) ov.innerHTML='<div class="exit-modal" style="text-align:center;"><div style="font-size:56px;margin-bottom:16px;">✅</div><div class="exit-title" style="margin-bottom:12px;">Got it!</div><div class="exit-sub">We\'ll text you a quote within 30 minutes.</div></div>';
       setTimeout(function(){const ov2=document.getElementById('exitOverlay');if(ov2)ov2.classList.remove('show');},3000);
     }
   });
 })();
 
-  // ââ PHOTO UPLOAD ââââââââââââââââââââââââââââââââââââââââââ
+  // ── PHOTO UPLOAD ──────────────────────────────────────────
   const photoInput = document.getElementById('photoUpload');
   if (photoInput) {
     photoInput.addEventListener('change', (e) => {
       const file = e.target.files[0];
       if (file) {
-        document.getElementById('uploadIcon').textContent = 'â';
+        document.getElementById('uploadIcon').textContent = '✅';
         document.getElementById('uploadText').style.display = 'none';
         const prev = document.getElementById('uploadPreview');
         prev.style.display = 'inline';
-        prev.textContent = file.name.length > 24 ? file.name.substring(0,24)+'â¦' : file.name;
+        prev.textContent = file.name.length > 24 ? file.name.substring(0,24)+'…' : file.name;
         document.getElementById('uploadLabel').style.borderColor = '#4ADE80';
         document.getElementById('uploadLabel').style.background = '#F0FFF4';
       }
     });
   }
 
-  // ââ BOOKING CALENDAR ââââââââââââââââââââââââââââââââââââââ
+  // ── BOOKING CALENDAR ──────────────────────────────────────
   (function() {
     const now = new Date();
     let viewYear = now.getFullYear(), viewMonth = now.getMonth();
@@ -2372,7 +2375,7 @@ document.addEventListener('mouseleave', function(e) {
         const isFull = !isPast && !isWknd && isDateFullyBooked(date);
         let cls = 'cal-day';
         if (isPast) cls += ' past';
-        else if (isFull) cls += ' past'; // fully booked â shown as unavailable
+        else if (isFull) cls += ' past'; // fully booked — shown as unavailable
         else if (isSel) cls += ' selected available';
         else if (isToday) cls += ' today available has-slot';
         else if (!isWknd) cls += ' available has-slot';
@@ -2413,9 +2416,9 @@ document.addEventListener('mouseleave', function(e) {
       if (selectedDate && selectedTime) {
         const ds = selectedDate.toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric'});
         sum.innerHTML = `<strong>${ds}</strong> at <strong>${selectedTime}</strong>`;
-        btn.disabled = false; btn.textContent = 'CONFIRM APPOINTMENT â';
+        btn.disabled = false; btn.textContent = 'CONFIRM APPOINTMENT →';
       } else if (selectedDate) {
-        sum.innerHTML = `<strong>${selectedDate.toLocaleDateString('en-US',{month:'long',day:'numeric'})}</strong> â now pick a time`;
+        sum.innerHTML = `<strong>${selectedDate.toLocaleDateString('en-US',{month:'long',day:'numeric'})}</strong> — now pick a time`;
         btn.disabled = true; btn.textContent = 'SELECT A TIME';
       } else {
         sum.textContent = 'Select a date and time to continue';
@@ -2445,7 +2448,7 @@ document.addEventListener('mouseleave', function(e) {
     loadAvailability();
   })();
 
-  // ââ COST CALCULATOR âââââââââââââââââââââââââââââââââââââââ
+  // ── COST CALCULATOR ───────────────────────────────────────
   (function() {
     let type=null, sev=null, size=null;
     let baseMin=0, baseMax=0;
@@ -2477,16 +2480,16 @@ document.addEventListener('mouseleave', function(e) {
       const noteEl=document.getElementById('calcNote');
       const ctaEl=document.getElementById('calcCta');
       if (!rangeEl) return;
-      if (!type) { rangeEl.innerHTML='$<span>â</span>'; return; }
+      if (!type) { rangeEl.innerHTML='$<span>—</span>'; return; }
       const m=sev||1.0, s=size||1.0;
       const lo=Math.round((baseMin*m*s)/10)*10;
       const hi=Math.round((baseMax*m*s)/10)*10;
       const shopLo=Math.round(lo*2.2/10)*10;
       const shopHi=Math.round(hi*2.5/10)*10;
       const savLo=shopLo-hi, savHi=shopHi-lo;
-      rangeEl.innerHTML=`$${lo}<span>â$${hi}</span>`;
+      rangeEl.innerHTML=`$${lo}<span>–$${hi}</span>`;
       vsEl.style.display='block';
-      document.getElementById('calcShopRange').textContent=`$${shopLo}â$${shopHi}`;
+      document.getElementById('calcShopRange').textContent=`$${shopLo}–$${shopHi}`;
       savEl.style.display='inline-flex';
       savTxt.textContent=`You save ~$${Math.round((savLo+savHi)/2)}`;
       noteEl.textContent='This is an estimate based on typical jobs. Text us a photo for an exact quote.';
@@ -2495,7 +2498,7 @@ document.addEventListener('mouseleave', function(e) {
     }
   })();
 
-  // ââ CHAT BUBBLE âââââââââââââââââââââââââââââââââââââââââââ
+  // ── CHAT BUBBLE ───────────────────────────────────────────
   (function() {
     const chatBtn=document.getElementById('chatBtn');
     const chatPanel=document.getElementById('chatPanel');
@@ -2507,11 +2510,11 @@ document.addEventListener('mouseleave', function(e) {
     if(!chatBtn) return;
 
     const REPLIES = {
-      bumper: { q:'ð Bumper damage', a:'collision authority and mobile repair is one of the most common cosmetic repairs we handle. Cracks, scuffs, and impact damage are typically in the $249â$499 range depending on the job. We come to you â send a photo to get started.', showQuote:true },
-      scratch: { q:'â¦ Scratch or scuff', a:'Surface scratches and scuffs are generally in the $149â$299 range depending on depth. We color-match to your vehicle for a clean result. Send a photo and we can take a look.', showQuote:true },
-      dent: { q:'âï¸ Dent repair', a:'For eligible dents where the paint is intact, paintless dent repair is typically $99â$249 and preserves the original finish. Whether it qualifies depends on the dent â send a photo first.', showQuote:true },
-      price: { q:'ð° How much does it cost?', a:'Pricing depends on the damage type and scope. Scratches start from $149, collision authority and mobile repairs from $249, panel work from $349. Use the cost estimator on this page for a realistic range.', showQuote:false },
-      area: { q:'ð Do you come to my area?', a:'We cover all of San Diego County â La Jolla, Downtown, Chula Vista, El Cajon, Mira Mesa, Santee, and more. Just text us your zip! ð', showQuote:false },
+      bumper: { q:'🚗 Bumper damage', a:'collision authority and mobile repair is one of the most common cosmetic repairs we handle. Cracks, scuffs, and impact damage typically start at $299 and run higher depending on the job. We come to you — send a photo to get started.', showQuote:true },
+      scratch: { q:'✦ Scratch or scuff', a:'Surface scratches and scuffs are generally in the $149–$299 range depending on depth. We color-match to your vehicle for a clean result. Send a photo and we can take a look.', showQuote:true },
+      dent: { q:'⚙️ Dent repair', a:'For eligible dents where the paint is intact, paintless dent repair is typically $99–$249 and preserves the original finish. Whether it qualifies depends on the dent — send a photo first.', showQuote:true },
+      price: { q:'💰 How much does it cost?', a:'Pricing depends on the damage type and scope. Surface repairs start from $149, bumper restoration from $299, panel respray from $449. Use the cost estimator on this page for a realistic range.', showQuote:false },
+      area: { q:'📍 Do you come to my area?', a:'We cover all of San Diego County — La Jolla, Downtown, Chula Vista, El Cajon, Mira Mesa, Santee, and more. Just text us your zip! 📍', showQuote:false },
     };
 
     function addMsg(text, from) {
@@ -2523,10 +2526,14 @@ document.addEventListener('mouseleave', function(e) {
     }
 
     chatBtn.addEventListener('click', () => {
-      chatPanel.classList.toggle('open');
+      const isOpen = chatPanel.classList.toggle('open');
+      chatBtn.setAttribute('aria-expanded', String(isOpen));
       chatBtn.querySelector('.chat-badge').style.display='none';
     });
-    chatClose.addEventListener('click', () => chatPanel.classList.remove('open'));
+    chatClose.addEventListener('click', () => {
+      chatPanel.classList.remove('open');
+      chatBtn.setAttribute('aria-expanded', 'false');
+    });
 
     chatOptions.querySelectorAll('.chat-option').forEach(opt => {
       opt.addEventListener('click', () => {
@@ -2538,9 +2545,9 @@ document.addEventListener('mouseleave', function(e) {
           addMsg(rep.a, 'bot');
           if (rep.showQuote) {
             setTimeout(()=>{
-              addMsg('ð Get your free quote in 30 min â no obligation.', 'bot');
+              addMsg('👉 Get your free quote in 30 min — no obligation.', 'bot');
               const link=document.createElement('a');
-              link.href='#quote'; link.className='chat-option'; link.textContent='ð Get Free Quote';
+              link.href='#quote'; link.className='chat-option'; link.textContent='📋 Get Free Quote';
               link.style.cssText='display:block;margin:0 16px 12px;text-decoration:none;text-align:center;';
               link.addEventListener('click',()=>chatPanel.classList.remove('open'));
               chatMessages.after(link);
@@ -2556,13 +2563,13 @@ document.addEventListener('mouseleave', function(e) {
       addMsg(val,'user');
       chatInput.value='';
       chatOptions.style.display='none';
-      setTimeout(()=>{ addMsg("Thanks! For a quick answer, call us at (858) 988-0325 or use the quote form below ð",'bot'); },700);
+      setTimeout(()=>{ addMsg("Thanks! For a quick answer, call us at (858) 988-0325 or use the quote form below 👇",'bot'); },700);
     }
     chatSend.addEventListener('click', sendChatMsg);
     chatInput.addEventListener('keydown', e=>{ if(e.key==='Enter') sendChatMsg(); });
   })();
 
-  // ââ STICKY CTA REDIRECT âââââââââââââââââââââââââââââââââââ
+  // ── STICKY CTA REDIRECT ───────────────────────────────────
   // Set window.BUMPERFIX_QUOTE_URL = 'https://yourpage.com/quote'
   // to make the sticky bar button redirect to an external page.
   (function() {
@@ -2575,10 +2582,10 @@ document.addEventListener('mouseleave', function(e) {
   })();
 </script>
 
-<!-- ââ BOOKING MODAL ââ -->
+<!-- ── BOOKING MODAL ── -->
 <div class="booking-modal-overlay" id="bookingModalOverlay">
   <div class="booking-modal">
-    <button class="booking-modal-close" id="bookingModalClose">Ã</button>
+    <button class="booking-modal-close" id="bookingModalClose">×</button>
 
     <!-- Step 1: Customer details -->
     <div id="bookingStep1">
@@ -2592,7 +2599,7 @@ document.addEventListener('mouseleave', function(e) {
       </div>
       <div class="booking-error" id="step1Error"></div>
       <button class="booking-main-btn" id="sendVerificationBtn">SEND VERIFICATION CODE</button>
-      <div class="booking-helper-text">Weâll text you a 6-digit code to confirm this booking request.</div>
+      <div class="booking-helper-text">We’ll text you a 6-digit code to confirm this booking request.</div>
     </div>
 
     <!-- Step 2: Verify code -->
@@ -2603,13 +2610,13 @@ document.addEventListener('mouseleave', function(e) {
       <div class="booking-error" id="step2Error"></div>
       <button class="booking-main-btn" id="verifyBookingBtn">CONFIRM APPOINTMENT</button>
       <button class="booking-secondary-btn" id="resendVerificationBtn">RESEND CODE</button>
-      <div class="booking-resend-confirm" id="resendConfirm">Code resent â check your messages.</div>
+      <div class="booking-resend-confirm" id="resendConfirm">Code resent — check your messages.</div>
       <div class="booking-helper-text">Your appointment is reserved only after the code is verified.</div>
     </div>
 
     <!-- Step 3: Confirmed -->
     <div id="bookingStep3" style="display:none;">
-      <div class="booking-modal-title">â Appointment Confirmed</div>
+      <div class="booking-modal-title">✅ Appointment Confirmed</div>
       <div class="booking-modal-sub" id="bookingConfirmedText">Your slot has been reserved. A confirmation text has been sent.</div>
       <button class="booking-main-btn" id="bookingDoneBtn">DONE</button>
     </div>
@@ -2617,10 +2624,10 @@ document.addEventListener('mouseleave', function(e) {
 </div>
 
 <script>
-// âââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
-// Smart Collision Authority â Booking Modal (frontend controller)
-// Coordinates SMS verification â slot reservation via /api/check-verification.
-// âââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
+// ─────────────────────────────────────────────────────────────────────────────
+// Smart Collision Authority — Booking Modal (frontend controller)
+// Coordinates SMS verification → slot reservation via /api/check-verification.
+// ─────────────────────────────────────────────────────────────────────────────
 
 let bookingState = {
   selectedDate:   null,
@@ -2631,7 +2638,7 @@ let bookingState = {
   customerNotes:  ''
 };
 
-// ââ UI helpers ââââââââââââââââââââââââââââââââââââââââââââââââ
+// ── UI helpers ────────────────────────────────────────────────
 
 function showError(id, msg) {
   const el = document.getElementById(id);
@@ -2651,7 +2658,7 @@ function setLoading(btnId, loading, loadingText) {
   if (!btn) return;
   if (loading) {
     _btnLabels[btnId] = btn.textContent;
-    btn.textContent = loadingText || 'PLEASE WAITâ¦';
+    btn.textContent = loadingText || 'PLEASE WAIT…';
     btn.disabled = true;
   } else {
     btn.textContent = _btnLabels[btnId] || btn.textContent;
@@ -2659,7 +2666,7 @@ function setLoading(btnId, loading, loadingText) {
   }
 }
 
-// ââ Modal open / close ââââââââââââââââââââââââââââââââââââââââ
+// ── Modal open / close ────────────────────────────────────────
 
 function openBookingModal() {
   clearErrors();
@@ -2702,7 +2709,7 @@ document.getElementById('bookingCode').addEventListener('input', function() {
 document.getElementById('bookingModalClose').addEventListener('click', closeBookingModal);
 document.getElementById('bookingDoneBtn').addEventListener('click',    closeBookingModal);
 
-// ââ Step 1 â Send verification code ââââââââââââââââââââââââââ
+// ── Step 1 — Send verification code ──────────────────────────
 
 document.getElementById('sendVerificationBtn').addEventListener('click', async function() {
   clearErrors();
@@ -2722,7 +2729,7 @@ document.getElementById('sendVerificationBtn').addEventListener('click', async f
   bookingState.customerArea  = area;
   bookingState.customerNotes = notes;
 
-  setLoading('sendVerificationBtn', true, 'SENDING CODEâ¦');
+  setLoading('sendVerificationBtn', true, 'SENDING CODE…');
 
   try {
     const res  = await fetch('/api/send-verification', {
@@ -2749,7 +2756,7 @@ document.getElementById('sendVerificationBtn').addEventListener('click', async f
   }
 });
 
-// ââ Step 2 â Verify code and create booking âââââââââââââââââââ
+// ── Step 2 — Verify code and create booking ───────────────────
 
 document.getElementById('verifyBookingBtn').addEventListener('click', async function() {
   clearErrors();
@@ -2760,7 +2767,7 @@ document.getElementById('verifyBookingBtn').addEventListener('click', async func
     return;
   }
 
-  setLoading('verifyBookingBtn', true, 'VERIFYINGâ¦');
+  setLoading('verifyBookingBtn', true, 'VERIFYING…');
 
   try {
     const res  = await fetch('/api/check-verification', {
@@ -2787,7 +2794,7 @@ document.getElementById('verifyBookingBtn').addEventListener('click', async func
       return;
     }
 
-    // Success â show confirmed step and update calendar UI
+    // Success — show confirmed step and update calendar UI
     document.getElementById('bookingStep2').style.display = 'none';
     document.getElementById('bookingStep3').style.display = 'block';
     document.getElementById('bookingConfirmedText').textContent =
@@ -2797,7 +2804,7 @@ document.getElementById('verifyBookingBtn').addEventListener('click', async func
     const calSummary = document.getElementById('calSummary');
     const calBookBtn = document.getElementById('calBookBtn');
     if (calSummary) calSummary.innerHTML =
-      'â Booked â <strong>' + bookingState.selectedDate + '</strong> at <strong>' + bookingState.selectedTime + '</strong>';
+      '✅ Booked — <strong>' + bookingState.selectedDate + '</strong> at <strong>' + bookingState.selectedTime + '</strong>';
     if (calBookBtn) {
       calBookBtn.textContent = 'APPOINTMENT CONFIRMED';
       calBookBtn.disabled    = true;
@@ -2821,11 +2828,11 @@ document.getElementById('verifyBookingBtn').addEventListener('click', async func
   }
 });
 
-// ââ Resend code âââââââââââââââââââââââââââââââââââââââââââââââ
+// ── Resend code ───────────────────────────────────────────────
 
 document.getElementById('resendVerificationBtn').addEventListener('click', async function() {
   clearErrors();
-  setLoading('resendVerificationBtn', true, 'RESENDINGâ¦');
+  setLoading('resendVerificationBtn', true, 'RESENDING…');
 
   try {
     const res  = await fetch('/api/send-verification', {

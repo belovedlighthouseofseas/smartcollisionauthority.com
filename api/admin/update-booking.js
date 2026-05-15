@@ -1,4 +1,4 @@
-// /api/admin/update-booking.js â Update booking status + trigger SMS workflows
+// /api/admin/update-booking.js — Update booking status + trigger SMS workflows
 import { createClient } from '@supabase/supabase-js';
 import twilio from 'twilio';
 
@@ -41,7 +41,7 @@ export default async function handler(req, res) {
   const FROM   = process.env.TWILIO_PHONE_NUMBER;
   const OWNER  = process.env.OWNER_PHONE;
 
-  // ââ Admin confirmed â send customer confirmation SMS ââââââââââââââââââââââ
+  // ── Admin confirmed → send customer confirmation SMS ──────────────────────
   if (status === 'admin_confirmed' && sendCustomerSms && data.phone) {
     const confirmMsg =
       `Bumper Fix: Your appointment is confirmed for ${data.date} at ${data.time}.\n\n` +
@@ -66,7 +66,7 @@ export default async function handler(req, res) {
     }
   }
 
-  // ââ Canceled â text customer ââââââââââââââââââââââââââââââââââââââââââââââ
+  // ── Canceled → text customer ──────────────────────────────────────────────
   if (status === 'canceled' && data.phone) {
     try {
       await client.messages.create({

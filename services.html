@@ -34,7 +34,7 @@
     .nav-phone:hover{background:var(--red2)!important}
     .nav-cta{background:transparent!important;border:1px solid rgba(255,255,255,0.25)!important;color:var(--white)!important;padding:8px 18px!important;border-radius:6px!important;font-weight:600!important;font-size:14px!important;transition:all 0.2s!important}
     .nav-cta:hover{border-color:var(--white)!important;background:rgba(255,255,255,0.05)!important}
-    .nav-dropdown{position:relative}.nav-dropdown>a{display:flex;align-items:center;gap:5px}.nav-dropdown>a::after{content:'â¾';font-size:10px;opacity:0.6}.nav-dropdown-menu{display:none;position:absolute;top:100%;padding-top:14px;left:50%;transform:translateX(-50%);background:rgba(18,18,18,0.98);border:1px solid rgba(255,255,255,0.1);border-radius:10px;padding:10px;min-width:360px;display:grid;grid-template-columns:1fr 1fr;gap:2px;box-shadow:0 12px 40px rgba(0,0,0,0.5);z-index:999;opacity:0;pointer-events:none;transition:opacity 0.18s ease,transform 0.18s ease;transform:translateX(-50%) translateY(-6px);backdrop-filter:blur(16px)}.nav-dropdown:hover .nav-dropdown-menu,.nav-dropdown-menu:hover{opacity:1;pointer-events:auto;transform:translateX(-50%) translateY(0)}.nav-dropdown-menu a{text-decoration:none;color:rgba(255,255,255,0.7);font-size:13px;font-weight:500;padding:8px 12px;border-radius:6px;transition:background 0.15s,color 0.15s;white-space:nowrap}.nav-dropdown-menu a:hover{background:rgba(255,255,255,0.08);color:#fff}.nav-dropdown-menu .dd-all{grid-column:1/-1;border-top:1px solid rgba(255,255,255,0.08);margin-top:4px;padding-top:10px;color:var(--red)!important;font-weight:700!important;text-align:center}.nav-dropdown-menu .dd-all:hover{background:rgba(220,38,38,0.1)!important;color:var(--red)!important}
+    .nav-dropdown{position:relative}.nav-dropdown>a{display:flex;align-items:center;gap:5px}.nav-dropdown>a::after{content:'▾';font-size:10px;opacity:0.6}.nav-dropdown-menu{display:none;position:absolute;top:100%;padding-top:14px;left:50%;transform:translateX(-50%);background:rgba(18,18,18,0.98);border:1px solid rgba(255,255,255,0.1);border-radius:10px;padding:10px;min-width:360px;display:grid;grid-template-columns:1fr 1fr;gap:2px;box-shadow:0 12px 40px rgba(0,0,0,0.5);z-index:999;opacity:0;pointer-events:none;transition:opacity 0.18s ease,transform 0.18s ease;transform:translateX(-50%) translateY(-6px);backdrop-filter:blur(16px)}.nav-dropdown:hover .nav-dropdown-menu,.nav-dropdown:focus-within .nav-dropdown-menu,.nav-dropdown-menu:hover{opacity:1;pointer-events:auto;transform:translateX(-50%) translateY(0)}.nav-dropdown>a:focus-visible{outline:2px solid rgba(255,255,255,0.7);outline-offset:3px;border-radius:3px}.nav-dropdown-menu a:focus-visible{outline:2px solid var(--red);outline-offset:1px}.nav-dropdown-menu a{text-decoration:none;color:rgba(255,255,255,0.7);font-size:13px;font-weight:500;padding:8px 12px;border-radius:6px;transition:background 0.15s,color 0.15s;white-space:nowrap}.nav-dropdown-menu a:hover{background:rgba(255,255,255,0.08);color:#fff}.nav-dropdown-menu .dd-all{grid-column:1/-1;border-top:1px solid rgba(255,255,255,0.08);margin-top:4px;padding-top:10px;color:var(--red)!important;font-weight:700!important;text-align:center}.nav-dropdown-menu .dd-all:hover{background:rgba(220,38,38,0.1)!important;color:var(--red)!important}
     .hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px}
     .hamburger span{display:block;width:24px;height:2px;background:var(--white);border-radius:2px}
     .mobile-menu{display:none;background:var(--bg2);border-top:1px solid rgba(255,255,255,0.07);padding:20px 24px;flex-direction:column;gap:4px}
@@ -73,7 +73,7 @@
     .svc-desc{font-size:14px;color:var(--mid);line-height:1.75;margin-bottom:16px}
     .svc-includes{list-style:none;display:flex;flex-direction:column;gap:6px;margin-bottom:20px}
     .svc-includes li{font-size:13px;color:rgba(255,255,255,0.6);display:flex;gap:8px;align-items:flex-start;line-height:1.5}
-    .svc-includes li::before{content:'â';color:var(--red);font-weight:700;flex-shrink:0}
+    .svc-includes li::before{content:'✓';color:var(--red);font-weight:700;flex-shrink:0}
     .svc-meta{display:flex;gap:20px;flex-wrap:wrap}
     .svc-badge{font-size:11px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--red);background:rgba(217,38,38,0.1);border:1px solid rgba(217,38,38,0.2);padding:5px 10px;border-radius:4px}
     .svc-num{position:absolute;bottom:12px;right:20px;font-family:'Anton',sans-serif;font-size:72px;color:rgba(255,255,255,0.025);line-height:1;pointer-events:none}
@@ -142,13 +142,13 @@
     <span class="topbar-item">BUMPER FIX<span class="topbar-sep"></span></span>
     <span class="topbar-item">San Diego Mobile collision authority and mobile repair<span class="topbar-sep"></span></span>
     <span class="topbar-item">We Come to Your Home or Office<span class="topbar-sep"></span></span>
-    <span class="topbar-item">Fast Quotes Â· Clean Repairs Â· No Shop Drop-Off<span class="topbar-sep"></span></span>
+    <span class="topbar-item">Fast Quotes · Clean Repairs · No Shop Drop-Off<span class="topbar-sep"></span></span>
     <span class="topbar-item">Serving San Diego County<span class="topbar-sep"></span></span>
     <span class="topbar-item">Call <a href="tel:+18589880325">(858) 988-0325</a><span class="topbar-sep"></span></span>
     <span class="topbar-item">BUMPER FIX<span class="topbar-sep"></span></span>
     <span class="topbar-item">San Diego Mobile collision authority and mobile repair<span class="topbar-sep"></span></span>
     <span class="topbar-item">We Come to Your Home or Office<span class="topbar-sep"></span></span>
-    <span class="topbar-item">Fast Quotes Â· Clean Repairs Â· No Shop Drop-Off<span class="topbar-sep"></span></span>
+    <span class="topbar-item">Fast Quotes · Clean Repairs · No Shop Drop-Off<span class="topbar-sep"></span></span>
     <span class="topbar-item">Serving San Diego County<span class="topbar-sep"></span></span>
     <span class="topbar-item">Call <a href="tel:+18589880325">(858) 988-0325</a><span class="topbar-sep"></span></span>
   </div>
@@ -160,7 +160,7 @@
   <div class="nav-links">
     <a href="services.html" class="active">Services</a>
     <a href="pricing.html">Pricing</a>
-    <div class="nav-dropdown"><a href="service-area.html">Service Area</a><div class="nav-dropdown-menu"><a href="carlsbad.html">Carlsbad</a><a href="chula-vista.html">Chula Vista</a><a href="coronado.html">Coronado</a><a href="downtown-san-diego.html">Downtown San Diego</a><a href="el-cajon.html">El Cajon</a><a href="escondido.html">Escondido</a><a href="la-jolla.html">La Jolla</a><a href="mira-mesa.html">Mira Mesa</a><a href="mission-valley.html">Mission Valley</a><a href="national-city.html">National City</a><a href="ocean-beach.html">Ocean Beach</a><a href="oceanside.html">Oceanside</a><a href="pacific-beach.html">Pacific Beach</a><a href="poway.html">Poway</a><a href="rancho-bernardo.html">Rancho Bernardo</a><a href="santee.html">Santee</a><a href="vista.html">Vista</a><a href="service-area.html" class="dd-all">View All Service Areas â</a></div></div>
+    <div class="nav-dropdown"><a href="service-area.html">Service Area</a><div class="nav-dropdown-menu"><a href="carlsbad.html">Carlsbad</a><a href="chula-vista.html">Chula Vista</a><a href="coronado.html">Coronado</a><a href="downtown-san-diego.html">Downtown San Diego</a><a href="el-cajon.html">El Cajon</a><a href="escondido.html">Escondido</a><a href="la-jolla.html">La Jolla</a><a href="mira-mesa.html">Mira Mesa</a><a href="mission-valley.html">Mission Valley</a><a href="national-city.html">National City</a><a href="ocean-beach.html">Ocean Beach</a><a href="oceanside.html">Oceanside</a><a href="pacific-beach.html">Pacific Beach</a><a href="poway.html">Poway</a><a href="rancho-bernardo.html">Rancho Bernardo</a><a href="santee.html">Santee</a><a href="vista.html">Vista</a><a href="service-area.html" class="dd-all">View All Service Areas →</a></div></div>
     <a href="tel:+18589880325" class="nav-phone">(858) 988-0325</a>
     <a href="contact.html" class="nav-cta">Get a Quote</a>
   </div>
@@ -171,25 +171,25 @@
   <a href="pricing.html">Pricing</a>
   <a href="service-area.html">Service Area</a>
   
-  <a href="carlsbad.html" style="font-size:13px;padding:8px 0;color:rgba(255,255,255,0.55);">â³ Carlsbad</a>
-  <a href="chula-vista.html" style="font-size:13px;padding:8px 0;color:rgba(255,255,255,0.55);">â³ Chula Vista</a>
-  <a href="coronado.html" style="font-size:13px;padding:8px 0;color:rgba(255,255,255,0.55);">â³ Coronado</a>
-  <a href="downtown-san-diego.html" style="font-size:13px;padding:8px 0;color:rgba(255,255,255,0.55);">â³ Downtown San Diego</a>
-  <a href="el-cajon.html" style="font-size:13px;padding:8px 0;color:rgba(255,255,255,0.55);">â³ El Cajon</a>
-  <a href="escondido.html" style="font-size:13px;padding:8px 0;color:rgba(255,255,255,0.55);">â³ Escondido</a>
-  <a href="la-jolla.html" style="font-size:13px;padding:8px 0;color:rgba(255,255,255,0.55);">â³ La Jolla</a>
-  <a href="mira-mesa.html" style="font-size:13px;padding:8px 0;color:rgba(255,255,255,0.55);">â³ Mira Mesa</a>
-  <a href="mission-valley.html" style="font-size:13px;padding:8px 0;color:rgba(255,255,255,0.55);">â³ Mission Valley</a>
-  <a href="national-city.html" style="font-size:13px;padding:8px 0;color:rgba(255,255,255,0.55);">â³ National City</a>
-  <a href="ocean-beach.html" style="font-size:13px;padding:8px 0;color:rgba(255,255,255,0.55);">â³ Ocean Beach</a>
-  <a href="oceanside.html" style="font-size:13px;padding:8px 0;color:rgba(255,255,255,0.55);">â³ Oceanside</a>
-  <a href="pacific-beach.html" style="font-size:13px;padding:8px 0;color:rgba(255,255,255,0.55);">â³ Pacific Beach</a>
-  <a href="poway.html" style="font-size:13px;padding:8px 0;color:rgba(255,255,255,0.55);">â³ Poway</a>
-  <a href="rancho-bernardo.html" style="font-size:13px;padding:8px 0;color:rgba(255,255,255,0.55);">â³ Rancho Bernardo</a>
-  <a href="santee.html" style="font-size:13px;padding:8px 0;color:rgba(255,255,255,0.55);">â³ Santee</a>
-  <a href="vista.html" style="font-size:13px;padding:8px 0;color:rgba(255,255,255,0.55);">â³ Vista</a>
+  <a href="carlsbad.html" style="font-size:13px;padding:8px 0;color:rgba(255,255,255,0.55);">↳ Carlsbad</a>
+  <a href="chula-vista.html" style="font-size:13px;padding:8px 0;color:rgba(255,255,255,0.55);">↳ Chula Vista</a>
+  <a href="coronado.html" style="font-size:13px;padding:8px 0;color:rgba(255,255,255,0.55);">↳ Coronado</a>
+  <a href="downtown-san-diego.html" style="font-size:13px;padding:8px 0;color:rgba(255,255,255,0.55);">↳ Downtown San Diego</a>
+  <a href="el-cajon.html" style="font-size:13px;padding:8px 0;color:rgba(255,255,255,0.55);">↳ El Cajon</a>
+  <a href="escondido.html" style="font-size:13px;padding:8px 0;color:rgba(255,255,255,0.55);">↳ Escondido</a>
+  <a href="la-jolla.html" style="font-size:13px;padding:8px 0;color:rgba(255,255,255,0.55);">↳ La Jolla</a>
+  <a href="mira-mesa.html" style="font-size:13px;padding:8px 0;color:rgba(255,255,255,0.55);">↳ Mira Mesa</a>
+  <a href="mission-valley.html" style="font-size:13px;padding:8px 0;color:rgba(255,255,255,0.55);">↳ Mission Valley</a>
+  <a href="national-city.html" style="font-size:13px;padding:8px 0;color:rgba(255,255,255,0.55);">↳ National City</a>
+  <a href="ocean-beach.html" style="font-size:13px;padding:8px 0;color:rgba(255,255,255,0.55);">↳ Ocean Beach</a>
+  <a href="oceanside.html" style="font-size:13px;padding:8px 0;color:rgba(255,255,255,0.55);">↳ Oceanside</a>
+  <a href="pacific-beach.html" style="font-size:13px;padding:8px 0;color:rgba(255,255,255,0.55);">↳ Pacific Beach</a>
+  <a href="poway.html" style="font-size:13px;padding:8px 0;color:rgba(255,255,255,0.55);">↳ Poway</a>
+  <a href="rancho-bernardo.html" style="font-size:13px;padding:8px 0;color:rgba(255,255,255,0.55);">↳ Rancho Bernardo</a>
+  <a href="santee.html" style="font-size:13px;padding:8px 0;color:rgba(255,255,255,0.55);">↳ Santee</a>
+  <a href="vista.html" style="font-size:13px;padding:8px 0;color:rgba(255,255,255,0.55);">↳ Vista</a>
   <a href="tel:+18589880325" class="mm-phone">(858) 988-0325</a>
-  <a href="contact.html" class="mm-cta">Get a Quote â</a>
+  <a href="contact.html" class="mm-cta">Get a Quote →</a>
 </div>
 
 <!-- HERO -->
@@ -197,10 +197,10 @@
   <div class="breadcrumb"><a href="/">Home</a> / Services</div>
   <div class="section-tag">What We Do</div>
   <h1>MOBILE AUTO<br>BODY SERVICES.</h1>
-  <p class="page-hero-sub">collision authority and mobile repair, scratch removal, paint correction, and cosmetic bodywork â at your home, office, or anywhere across San Diego County. No shop drop-off. No wait.</p>
+  <p class="page-hero-sub">collision authority and mobile repair, scratch removal, paint correction, and cosmetic bodywork — at your home, office, or anywhere across San Diego County. No shop drop-off. No wait.</p>
   <div style="display:flex;gap:14px;flex-wrap:wrap;">
     <a href="contact.html" class="btn-primary">Get a Quote</a>
-    <a href="sms:+18589880325" style="display:inline-flex;align-items:center;gap:8px;color:#4ADE80;font-size:14px;font-weight:700;text-decoration:none;border:1px solid rgba(74,222,128,0.3);padding:10px 18px;border-radius:6px;">ð¬ Text a Photo</a>
+    <a href="sms:+18589880325" style="display:inline-flex;align-items:center;gap:8px;color:#4ADE80;font-size:14px;font-weight:700;text-decoration:none;border:1px solid rgba(74,222,128,0.3);padding:10px 18px;border-radius:6px;">💬 Text a Photo</a>
   </div>
 </div>
 
@@ -212,7 +212,7 @@
 
   <div class="svc-grid">
     <div class="svc-card reveal">
-      <div class="svc-icon">ð</div>
+      <div class="svc-icon">🚗</div>
       <div class="svc-title">collision authority and mobile repair</div>
       <p class="svc-desc">Mobile collision authority and mobile repair for cracks, dents, scuffs, and impact damage. We restore the bumper on-site with a color-matched refinish.</p>
       <ul class="svc-includes">
@@ -222,14 +222,14 @@
         <li>Front and rear bumpers</li>
       </ul>
       <div class="svc-meta">
-        <span class="svc-badge">2â3 hrs typical</span>
-        <span class="svc-badge">$350â$600</span>
+        <span class="svc-badge">2–3 hrs typical</span>
+        <span class="svc-badge">$350–$600</span>
       </div>
       <div class="svc-num">01</div>
     </div>
 
     <div class="svc-card reveal">
-      <div class="svc-icon">â¦</div>
+      <div class="svc-icon">✦</div>
       <div class="svc-title">Scratch Removal</div>
       <p class="svc-desc">Scratch repair from minor surface marks to deeper paint scratches across doors, panels, and bumpers. Clean result without full repainting when possible.</p>
       <ul class="svc-includes">
@@ -239,14 +239,14 @@
         <li>Multi-panel blending when needed</li>
       </ul>
       <div class="svc-meta">
-        <span class="svc-badge">1.5â3 hrs</span>
-        <span class="svc-badge">$200â$450</span>
+        <span class="svc-badge">1.5–3 hrs</span>
+        <span class="svc-badge">$200–$450</span>
       </div>
       <div class="svc-num">02</div>
     </div>
 
     <div class="svc-card reveal">
-      <div class="svc-icon">ð¡ï¸</div>
+      <div class="svc-icon">🛡️</div>
       <div class="svc-title">Scuff &amp; Scrape Repair</div>
       <p class="svc-desc">Surface-level scuffs and scrapes from parking lot contact, curb rash, or light collisions. Often the most cost-effective mobile repair type.</p>
       <ul class="svc-includes">
@@ -256,14 +256,14 @@
         <li>Bumpers, doors, and body panels</li>
       </ul>
       <div class="svc-meta">
-        <span class="svc-badge">1â2 hrs</span>
-        <span class="svc-badge">$150â$350</span>
+        <span class="svc-badge">1–2 hrs</span>
+        <span class="svc-badge">$150–$350</span>
       </div>
       <div class="svc-num">03</div>
     </div>
 
     <div class="svc-card reveal">
-      <div class="svc-icon">ð¨</div>
+      <div class="svc-icon">🎨</div>
       <div class="svc-title">Auto Body Paint</div>
       <p class="svc-desc">Panel repaints and color-matched refinishing for panels that need full coverage rather than spot correction. Done on-site with professional spray equipment.</p>
       <ul class="svc-includes">
@@ -273,16 +273,16 @@
         <li>Edge blend to surrounding panels</li>
       </ul>
       <div class="svc-meta">
-        <span class="svc-badge">3â5 hrs</span>
-        <span class="svc-badge">$400â$750</span>
+        <span class="svc-badge">3–5 hrs</span>
+        <span class="svc-badge">$400–$750</span>
       </div>
       <div class="svc-num">04</div>
     </div>
 
     <div class="svc-card reveal">
-      <div class="svc-icon">âï¸</div>
+      <div class="svc-icon">⚙️</div>
       <div class="svc-title">Paintless Dent Repair</div>
-      <p class="svc-desc">PDR removes dents from hoods, doors, roofs, and body panels without repainting â when the paint is undamaged and the dent shape allows for it.</p>
+      <p class="svc-desc">PDR removes dents from hoods, doors, roofs, and body panels without repainting — when the paint is undamaged and the dent shape allows for it.</p>
       <ul class="svc-includes">
         <li>Eligible dent assessment on arrival</li>
         <li>Precision tool access from behind panel</li>
@@ -290,8 +290,8 @@
         <li>Works on hail damage and round dents</li>
       </ul>
       <div class="svc-meta">
-        <span class="svc-badge">1.5â3 hrs</span>
-        <span class="svc-badge">$200â$500</span>
+        <span class="svc-badge">1.5–3 hrs</span>
+        <span class="svc-badge">$200–$500</span>
       </div>
       <div class="svc-num">05</div>
     </div>
@@ -299,7 +299,7 @@
     <div class="svc-card reveal" style="display:flex;flex-direction:column;justify-content:center;align-items:flex-start;background:rgba(217,38,38,0.05);border:1px dashed rgba(217,38,38,0.3);">
       <div style="font-family:'Anton',sans-serif;font-size:22px;color:var(--white);margin-bottom:12px;line-height:1.1;">Not Sure What<br>You Need?</div>
       <p style="font-size:14px;color:rgba(255,255,255,0.5);line-height:1.7;margin-bottom:24px;">Text a photo of the damage. We'll tell you what type of repair applies, whether it's a good fit for mobile service, and what the range looks like.</p>
-      <a href="sms:+18589880325" style="display:inline-flex;align-items:center;gap:8px;background:var(--red);color:white;padding:12px 22px;border-radius:6px;font-size:14px;font-weight:700;text-decoration:none;">ð¬ Text Us a Photo</a>
+      <a href="sms:+18589880325" style="display:inline-flex;align-items:center;gap:8px;background:var(--red);color:white;padding:12px 22px;border-radius:6px;font-size:14px;font-weight:700;text-decoration:none;">💬 Text Us a Photo</a>
     </div>
   </div>
 </section>
@@ -342,23 +342,23 @@
     <div class="fit-card good reveal">
       <div class="fit-title">Good Fit for Mobile</div>
       <ul class="fit-list">
-        <li><span class="ic">â</span>Bumper cracks, dents, and scuffs</li>
-        <li><span class="ic">â</span>Door and panel scratch repair</li>
-        <li><span class="ic">â</span>Scuff and paint transfer removal</li>
-        <li><span class="ic">â</span>Single-panel refinish and respray</li>
-        <li><span class="ic">â</span>Paintless dent repair on eligible panels</li>
-        <li><span class="ic">â</span>Keying and surface damage correction</li>
-        <li><span class="ic">â</span>Cosmetic hail damage on hoods and roofs</li>
+        <li><span class="ic">✓</span>Bumper cracks, dents, and scuffs</li>
+        <li><span class="ic">✓</span>Door and panel scratch repair</li>
+        <li><span class="ic">✓</span>Scuff and paint transfer removal</li>
+        <li><span class="ic">✓</span>Single-panel refinish and respray</li>
+        <li><span class="ic">✓</span>Paintless dent repair on eligible panels</li>
+        <li><span class="ic">✓</span>Keying and surface damage correction</li>
+        <li><span class="ic">✓</span>Cosmetic hail damage on hoods and roofs</li>
       </ul>
     </div>
     <div class="fit-card bad reveal">
       <div class="fit-title">May Need a Shop</div>
       <ul class="fit-list">
-        <li><span class="ic" style="color:#888">â</span>Frame or structural damage from collision</li>
-        <li><span class="ic" style="color:#888">â</span>Full multi-panel repaints requiring a booth</li>
-        <li><span class="ic" style="color:#888">â</span>Airbag or safety system repairs</li>
-        <li><span class="ic" style="color:#888">â</span>Damage that prevents the vehicle from running</li>
-        <li><span class="ic" style="color:#888">â</span>Insurance claims requiring shop documentation</li>
+        <li><span class="ic" style="color:#888">–</span>Frame or structural damage from collision</li>
+        <li><span class="ic" style="color:#888">–</span>Full multi-panel repaints requiring a booth</li>
+        <li><span class="ic" style="color:#888">–</span>Airbag or safety system repairs</li>
+        <li><span class="ic" style="color:#888">–</span>Damage that prevents the vehicle from running</li>
+        <li><span class="ic" style="color:#888">–</span>Insurance claims requiring shop documentation</li>
       </ul>
       <p style="font-size:13px;color:rgba(255,255,255,0.4);margin-top:18px;line-height:1.6;">If your situation falls in this list, we will let you know upfront rather than take the job and do it wrong.</p>
     </div>
@@ -371,7 +371,7 @@
   <p class="cta-p">Text a photo of the damage. We review it, confirm the fit, and respond with the next step as quickly as possible.</p>
   <div class="cta-btns">
     <a href="contact.html" class="cta-btn-dark">Get a Quote</a>
-    <a href="sms:+18589880325" class="cta-btn-outline">ð¬ Text a Photo</a>
+    <a href="sms:+18589880325" class="cta-btn-outline">💬 Text a Photo</a>
   </div>
 </section>
 
@@ -385,7 +385,7 @@
       </div>
       <p class="footer-tagline">Clean mobile collision authority and mobile repair, scratch correction, and cosmetic paintwork without the normal body shop delay.</p>
       <a href="tel:+18589880325" class="footer-phone">(858) 988-0325</a>
-      <div style="font-size:12px;color:rgba(255,255,255,0.35);margin-top:12px;line-height:1.8;">MonâFri 7amâ7pm<br>SatâSun 8amâ5pm</div>
+      <div style="font-size:12px;color:rgba(255,255,255,0.35);margin-top:12px;line-height:1.8;">Mon–Fri 7am–7pm<br>Sat–Sun 8am–5pm</div>
     </div>
     <div>
       <div class="footer-col-title">Services</div>
@@ -432,19 +432,19 @@
     </div>
   </div>
   <div class="footer-bottom">
-    <span>Â© 2026 Smart Collision Authority. All rights reserved. San Diego, CA.</span>
+    <span>© 2026 Smart Collision Authority. All rights reserved. San Diego, CA.</span>
     <span>Mobile cosmetic auto body service designed for fast, on-site convenience.</span>
   </div>
 </footer>
 
-<a href="https://wa.me/18589880325?text=Hi! I need a quote for collision authority and mobile repair." target="_blank" rel="noopener" class="wa-btn" aria-label="WhatsApp">ð¬</a>
+<a href="https://wa.me/18589880325?text=Hi! I need a quote for collision authority and mobile repair." target="_blank" rel="noopener" class="wa-btn" aria-label="WhatsApp">💬</a>
 
 <div class="sticky-cta" id="stickyCta">
-  <div><div class="sticky-brand">BUMPER FIX</div><div class="sticky-tagline">Mobile Auto Body Â· San Diego County</div></div>
+  <div><div class="sticky-brand">BUMPER FIX</div><div class="sticky-tagline">Mobile Auto Body · San Diego County</div></div>
   <div class="sticky-actions">
     <a href="tel:+18589880325" class="sticky-phone">(858) 988-0325</a>
     <a href="contact.html" class="sticky-btn">Get a Quote</a>
-    <button class="sticky-close" id="stickyClose">Ã</button>
+    <button class="sticky-close" id="stickyClose">×</button>
   </div>
 </div>
 

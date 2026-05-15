@@ -1,4 +1,4 @@
-// /api/admin/auth.js â Admin login
+// /api/admin/auth.js — Admin login
 export default function handler(req, res) {
   if (req.method !== 'POST') return res.status(405).json({ error: 'Method not allowed.' });
   const { password } = req.body || {};

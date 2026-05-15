@@ -1,4 +1,4 @@
-// /api/get-availability.js â Returns booked slots + blocked slots for the calendar
+// /api/get-availability.js — Returns booked slots + blocked slots for the calendar
 import { createClient } from '@supabase/supabase-js';
 
 export default async function handler(req, res) {
