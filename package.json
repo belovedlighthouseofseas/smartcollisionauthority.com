@@ -1,0 +1,9 @@
+{
+  "name": "smartcollisionauthority-com",
+  "version": "1.0.0",
+  "type": "module",
+  "dependencies": {
+    "twilio": "^5.3.3",
+    "@supabase/supabase-js": "^2.45.0"
+  }
+}
